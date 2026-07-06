@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://biskj6dw15er3"]
+
+[ext_resource type="Script" uid="uid://djtvgto7g4xa3" path="res://combat.gd" id="1_4jl1m"]
+[ext_resource type="PackedScene" uid="uid://bhripyqn5q2ci" path="res://player.tscn" id="2_hchht"]
+[ext_resource type="PackedScene" uid="uid://dpobgcxpm80d2" path="res://enemy.tscn" id="3_34m47"]
+
+[node name="Fight" type="Node2D" unique_id=1647977493]
+script = ExtResource("1_4jl1m")
+
+[node name="Player" parent="." unique_id=1223803813 instance=ExtResource("2_hchht")]
+position = Vector2(562, 361)
+
+[node name="Label" type="Label" parent="Player" unique_id=1819122126]
+offset_left = 89.0
+offset_top = -11.0
+offset_right = 353.0
+offset_bottom = 82.0
+
+[node name="enemy" parent="." unique_id=810602662 instance=ExtResource("3_34m47")]
+position = Vector2(606, 172)
+
+[node name="Label" type="Label" parent="enemy" unique_id=1622196255]
+offset_left = 81.0
+offset_top = -3.0
+offset_right = 181.0
+offset_bottom = 58.0
+
+[node name="Button" type="Button" parent="." unique_id=1218250415]
+offset_left = 204.0
+offset_top = 252.0
+offset_right = 318.0
+offset_bottom = 366.0
+text = "fight"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
