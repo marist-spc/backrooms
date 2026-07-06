@@ -8,7 +8,7 @@
 script = ExtResource("1_4jl1m")
 
 [node name="Player" parent="." unique_id=1223803813 instance=ExtResource("2_hchht")]
-position = Vector2(562, 361)
+position = Vector2(213, 534)
 
 [node name="Label" type="Label" parent="Player" unique_id=1819122126]
 offset_left = 89.0
@@ -17,7 +17,7 @@ offset_right = 353.0
 offset_bottom = 82.0
 
 [node name="enemy" parent="." unique_id=810602662 instance=ExtResource("3_34m47")]
-position = Vector2(606, 172)
+position = Vector2(543, 151)
 
 [node name="Label" type="Label" parent="enemy" unique_id=1622196255]
 offset_left = 81.0
@@ -25,11 +25,19 @@ offset_top = -3.0
 offset_right = 181.0
 offset_bottom = 58.0
 
-[node name="Button" type="Button" parent="." unique_id=1218250415]
-offset_left = 204.0
-offset_top = 252.0
-offset_right = 318.0
-offset_bottom = 366.0
+[node name="Attack" type="Button" parent="." unique_id=1218250415]
+offset_left = 346.0
+offset_top = 461.0
+offset_right = 460.0
+offset_bottom = 575.0
 text = "fight"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Block" type="Button" parent="." unique_id=1205252634]
+offset_left = 545.0
+offset_top = 466.0
+offset_right = 671.0
+offset_bottom = 574.0
+text = "Block"
+
+[connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
