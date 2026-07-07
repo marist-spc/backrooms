@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://bah16eccmbo2t"]
 
 [ext_resource type="PackedScene" uid="uid://cavs03g48cb3b" path="res://building_block.tscn" id="1_vfa6b"]
+=======
+[gd_scene format=3 uid="uid://eh2ehh6gox3j"]
+
+[ext_resource type="PackedScene" uid="uid://cwm5pxfl3vgua" path="res://walls.tscn" id="1_vfa6b"]
+>>>>>>> Stashed changes
 
 [sub_resource type="BoxMesh" id="BoxMesh_it8ie"]
 size = Vector3(104, 1, 60)
@@ -11,6 +17,10 @@ size = Vector3(104, 1, 60)
 [node name="Level0" type="Node3D" unique_id=1880062457]
 
 [node name="Floor" type="Area3D" parent="." unique_id=1226670288]
+<<<<<<< Updated upstream
+=======
+collision_mask = 14
+>>>>>>> Stashed changes
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1956927346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -20,6 +30,7 @@ mesh = SubResource("BoxMesh_it8ie")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 shape = SubResource("BoxShape3D_47xu7")
 
+<<<<<<< Updated upstream
 [node name="Walls" type="Node3D" parent="." unique_id=839291403]
 
 [node name="BuildingBlock" parent="Walls" unique_id=1975011575 instance=ExtResource("1_vfa6b")]
@@ -126,3 +137,6 @@ transform = Transform3D(-1.3113416e-07, 0, 1, 0, 1, 0, -3, 0, -4.371139e-08, 39.
 
 [node name="BuildingBlock22" parent="Walls" unique_id=1569863683 instance=ExtResource("1_vfa6b")]
 transform = Transform3D(-1.3113416e-07, 0, 1, 0, 1, 0, -3, 0, -4.371139e-08, 46.575634, 2, -19.884487)
+=======
+[node name="Walls" parent="." unique_id=466816777 instance=ExtResource("1_vfa6b")]
+>>>>>>> Stashed changes
