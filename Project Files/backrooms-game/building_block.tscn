@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://cavs03g48cb3b"]
+[gd_scene format=3 uid="uid://nho8lhh027mm"]
+
+[ext_resource type="Material" uid="uid://ccg0xse51hfp6" path="res://BackroomsWalls.tres" id="1_sj7df"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_it8ie"]
+material = ExtResource("1_sj7df")
 size = Vector3(4, 4, 0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sj7df"]
-albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_it8ie"]
 size = Vector3(4, 4, 0.5)
@@ -14,7 +14,6 @@ collision_mask = 6
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1710374621]
 mesh = SubResource("BoxMesh_it8ie")
-surface_material_override/0 = SubResource("StandardMaterial3D_sj7df")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=754910604]
 shape = SubResource("BoxShape3D_it8ie")
