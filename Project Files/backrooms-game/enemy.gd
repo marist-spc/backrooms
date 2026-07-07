@@ -22,6 +22,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	match state_machine.get_current_node():
 		"Idle":
+			# get the direction vector pointing from enemy to player
+			# get the forward direction vector for the enemy (this is probably Vector3.FORWARD)
+			# compute the dot product of the two
+			# if it's greater than zero, go ahead and do the raycast stuff
+			# otherwise don't do the raycast stuff
 			raycast.look_at(player.global_position, Vector3.UP)
 			if raycast.is_colliding():
 				if raycast.get_collider() == player: 

@@ -1,9 +1,24 @@
+
+[gd_scene format=3 uid="uid://ccfjlt7nxrsee"]
+
+
+[gd_scene format=3 uid="uid://eh2ehh6gox3j"]
+
+
+[ext_resource type="PackedScene" path="res://walls.tscn" id="1_vfa6b"]
+
 [gd_scene format=3 uid="uid://ccfjlt7nxrsee"]
 
 [ext_resource type="PackedScene" uid="uid://cwm5pxfl3vgua" path="res://walls.tscn" id="1_vfa6b"]
+
 [ext_resource type="PackedScene" uid="uid://bamcgkyaw4co6" path="res://player.tscn" id="2_t218m"]
 [ext_resource type="Material" uid="uid://c41hxvvxo3f5i" path="res://BackroomsFloor.tres" id="3_smnfn"]
 [ext_resource type="Texture2D" uid="uid://c45ggtx5nn5ga" path="res://BackroomsCeiling.png" id="4_nu7sl"]
+
+
+[ext_resource type="PackedScene" uid="uid://bamcgkyaw4co6" path="res://player.tscn" id="2_t218m"]
+[ext_resource type="PackedScene" uid="uid://xncvm6v6lrlk" path="res://Assets/Building/wall.tscn" id="3_v6xcw"]
+
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_smnfn"]
 vertices = PackedVector3Array(-19.000555, -0.5, 1.7499924, -11.750555, -0.5, -1.0000076, -11.750555, -0.5, -2.5000076, -29.500555, -0.5, 2.9999924, -21.000555, -0.5, 2.9999924, -20.750555, -0.5, 1.9999924, -10.250555, -0.5, -29.500008, -29.500555, -0.5, -29.500008, -10.000555, -0.5, -2.7500076, -1.000555, -0.5, -3.0000076, -1.000555, -0.5, -29.500008, -0.50055504, -0.5, -2.7500076, -0.50055504, -0.5, -1.2500076, 6.499445, -0.5, 1.4999924, 7.749445, -0.5, 1.4999924, 29.499445, -0.5, 2.7499924, 29.499445, -0.5, -29.500008, 7.999445, -0.5, 2.7499924, -4.750555, 4, -1.7500076, -1.500555, 4, -1.7500076, -10.750555, 4, -1.7500076, -5.500555, 4, -1.5000076, -5.250555, 4, -7.6293945e-06, -4.000555, -0.5, -0.7500076, -3.750555, -0.5, 5.2499924, -3.250555, -0.5, 5.4999924, -0.75055504, -0.5, -0.7500076, 7.749445, -0.5, 4.2499924, 5.999445, -0.5, 3.9999924, -3.500555, -0.5, 8.499992, -10.500555, -0.5, 13.999992, -10.500555, -0.5, 29.499992, 8.249445, -0.5, 29.499992, 5.999445, -0.5, 1.7499924, 7.999445, -0.5, 3.7499924, -5.500555, -0.5, 8.749992, -18.500555, -0.5, 1.9999924, -11.500555, -0.5, -0.5000076, -18.500555, -0.5, 3.2499924, -6.000555, -0.5, 5.9999924, -6.250555, -0.5, -0.5000076, -16.750555, -0.5, 12.999992, -11.000555, -0.5, 11.249992, -4.500555, 4, 7.7499924, -5.000555, 4, 0.24999237, -5.000555, 4, 6.4999924, -5.750555, 4, 7.4999924, -7.500555, 4, 8.749992, -7.250555, 4, 9.249992, 29.499445, -0.5, 29.499992, -21.000555, -0.5, 3.4999924, -29.500555, -0.5, 11.749992, -22.500555, -0.5, 13.249992, -19.500555, -0.5, 13.999992, -19.500555, -0.5, 3.9999924, -20.750555, -0.5, 3.9999924, -10.500555, 4, 12.249992, -11.750555, 4, 12.499992, -10.500555, 4, 12.749992, -8.500555, 4, 10.749992, -8.750555, 4, 10.249992, -11.500555, -0.5, 13.749992, -18.000555, -0.5, 15.999992, -18.000555, -0.5, 29.499992, -21.000555, -0.5, 16.249992, -29.500555, -0.5, 14.249992, -29.500555, -0.5, 29.499992)
@@ -15,6 +30,7 @@ size = Vector3(104, 1, 60)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_47xu7"]
 size = Vector3(104, 1, 60)
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6xcw"]
 albedo_texture = ExtResource("4_nu7sl")
@@ -469,3 +485,42 @@ light_indirect_energy = 8.871
 light_volumetric_fog_energy = 5.436
 light_specular = 15.684
 spot_range = 32.335
+=======
+[node name="Level0" type="Node3D" unique_id=1880062457]
+
+[node name="Walls" parent="." unique_id=466816777 instance=ExtResource("1_vfa6b")]
+
+[node name="player3D" parent="." unique_id=415036748 instance=ExtResource("2_t218m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.167631, 0, 5)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=52557283]
+transform = Transform3D(-0.9991228, 0, 0.041875646, 0, 1, 0, -0.041875646, 0, -0.9991228, 0, 1, 0)
+navigation_mesh = SubResource("NavigationMesh_smnfn")
+
+[node name="Ground" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1789078545]
+transform = Transform3D(1.0000001, 0, -3.7252903e-09, 0, 1, 0, 3.7252903e-09, 0, 1.0000001, 0, -2, 0)
+collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Ground" unique_id=1956927346]
+transform = Transform3D(-0.9991227, 0, -0.04187564, 0, 1, 0, 0.04187564, 0, -0.9991227, 0.9991227, 1, -0.04187564)
+mesh = SubResource("BoxMesh_it8ie")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ground" unique_id=1344526795]
+transform = Transform3D(-0.9991227, 0, -0.04187564, 0, 1, 0, 0.04187564, 0, -0.9991227, 0.9991227, 1, -0.04187564)
+shape = SubResource("BoxShape3D_47xu7")
+
+[node name="Wall" parent="NavigationRegion3D" unique_id=620422938 instance=ExtResource("3_v6xcw")]
+transform = Transform3D(-0.9991229, 0, -0.04187565, 0, 1, 0, 0.04187565, 0, -0.9991229, -6.078489, 1, -1.7469919)
+
+[node name="Wall2" parent="NavigationRegion3D" unique_id=66446803 instance=ExtResource("3_v6xcw")]
+transform = Transform3D(0.041875694, 0, -0.9991229, 0, 1, 0, 0.9991229, 0, 0.041875694, -4.8699875, 1, 3.206747)
+
+[node name="Wall4" parent="NavigationRegion3D" unique_id=1555771224 instance=ExtResource("3_v6xcw")]
+transform = Transform3D(-0.95424026, 0, -0.29904076, 0, 1, 0, 0.29904076, 0, -0.95424026, -14.734224, 1, 13.649795)
+
+[node name="Wall5" parent="NavigationRegion3D" unique_id=459877557 instance=ExtResource("3_v6xcw")]
+transform = Transform3D(-0.9759168, 0, 0.21814327, 0, 1, 0, -0.21814327, 0, -0.9759168, -24.725452, 1, 14.068551)
+
+[node name="Wall3" parent="NavigationRegion3D" unique_id=1952485266 instance=ExtResource("3_v6xcw")]
+transform = Transform3D(-0.676876, 0, -0.73609716, 0, 1, 0, 0.73609716, 0, -0.676876, -7.6161027, 1, 9.327111)
+
