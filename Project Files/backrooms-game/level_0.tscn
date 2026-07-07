@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bah16eccmbo2t"]
+
+[ext_resource type="PackedScene" uid="uid://cavs03g48cb3b" path="res://building_block.tscn" id="1_vfa6b"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_it8ie"]
+size = Vector3(104, 1, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_47xu7"]
+size = Vector3(104, 1, 60)
+
+[node name="Level0" type="Node3D" unique_id=1880062457]
+
+[node name="Floor" type="Area3D" parent="." unique_id=1226670288]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1956927346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+mesh = SubResource("BoxMesh_it8ie")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1344526795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+shape = SubResource("BoxShape3D_47xu7")
+
+[node name="Walls" type="Node3D" parent="." unique_id=839291403]
+
+[node name="BuildingBlock" parent="Walls" unique_id=1975011575 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(26, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -30)
+
+[node name="BuildingBlock2" parent="Walls" unique_id=1807196583 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(26, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 29.916943)
+
+[node name="BuildingBlock3" parent="Walls" unique_id=988720042 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-6.556708e-07, 0, 1, 0, 1, 0, -15, 0, -4.371139e-08, -52.793083, 2, 0)
+
+[node name="BuildingBlock9" parent="Walls" unique_id=2139526057 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-6.556708e-07, 0, 1, 0, 1, 0, -15, 0, -4.371139e-08, 50.938522, 2, 0)
+
+[node name="BuildingBlock4" parent="Walls" unique_id=1394974494 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-1.3113416e-07, 0, 1, 0, 1, 0, -3, 0, -4.371139e-08, -39.84671, 2, -24.121145)
+
+[node name="BuildingBlock5" parent="Walls" unique_id=344180609 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, -49.6587, 2, -18.533758)
+
+[node name="BuildingBlock8" parent="Walls" unique_id=1534363079 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(11, 0, 0, 0, 1, 0, 0, 0, 1, -30.451649, 2, -11.078557)
+
+[node name="BuildingBlock10" parent="Walls" unique_id=1742214078 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(6.5, 0, 0, 0, 1, 0, 0, 0, 1, -16.933407, 2, -23.054928)
+
+[node name="BuildingBlock11" parent="Walls" unique_id=357242499 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-6.556708e-08, 0, 1, 0, 1, 0, -1.5, 0, -4.371139e-08, -29.89127, 2, -20.225155)
+
+[node name="BuildingBlock12" parent="Walls" unique_id=1565632537 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, -20.073399, 2, -17.318771)
+
+[node name="BuildingBlock13" parent="Walls" unique_id=644762916 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-8.742278e-08, 0, 1, 0, 1, 0, -2, 0, -4.371139e-08, -4.262005, 2, -19.411776)
+
+[node name="BuildingBlock14" parent="Walls" unique_id=1004568615 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-1.09278474e-07, 0, 1, 0, 1, 0, -2.5, 0, -4.371139e-08, 4.737995, 2, -25.284424)
+
+[node name="BuildingBlock15" parent="Walls" unique_id=1103214525 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 14.543972, 2, -20.572464)
+
+[node name="BuildingBlock16" parent="Walls" unique_id=1041076308 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 24.261524, 2, -22.653759)
+
+[node name="BuildingBlock17" parent="Walls" unique_id=1379563497 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 16.501072, 2, -24.75118)
+
+[node name="BuildingBlock18" parent="Walls" unique_id=1591166870 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-1.7484555e-07, 0, 1, 0, 1, 0, -4, 0, -4.371139e-08, 34.603237, 2, -21.824484)
+
+[node name="BuildingBlock19" parent="Walls" unique_id=1356240907 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 28.882648, 2, -14.019958)
+
+[node name="BuildingBlock23" parent="Walls" unique_id=162799 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-8.742278e-08, 0, 1, 0, 1, 0, -2, 0, -4.371139e-08, 19.240955, 2, -10.441599)
+
+[node name="BuildingBlock24" parent="Walls" unique_id=1677117940 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 7.9094887, 2, -14.119354)
+
+[node name="BuildingBlock25" parent="Walls" unique_id=1266617593 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-1.7484555e-07, 0, 1, 0, 1, 0, -4, 0, -4.371139e-08, 11.587254, 2, -6.2668505)
+
+[node name="BuildingBlock26" parent="Walls" unique_id=484468363 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-1.3113416e-07, 0, 1, 0, 1, 0, -3, 0, -4.371139e-08, 4.231739, 2, -8.453623)
+
+[node name="BuildingBlock27" parent="Walls" unique_id=1507735046 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 14.668621, 2, -2.5890942)
+
+[node name="BuildingBlock28" parent="Walls" unique_id=195350584 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-1.3113416e-07, 0, 1, 0, 1, 0, -3, 0, -4.371139e-08, 20.433743, 2, 3.1760378)
+
+[node name="BuildingBlock29" parent="Walls" unique_id=508090884 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 16.656582, 2, 8.969201)
+
+[node name="BuildingBlock30" parent="Walls" unique_id=16730748 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-8.742278e-08, 0, 1, 0, 1, 0, -2, 0, -4.371139e-08, 12.879429, 2, 12.774394)
+
+[node name="BuildingBlock31" parent="Walls" unique_id=1412206844 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 41.009296, 2, -6.962634)
+
+[node name="BuildingBlock32" parent="Walls" unique_id=214475381 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -5, 0, -4.371139e-08, 31.367619, 2, 2.8778486)
+
+[node name="BuildingBlock33" parent="Walls" unique_id=1105837085 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.653797, 2, 12.718327)
+
+[node name="BuildingBlock34" parent="Walls" unique_id=1433942104 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.32555, 2, 0.7904682)
+
+[node name="BuildingBlock35" parent="Walls" unique_id=1901559101 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 40.247547, 2, -0.91797066)
+
+[node name="BuildingBlock36" parent="Walls" unique_id=516841837 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 43.02377, 2, -2.7331858)
+
+[node name="BuildingBlock37" parent="Walls" unique_id=212389676 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-8.742278e-08, 0, 1, 0, 1, 0, -2, 0, -4.371139e-08, 45.745693, 2, 1.0094843)
+
+[node name="BuildingBlock20" parent="Walls" unique_id=1326203761 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.86182, 2, -14.019958)
+
+[node name="BuildingBlock21" parent="Walls" unique_id=237451276 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-1.3113416e-07, 0, 1, 0, 1, 0, -3, 0, -4.371139e-08, 39.02132, 2, -19.785088)
+
+[node name="BuildingBlock22" parent="Walls" unique_id=1569863683 instance=ExtResource("1_vfa6b")]
+transform = Transform3D(-1.3113416e-07, 0, 1, 0, 1, 0, -3, 0, -4.371139e-08, 46.575634, 2, -19.884487)
