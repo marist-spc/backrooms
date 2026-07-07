@@ -54,6 +54,9 @@ func _on_button_pressed() -> void:
 	$Attack.disabled = true
 	$Block.disabled = true
 	$Item.disabled = true
+	$Item.visible = true
+	$"Almond Water".visible = false
+	$"Almond Water".disabled = true
 	$Ability.disabled = true
 	$Bash.visible = false
 	$SuperBash.visible = false
@@ -66,6 +69,14 @@ func _on_block_pressed() -> void:
 	$Block.disabled = true
 	$Item.disabled = true
 	$Ability.disabled = true
+	$Ability.visible = true
+	$Item.visible = true
+	$Bash.visible = false
+	$SuperBash.visible = false
+	$Bash.disabled = true
+	$SuperBash.disabled = true
+	$"Almond Water".visible = false
+	$"Almond Water".disabled = true
 	await get_tree().create_timer(1).timeout
 	$Player.health -= randi_range(10,15) * $enemy.attack / ($Player.defense * 3)
 	set_player_health()
@@ -74,11 +85,8 @@ func _on_block_pressed() -> void:
 	$Block.disabled = false
 	$Item.disabled = false
 	$Ability.disabled = false
-	$Bash.visible = false
-	$SuperBash.visible = false
-	$Bash.disabled = true
-	$SuperBash.disabled = true
-	$Ability.visible = true
+
+	
 
 
 func _on_item_pressed() -> void:

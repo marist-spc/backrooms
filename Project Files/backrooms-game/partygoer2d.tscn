@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bby4fltw0x506"]
+
+[ext_resource type="Script" uid="uid://cqv30w7x186oe" path="res://partygoer.gd" id="1_gafly"]
+
+[node name="Partygoer" type="Node2D" unique_id=1555681569]
+script = ExtResource("1_gafly")
+health = 80
+max_health = 80
