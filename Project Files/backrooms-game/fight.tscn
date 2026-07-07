@@ -11,10 +11,16 @@ script = ExtResource("1_4jl1m")
 position = Vector2(213, 534)
 
 [node name="Label" type="Label" parent="Player" unique_id=1819122126]
-offset_left = 89.0
-offset_top = -11.0
-offset_right = 353.0
-offset_bottom = 82.0
+offset_left = -169.0
+offset_top = -206.0
+offset_right = 95.0
+offset_bottom = -113.0
+
+[node name="SP" type="Label" parent="Player" unique_id=1088781795]
+offset_left = -155.0
+offset_top = -102.0
+offset_right = 60.0
+offset_bottom = -24.0
 
 [node name="enemy" parent="." unique_id=810602662 instance=ExtResource("3_34m47")]
 position = Vector2(543, 151)
@@ -86,9 +92,12 @@ offset_top = 534.0
 offset_right = 876.0
 offset_bottom = 602.0
 disabled = true
-text = "Super Bash: 4 SP"
+text = "Triple Slash: 4 SP"
 
 [connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
 [connection signal="pressed" from="Item" to="." method="_on_item_pressed"]
 [connection signal="pressed" from="Almond Water" to="." method="_on_almond_water_pressed"]
+[connection signal="pressed" from="Ability" to="." method="_on_ability_pressed"]
+[connection signal="pressed" from="Bash" to="." method="_on_bash_pressed"]
+[connection signal="pressed" from="SuperBash" to="." method="_on_super_bash_pressed"]
