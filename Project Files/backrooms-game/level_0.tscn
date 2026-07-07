@@ -50,16 +50,16 @@ mesh = SubResource("BoxMesh_it8ie")
 transform = Transform3D(-0.9991227, 0, -0.04187564, 0, 1, 0, 0.04187564, 0, -0.9991227, 0.9991227, 1, -0.04187564)
 shape = SubResource("BoxShape3D_47xu7")
 
-[node name="Ground2" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1377640456]
+[node name="Ceiling" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1377640456]
 transform = Transform3D(1.0000001, 0, -3.7252903e-09, 0, 1, 0, 3.7252903e-09, 0, 1.0000001, 0, -2, 0)
 collision_layer = 0
 collision_mask = 14
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Ground2" unique_id=1875136732]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Ceiling" unique_id=1875136732]
 transform = Transform3D(-0.9991226, 0, -0.041875638, 0, 1, 0, 0.041875638, 0, -0.9991226, 0.999, 5.5, -0.042)
 mesh = SubResource("BoxMesh_smnfn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ground2" unique_id=1891808308]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ceiling" unique_id=1891808308]
 transform = Transform3D(-0.9991227, 0, -0.04187564, 0, 1, 0, 0.04187564, 0, -0.9991227, 0.9991227, 1, -0.04187564)
 shape = SubResource("BoxShape3D_47xu7")
 
