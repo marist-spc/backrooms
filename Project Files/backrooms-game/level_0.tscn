@@ -1,12 +1,6 @@
-<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://bah16eccmbo2t"]
 
 [ext_resource type="PackedScene" uid="uid://cavs03g48cb3b" path="res://building_block.tscn" id="1_vfa6b"]
-=======
-[gd_scene format=3 uid="uid://eh2ehh6gox3j"]
-
-[ext_resource type="PackedScene" uid="uid://cwm5pxfl3vgua" path="res://walls.tscn" id="1_vfa6b"]
->>>>>>> Stashed changes
 
 [sub_resource type="BoxMesh" id="BoxMesh_it8ie"]
 size = Vector3(104, 1, 60)
