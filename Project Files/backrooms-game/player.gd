@@ -9,6 +9,7 @@ var Inventory = {"almond water": 5, "item": 0, "another fucking item idk": 0}
 @export var max_SP = 10
 @export var attack = 5
 @export var defense = 3
+@export var standard_defense = 3
 
 
 # Called when the node enters the scene tree for the first time.
