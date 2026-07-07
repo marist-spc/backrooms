@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dxukkvhik86r5"]
+
+[ext_resource type="PackedScene" uid="uid://cwipdn800kh0u" path="res://Assets/Enemies/Life Form/LifeformIdle.glb" id="1_8crh3"]
+
+[node name="LifeForm" type="CharacterBody3D" unique_id=280681958]
+
+[node name="LifeformIdle" parent="." unique_id=1079272750 instance=ExtResource("1_8crh3")]
+
+[node name="Skeleton3D" parent="LifeformIdle/Armature" parent_id_path=PackedInt32Array(1079272750, 1435170605) index="0" unique_id=1498853025]
+bones/0/rotation = Quaternion(0.056571342, 0.066448815, -0.20832014, 0.97415966)
+bones/2/rotation = Quaternion(-0.563772, -0.08056309, -0.10597926, 0.8151313)
+bones/3/rotation = Quaternion(-0.42392397, -0.0034064557, -0.47526437, 0.77097374)
+bones/4/rotation = Quaternion(0.74856275, 0.01477356, 0.015534259, 0.6627174)
+bones/5/rotation = Quaternion(0.47172278, 0.08746532, 0.007581841, 0.8773654)
+bones/6/rotation = Quaternion(0.45373556, 0.055322107, -0.5530379, 0.69657207)
+bones/8/rotation = Quaternion(-0.264343, -0.068911314, 0.10268843, 0.956467)
+bones/10/rotation = Quaternion(-0.0027370125, 0.010013139, 0.07413085, 0.9971946)
+bones/12/rotation = Quaternion(0.13241038, -0.05258679, 0.0927574, 0.98544323)
+bones/13/rotation = Quaternion(0.39045307, 0.1100408, 0.12172984, 0.90588045)
+bones/14/rotation = Quaternion(-0.39086384, -0.00070734747, -0.0016780754, 0.9204467)
+bones/15/rotation = Quaternion(-0.0018912504, 0.050510943, -0.1237786, 0.99102175)
+bones/16/rotation = Quaternion(0.05488289, 0.029184625, -0.15636045, 0.9857421)
+bones/17/rotation = Quaternion(-0.030363906, -0.14799967, -0.12640187, 0.9804064)
+bones/23/position = Vector3(3.4050734, -6.312195, 3.0425873)
+bones/24/position = Vector3(3.2609787, -5.9181285, -1.8705959)
+bones/24/rotation = Quaternion(0.70140815, 0.70140815, 0.08959146, -0.08959147)
+bones/26/rotation = Quaternion(0.7071068, 0.7071068, 6.883939e-08, -6.883939e-08)
+bones/27/position = Vector3(0.5919858, -0.23254585, 0.11842805)
+
+[node name="AnimationTree" type="AnimationTree" parent="LifeformIdle" unique_id=208072748]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=503882782]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=109290490]
+
+[node name="RayCast" type="RayCast3D" parent="." unique_id=791428553]
+
+[editable path="LifeformIdle"]

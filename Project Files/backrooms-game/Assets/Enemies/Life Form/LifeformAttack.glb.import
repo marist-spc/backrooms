@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="animation_library"
 importer_version=1
-type="PackedScene"
-uid="uid://s8s4mubs5fcs"
-path="res://.godot/imported/Idle.glb-8744d1d26ab7271d8fd18725a6ee7d45.scn"
+type="AnimationLibrary"
+uid="uid://rb53gu1axk88"
+path="res://.godot/imported/LifeformAttack.glb-807002b8a9e4b535615ff4eda316ef75.res"
 
 [deps]
 
-source_file="res://Assets/Idle.glb"
-dest_files=["res://.godot/imported/Idle.glb-8744d1d26ab7271d8fd18725a6ee7d45.scn"]
+source_file="res://Assets/Enemies/Life Form/LifeformAttack.glb"
+dest_files=["res://.godot/imported/LifeformAttack.glb-807002b8a9e4b535615ff4eda316ef75.res"]
 
 [params]
 

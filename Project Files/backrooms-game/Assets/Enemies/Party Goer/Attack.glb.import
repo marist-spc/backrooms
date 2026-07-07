@@ -4,12 +4,12 @@ importer="animation_library"
 importer_version=1
 type="AnimationLibrary"
 uid="uid://dnmbng4u4pvfd"
-path="res://.godot/imported/Attack.glb-e16bffd819059844000053d2ce8b22f4.res"
+path="res://.godot/imported/Attack.glb-eb9b1c44d490e6eb55a43f62ed07b6c3.res"
 
 [deps]
 
-source_file="res://Assets/Attack.glb"
-dest_files=["res://.godot/imported/Attack.glb-e16bffd819059844000053d2ce8b22f4.res"]
+source_file="res://Assets/Enemies/Party Goer/Attack.glb"
+dest_files=["res://.godot/imported/Attack.glb-eb9b1c44d490e6eb55a43f62ed07b6c3.res"]
 
 [params]
 
