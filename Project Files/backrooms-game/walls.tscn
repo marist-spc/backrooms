@@ -1,3 +1,8 @@
+
+[gd_scene format=3 uid="uid://dt3ylorjy3i8m"]
+
+[ext_resource type="PackedScene" path="res://building_block.tscn" id="1_xxkwp"]
+
 [gd_scene format=3 uid="uid://cwm5pxfl3vgua"]
 
 [ext_resource type="PackedScene" uid="uid://dusee6ff7rub6" path="res://building_block.tscn" id="1_xxkwp"]
