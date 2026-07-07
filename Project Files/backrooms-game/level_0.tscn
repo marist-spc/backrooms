@@ -5,9 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bamcgkyaw4co6" path="res://player.tscn" id="2_t218m"]
 [ext_resource type="Material" uid="uid://c41hxvvxo3f5i" path="res://BackroomsFloor.tres" id="3_smnfn"]
 [ext_resource type="Texture2D" uid="uid://c45ggtx5nn5ga" path="res://BackroomsCeiling.png" id="4_nu7sl"]
-
-
-[ext_resource type="PackedScene" uid="uid://bamcgkyaw4co6" path="res://player.tscn" id="2_t218m"]
 [ext_resource type="PackedScene" uid="uid://xncvm6v6lrlk" path="res://Assets/Building/wall.tscn" id="3_v6xcw"]
 
 
