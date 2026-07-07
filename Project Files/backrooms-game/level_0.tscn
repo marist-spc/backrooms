@@ -21,7 +21,6 @@ mesh = SubResource("BoxMesh_it8ie")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 shape = SubResource("BoxShape3D_47xu7")
 
-<<<<<<< Updated upstream
 [node name="Walls" type="Node3D" parent="." unique_id=839291403]
 
 [node name="BuildingBlock" parent="Walls" unique_id=1975011575 instance=ExtResource("1_vfa6b")]
@@ -128,6 +127,3 @@ transform = Transform3D(-1.3113416e-07, 0, 1, 0, 1, 0, -3, 0, -4.371139e-08, 39.
 
 [node name="BuildingBlock22" parent="Walls" unique_id=1569863683 instance=ExtResource("1_vfa6b")]
 transform = Transform3D(-1.3113416e-07, 0, 1, 0, 1, 0, -3, 0, -4.371139e-08, 46.575634, 2, -19.884487)
-=======
-[node name="Walls" parent="." unique_id=466816777 instance=ExtResource("1_vfa6b")]
->>>>>>> Stashed changes
