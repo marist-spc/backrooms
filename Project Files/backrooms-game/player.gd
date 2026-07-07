@@ -7,6 +7,10 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	var random = FastNoiseLite.new()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -36,3 +40,5 @@ func _unhandled_input(event: InputEvent):
 		head.rotate_y(-relative.x)
 		eye_camera.rotate_x(relative.y)
 		eye_camera.rotation.x = clamp(eye_camera.rotation.x, -0.7, 0.7)
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()

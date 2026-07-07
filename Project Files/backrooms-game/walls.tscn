@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cwm5pxfl3vgua"]
+[gd_scene format=3 uid="uid://dyercyo67dm1i"]
 
 [ext_resource type="Material" uid="uid://ccg0xse51hfp6" path="res://BackroomsWalls.tres" id="1_jt0p1"]
 [ext_resource type="PackedScene" uid="uid://nho8lhh027mm" path="res://building_block.tscn" id="1_xxkwp"]
