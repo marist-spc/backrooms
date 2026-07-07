@@ -54,6 +54,9 @@ func _on_button_pressed() -> void:
 	$Attack.disabled = true
 	$Block.disabled = true
 	$Item.disabled = true
+	$Item.visible = true
+	$"Almond Water".visible = false
+	$"Almond Water".disabled = true
 	$Ability.disabled = true
 	$Bash.visible = false
 	$SuperBash.visible = false
@@ -67,6 +70,7 @@ func _on_block_pressed() -> void:
 	$Item.disabled = true
 	$Ability.disabled = true
 	$Ability.visible = true
+	$Item.visible = true
 	$Bash.visible = false
 	$SuperBash.visible = false
 	$Bash.disabled = true
