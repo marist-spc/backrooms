@@ -4,11 +4,23 @@ extends CharacterBody3D
 @onready var head: Node3D = $Head
 @onready var eye_camera: Camera3D = $Head/EyeCamera
 
+
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 
 func _physics_process(delta: float) -> void:
+
+	$CanvasLayer/BoxContainer/InteractText.hide()
+	if %SeeCast.is_colliding():
+		#print("Collidin")
+		var target = %SeeCast.get_collider()
+		if target != null and target.has_method("interact"):
+			$CanvasLayer/BoxContainer/InteractText.show()
+			if Input.is_action_just_pressed("interact"):
+				target.interact()
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
