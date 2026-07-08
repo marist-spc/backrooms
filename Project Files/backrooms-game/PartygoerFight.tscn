@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5j87o3el774b"]
 
 [ext_resource type="Script" uid="uid://dif6m14chd0uc" path="res://PartygoerFight.tscn.gd" id="1_l2mby"]
-[ext_resource type="PackedScene" uid="uid://bhripyqn5q2ci" path="res://player2D.tscn" id="2_gr412"]
+[ext_resource type="PackedScene" uid="uid://clb8ycwsgctg" path="res://player2D.tscn" id="2_gr412"]
 [ext_resource type="PackedScene" uid="uid://bby4fltw0x506" path="res://partygoer2d.tscn" id="3_gr412"]
 [ext_resource type="Texture2D" uid="uid://c61es5k6hheih" path="res://Assets/Combat Assests/FightButton.png" id="4_2n83y"]
 [ext_resource type="Texture2D" uid="uid://8s0fdddnpuut" path="res://Combat Assets/DefendButton.png" id="5_rxjoe"]
@@ -171,12 +171,11 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Bash" type="Button" parent="." unique_id=604396444]
-visible = false
 texture_filter = 1
-offset_left = 668.0
-offset_top = 458.0
-offset_right = 844.0
-offset_bottom = 602.0
+offset_left = 665.0
+offset_top = 418.0
+offset_right = 841.0
+offset_bottom = 562.0
 disabled = true
 icon = ExtResource("8_vysco")
 flat = true
@@ -184,12 +183,11 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="SuperBash" type="Button" parent="." unique_id=711982891]
-visible = false
 texture_filter = 1
-offset_left = 688.0
-offset_top = 460.0
-offset_right = 829.0
-offset_bottom = 601.0
+offset_left = 690.0
+offset_top = 486.0
+offset_right = 831.0
+offset_bottom = 627.0
 disabled = true
 icon = ExtResource("9_vysco")
 flat = true
