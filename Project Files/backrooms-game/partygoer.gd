@@ -1,4 +1,4 @@
-extends "res://enemy.gd"
+extends "res://enemy2D.gd"
 
 
 # Called when the node enters the scene tree for the first time.
