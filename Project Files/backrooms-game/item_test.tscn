@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b8crp65q4cxfj"]
+[gd_scene format=3 uid="uid://6hpqdiaaojcf"]
 
-[ext_resource type="Script" path="res://item_test.gd" id="1_ntug4"]
+[ext_resource type="Script" uid="uid://baswm008hgo0d" path="res://item_test.gd" id="1_ntug4"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3e2ki"]
 
