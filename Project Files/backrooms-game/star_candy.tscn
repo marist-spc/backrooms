@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://rbe02im2hdkx"]
+
+[ext_resource type="PackedScene" uid="uid://btt8h3lc8xu4i" path="res://Assets/3D Items/StarCandyVial.glb" id="1_1sgwf"]
+[ext_resource type="Script" uid="uid://beqobvw81d4f1" path="res://star_candy.gd" id="1_momce"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e2ki"]
+size = Vector3(6, 1, 1)
+
+[node name="StarCandy" type="StaticBody3D" unique_id=617621598]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_momce")
+
+[node name="StarCandyVial" parent="." unique_id=5003406 instance=ExtResource("1_1sgwf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1182449889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+shape = SubResource("BoxShape3D_3e2ki")
