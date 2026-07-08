@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dyercyo67dm1i"]
 
-[ext_resource type="PackedScene" path="res://building_block.tscn" id="1_xxkwp"]
+[ext_resource type="PackedScene" uid="uid://cavs03g48cb3b" path="res://building_block.tscn" id="1_xxkwp"]
 
 [node name="Walls" type="Node3D" unique_id=466816777]
 
