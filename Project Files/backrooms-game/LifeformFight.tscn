@@ -146,10 +146,10 @@ text = "no items"
 
 [node name="Almond Water" type="Button" parent="." unique_id=2060077665]
 visible = false
-offset_left = 904.0
+offset_left = 892.0
 offset_top = 458.0
-offset_right = 1027.0
-offset_bottom = 581.0
+offset_right = 1012.0
+offset_bottom = 527.0
 text = "Almond Water"
 
 [node name="Ability" type="Button" parent="." unique_id=348993660]
@@ -187,6 +187,15 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="StarCandy" type="Button" parent="." unique_id=1716671931]
+visible = false
+offset_left = 884.0
+offset_top = 532.0
+offset_right = 1014.5807
+offset_bottom = 576.0
+disabled = true
+text = "Star Candy"
+
 [connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
 [connection signal="pressed" from="Item" to="." method="_on_item_pressed"]
@@ -194,3 +203,4 @@ expand_icon = true
 [connection signal="pressed" from="Ability" to="." method="_on_ability_pressed"]
 [connection signal="pressed" from="Bash" to="." method="_on_bash_pressed"]
 [connection signal="pressed" from="SuperBash" to="." method="_on_super_bash_pressed"]
+[connection signal="pressed" from="StarCandy" to="." method="_on_star_candy_pressed"]

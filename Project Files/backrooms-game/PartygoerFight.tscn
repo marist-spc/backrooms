@@ -74,8 +74,10 @@ vertical_alignment = 1
 
 [node name="Partygoer" parent="." unique_id=1555681569 instance=ExtResource("3_gr412")]
 position = Vector2(-115, 7)
-health = 60
-max_health = 60
+health = 90
+max_health = 90
+defense = 2
+standard_defense = 2
 
 [node name="TextHolder" type="Sprite2D" parent="Partygoer" unique_id=1097619549]
 texture_filter = 1
@@ -153,10 +155,10 @@ text = "no items"
 
 [node name="Almond Water" type="Button" parent="." unique_id=2060077665]
 visible = false
-offset_left = 904.0
-offset_top = 458.0
-offset_right = 1027.0
-offset_bottom = 581.0
+offset_left = 880.0
+offset_top = 464.0
+offset_right = 1003.0
+offset_bottom = 524.0
 text = "Almond Water"
 
 [node name="Ability" type="Button" parent="." unique_id=348993660]
@@ -171,6 +173,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Bash" type="Button" parent="." unique_id=604396444]
+visible = false
 texture_filter = 1
 offset_left = 665.0
 offset_top = 418.0
@@ -183,6 +186,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="SuperBash" type="Button" parent="." unique_id=711982891]
+visible = false
 texture_filter = 1
 offset_left = 690.0
 offset_top = 486.0
@@ -194,6 +198,15 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="StarCandy" type="Button" parent="." unique_id=1494793763]
+visible = false
+offset_left = 884.0
+offset_top = 532.0
+offset_right = 1014.5807
+offset_bottom = 576.0
+disabled = true
+text = "Star Candy"
+
 [connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
 [connection signal="pressed" from="Item" to="." method="_on_item_pressed"]
@@ -201,3 +214,4 @@ expand_icon = true
 [connection signal="pressed" from="Ability" to="." method="_on_ability_pressed"]
 [connection signal="pressed" from="Bash" to="." method="_on_bash_pressed"]
 [connection signal="pressed" from="SuperBash" to="." method="_on_super_bash_pressed"]
+[connection signal="pressed" from="StarCandy" to="." method="_on_star_candy_pressed"]
