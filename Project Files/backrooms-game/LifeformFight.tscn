@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3wjpf8uhapol"]
 
-[ext_resource type="Script" uid="uid://jj2tudkfwxxd" path="res://LifeformFight.gd" id="1_6yrp4"]
-[ext_resource type="PackedScene" uid="uid://bhripyqn5q2ci" path="res://player.tscn" id="2_hm5ma"]
+[ext_resource type="Script" uid="uid://dm3khw5vaokr3" path="res://Lifeform2D.gd" id="1_6yrp4"]
+[ext_resource type="PackedScene" uid="uid://bamcgkyaw4co6" path="res://player.tscn" id="2_hm5ma"]
 [ext_resource type="PackedScene" uid="uid://cfcw5y30fqbbf" path="res://Lifeform2D.tscn" id="3_hm5ma"]
 
 [node name="combat" type="Node2D" unique_id=1647977493]
