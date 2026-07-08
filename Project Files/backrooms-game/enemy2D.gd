@@ -1,4 +1,4 @@
-class_name Enemy extends Node2D
+class_name enemy2D extends Node2D
 
 @export var health = 60
 @export var max_health = 60

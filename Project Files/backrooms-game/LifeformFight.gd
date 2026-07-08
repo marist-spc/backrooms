@@ -42,7 +42,7 @@ func defend():
 	$Lifeform/action.text = "Lifeform defends."
 
 func Defense_lower():
-	$Player.health -= randi_range(10,16) * $Lifeform.attack / $Player.defense - 2
+	$Player.health -= randi_range(10,16) * ($Lifeform.attack / $Player.defense) - 2
 	set_player_health()
 	update_player_health()
 	$Player.defense /= 2
@@ -74,6 +74,7 @@ func _process(_delta: float) -> void:
 		$Player.exp += 30
 
 func _on_button_pressed() -> void:
+	print($Lifeform.defense)
 	$Lifeform.health -= $Player.attack * 10 / 3 - $Lifeform.defense
 	if $Lifeform.health < 0:
 		$Lifeform.health = 0
