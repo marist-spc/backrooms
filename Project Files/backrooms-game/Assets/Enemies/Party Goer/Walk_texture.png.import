@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jsvqxvevmy01"
-path.s3tc="res://.godot/imported/Walk_texture.png-2413185978da6e61a8823e499ff86d2d.s3tc.ctex"
+path.s3tc="res://.godot/imported/Walk_texture.png-31da7f54434213e755940804dfb5de89.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Walk_texture.png"
-dest_files=["res://.godot/imported/Walk_texture.png-2413185978da6e61a8823e499ff86d2d.s3tc.ctex"]
+source_file="res://Assets/Enemies/Party Goer/Walk_texture.png"
+dest_files=["res://.godot/imported/Walk_texture.png-31da7f54434213e755940804dfb5de89.s3tc.ctex"]
 
 [params]
 

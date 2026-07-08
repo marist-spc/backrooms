@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://16bj0rsb2olk"
-path="res://.godot/imported/A-Pose.glb-3bb1342067c69e3cd16eb3fd7263405f.scn"
+uid="uid://bsc74ommjl1fj"
+path="res://.godot/imported/Walk.glb-b7c3ffa7586f1fc3b368b19fa45160f7.scn"
 
 [deps]
 
-source_file="res://Assets/A-Pose.glb"
-dest_files=["res://.godot/imported/A-Pose.glb-3bb1342067c69e3cd16eb3fd7263405f.scn"]
+source_file="res://Assets/Enemies/Party Goer/Walk.glb"
+dest_files=["res://.godot/imported/Walk.glb-b7c3ffa7586f1fc3b368b19fa45160f7.scn"]
 
 [params]
 
