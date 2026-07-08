@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5j87o3el774b"]
 
 [ext_resource type="Script" uid="uid://dif6m14chd0uc" path="res://PartygoerFight.tscn.gd" id="1_l2mby"]
-[ext_resource type="PackedScene" uid="uid://bhripyqn5q2ci" path="res://player2D.tscn" id="2_gr412"]
+[ext_resource type="PackedScene" uid="uid://clb8ycwsgctg" path="res://player2D.tscn" id="2_gr412"]
 [ext_resource type="PackedScene" uid="uid://bby4fltw0x506" path="res://partygoer2d.tscn" id="3_gr412"]
 [ext_resource type="Texture2D" uid="uid://c61es5k6hheih" path="res://Assets/Combat Assests/FightButton.png" id="4_2n83y"]
 [ext_resource type="Texture2D" uid="uid://8s0fdddnpuut" path="res://Combat Assets/DefendButton.png" id="5_rxjoe"]
