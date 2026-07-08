@@ -45,6 +45,16 @@ func _physics_process(delta: float) -> void:
 		"Attack":
 			anim_tree.set("parameters/conditions/Walk", !target_in_range())
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
-
+			
 func target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
+	
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://PartygoerFight.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+
+
+func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
+	$Area3D/CollisionShape3D.disabled = false

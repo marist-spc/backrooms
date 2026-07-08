@@ -505,62 +505,44 @@ graph_offset = Vector2(169.00436, -16.07263)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hrk6l"]
 height = 3.381836
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dkpqf"]
+height = 2.8530273
+
 [node name="Party Goer" type="CharacterBody3D" unique_id=269867450]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_hrk6l")
 
 [node name="A-Pose" parent="." unique_id=139543420 instance=ExtResource("2_5lhdp")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.120966434, -0.00034976006, -0.037009656)
 
-
-[node name="Armature" parent="A-Pose" index="0" unique_id=280363317]
+[node name="Armature" parent="A-Pose" index="0" unique_id=930566990]
 transform = Transform3D(-9.647943e-08, 0, -2.2071922, 0, 2.2071922, 0, 2.2071922, 0, -9.647943e-08, 0, 5.960957, 0)
 
-[node name="Skeleton3D" parent="A-Pose/Armature" index="0" unique_id=644070779]
-bones/0/rotation = Quaternion(0.003127962, 0.0028722188, 0.17873308, 0.9838885)
-bones/2/rotation = Quaternion(0.30445033, 0.0043311873, 0.3331724, 0.8923494)
-bones/3/rotation = Quaternion(0.13155997, -0.0036792066, 0.11611287, 0.9844777)
-bones/4/rotation = Quaternion(-0.022899713, 0.00022623077, 0.0501234, 0.99848044)
-bones/5/rotation = Quaternion(-0.026560448, 5.405861e-05, 0.07343289, 0.99694645)
-bones/7/rotation = Quaternion(-0.411256, 0.0015468834, 0.18765809, 0.89199257)
-bones/8/rotation = Quaternion(-0.14992882, -0.00354495, 0.10077675, 0.9835411)
-
-[node name="Armature" parent="A-Pose" index="0" unique_id=65065691]
-transform = Transform3D(-9.647943e-08, 0, -2.2071922, 0, 2.2071922, 0, 2.2071922, 0, -9.647943e-08, 0, 5.960957, 0)
-
-[node name="Skeleton3D" parent="A-Pose/Armature" index="0" unique_id=712932668]
-bones/0/rotation = Quaternion(-0.0054852744, 0.0005589052, 0.2277651, 0.9737005)
-bones/2/rotation = Quaternion(0.23031919, 0.0025388012, 0.3432841, 0.91055083)
-bones/3/rotation = Quaternion(0.17050542, -0.004169059, 0.19105276, 0.9666486)
-bones/4/rotation = Quaternion(-0.01426148, 4.8082115e-05, 0.08012936, 0.9966825)
-bones/5/rotation = Quaternion(-0.017909702, 1.4106776e-05, 0.10035397, 0.9947907)
-bones/7/rotation = Quaternion(-0.41132838, 0.0046242164, 0.2532979, 0.8755729)
-bones/8/rotation = Quaternion(-0.089928836, -0.0044340095, 0.080641285, 0.9926683)
-
+[node name="Skeleton3D" parent="A-Pose/Armature" index="0" unique_id=626536660]
+bones/0/rotation = Quaternion(0.009473168, -0.0014869676, 0.06280594, 0.9979797)
+bones/2/rotation = Quaternion(0.55858725, 0.0069656447, 0.043469533, 0.82827675)
+bones/3/rotation = Quaternion(0.0011775462, 0.021634756, 0.0014920172, 0.99976414)
+bones/4/rotation = Quaternion(0.015574679, -3.506706e-10, 0.08869119, 0.9959374)
+bones/5/rotation = Quaternion(0.019644752, -5.858679e-10, 0.111868486, 0.99352884)
+bones/7/rotation = Quaternion(-0.525101, 0.04020922, 0.16275707, 0.83436334)
+bones/8/rotation = Quaternion(-0.077378444, -0.16286016, 6.187195e-05, 0.98361033)
 bones/9/rotation = Quaternion(1, 0, 0, -2.980233e-08)
-bones/11/rotation = Quaternion(0.68403, -0.00063667714, -0.00059670495, 0.72945344)
-bones/12/rotation = Quaternion(2.0561937e-17, -2.910383e-11, 6.433214e-19, 1)
-bones/14/rotation = Quaternion(-0.6639333, 2.9531552e-08, -2.6219835e-08, 0.7477918)
-bones/15/rotation = Quaternion(-2.5410988e-21, 3.5527145e-15, -5.726928e-22, 1)
-bones/16/position = Vector3(0, -4.8866153, 0.4121406)
-bones/17/position = Vector3(0, -4.919599, -0.41772455)
+bones/11/rotation = Quaternion(0.6713655, 0.13608082, -0.053647123, 0.72654825)
+bones/12/rotation = Quaternion(0.0010341207, 0.0020891072, -0.0030818256, 0.99999255)
+bones/14/rotation = Quaternion(-0.6040346, 0.06542412, 0.046763588, 0.7928904)
+bones/15/rotation = Quaternion(-0.044805627, -0.038153585, -0.6540066, 0.75419635)
+bones/16/position = Vector3(1.0634319, -4.8357143, 0.5351403)
+bones/17/position = Vector3(1.6447785, -3.4434564, -0.66691136)
 bones/17/rotation = Quaternion(0.7071068, -0.7071068, -2.6692543e-08, -2.6692543e-08)
-
-bones/18/position = Vector3(-1.200686, -1.8921291, 1.5780312)
-bones/19/position = Vector3(-0.4836508, -2.0374947, -1.6174742)
-bones/20/position = Vector3(-0.1783862, 0.27903894, 0.0036241512)
-bones/22/position = Vector3(-0.72372025, -2.8882427, -0.41772455)
+bones/18/position = Vector3(0.092529684, -2.4974773, 1.2269232)
+bones/19/position = Vector3(-0.5859093, -2.0483496, -1.2881944)
+bones/20/position = Vector3(-0.10160849, 0.6089644, 0.015226566)
+bones/21/position = Vector3(-0.7467403, -2.8942878, 0.30836847)
+bones/22/position = Vector3(-0.6093026, -3.8656375, -0.83716416)
 bones/22/rotation = Quaternion(0.7071068, -0.7071068, -2.6692543e-08, -2.6692543e-08)
 
-[node name="AnimationPlayer" parent="A-Pose" index="1" unique_id=1464092581]
-
-bones/18/position = Vector3(-1.3103459, -1.8123295, 1.6353072)
-bones/19/position = Vector3(-0.5828095, -2.1221168, -1.58111)
-bones/20/position = Vector3(-0.20875354, 0.22590575, -0.0049231127)
-bones/22/position = Vector3(-0.72372025, -2.8882427, -0.41772455)
-bones/22/rotation = Quaternion(0.7071068, -0.7071068, -2.6692543e-08, -2.6692543e-08)
-
-[node name="AnimationPlayer" parent="A-Pose" index="1" unique_id=1171255958]
-
+[node name="AnimationPlayer" parent="A-Pose" index="1" unique_id=17895688]
 libraries/ = SubResource("AnimationLibrary_2ol74")
 
 [node name="AnimationTree" type="AnimationTree" parent="A-Pose" unique_id=301086702]
@@ -579,5 +561,18 @@ shape = SubResource("CapsuleShape3D_hrk6l")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6355392, 0)
 target_position = Vector3(0, 0, -30)
 collision_mask = 3
+
+[node name="Area3D" type="Area3D" parent="." unique_id=344293560]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.401, -1.6118742)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=144118776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03399998, 0.7114532)
+shape = SubResource("CapsuleShape3D_dkpqf")
+disabled = true
+
+[connection signal="animation_finished" from="A-Pose/AnimationTree" to="." method="_on_animation_tree_animation_finished"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="A-Pose"]
