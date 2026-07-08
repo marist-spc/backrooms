@@ -8,6 +8,9 @@ height = 2.8081055
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3e2ki"]
 height = 2.8027344
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vt7yy"]
+height = 2.8530273
+
 [node name="player3D" type="CharacterBody3D" unique_id=415036748]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.167631, 0, 0)
 collision_layer = 2
@@ -51,3 +54,15 @@ grow_vertical = 2
 [node name="InteractText" type="Label" parent="CanvasLayer/BoxContainer" unique_id=2119091791]
 layout_mode = 2
 text = "Press \"E\" to interect"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1805336808]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.4013672, 0)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1872735893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.033935547, -0.0007195473)
+shape = SubResource("CapsuleShape3D_vt7yy")
+disabled = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
