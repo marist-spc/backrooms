@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://dn6mypxe04xp5"]
 
 [ext_resource type="Script" uid="uid://c7u3073ytv3pk" path="res://main.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bamcgkyaw4co6" path="res://player.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://daxk0bedguv08" path="res://Assets/Enemies/enemy.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://xncvm6v6lrlk" path="res://Assets/Building/wall.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://6hpqdiaaojcf" path="res://item_test.tscn" id="5_lquwl"]
 
@@ -23,8 +21,11 @@ script = ExtResource("1_0xm2m")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 12, 0)
 shadow_enabled = true
 
+
 [node name="player" parent="." unique_id=415036748 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 8)
+
+
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2062680291]
 transform = Transform3D(-0.9991228, 0, 0.041875646, 0, 1, 0, -0.041875646, 0, -0.9991228, 0, 1, 0)
@@ -40,14 +41,6 @@ shape = SubResource("BoxShape3D_3e2ki")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Ground" unique_id=1653566102]
 transform = Transform3D(1.0000179, 0, -3.1292439e-07, 0, 1, 0, 3.1292439e-07, 0, 1.0000179, -1.467735e-06, 0, 8.5967586e-05)
 mesh = SubResource("BoxMesh_3e2ki")
-
-[node name="enemy" parent="NavigationRegion3D" unique_id=269867450 instance=ExtResource("3_h2yge")]
-transform = Transform3D(-0.9991229, 0, -0.04187565, 0, 1, 0, 0.04187565, 0, -0.9991229, -19.898706, 0, 2.8357587)
-player_path = NodePath("../../player")
-
-[node name="enemy2" parent="NavigationRegion3D" unique_id=1793737521 instance=ExtResource("3_h2yge")]
-transform = Transform3D(-0.041875605, 0, 0.99912316, 0, 1, 0, -0.99912316, 0, -0.041875605, -13.862092, 0, 3.5836282)
-player_path = NodePath("../../player")
 
 [node name="Wall" parent="NavigationRegion3D" unique_id=620422938 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(-0.9991229, 0, -0.04187565, 0, 1, 0, 0.04187565, 0, -0.9991229, -6.078489, 1, -1.7469919)
