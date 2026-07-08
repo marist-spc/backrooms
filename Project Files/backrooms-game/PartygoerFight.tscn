@@ -8,9 +8,32 @@
 [ext_resource type="Texture2D" uid="uid://bhymib3oh7dgf" path="res://Assets/Combat Assests/ItemButton.png" id="6_7vhgq"]
 [ext_resource type="Texture2D" uid="uid://cnjbutgjlneut" path="res://Combat Assets/AbilityButton.png" id="6_rxjoe"]
 [ext_resource type="Texture2D" uid="uid://c86ug5agnlpd4" path="res://Assets/Combat Assests/BashAbilityButton.png" id="8_vysco"]
+[ext_resource type="Texture2D" uid="uid://bjmo2w3kf0wvr" path="res://Combat Assets/TripleSlashAbilityButton.png" id="9_vysco"]
+[ext_resource type="Texture2D" uid="uid://5r4ng1hvbhyy" path="res://Combat Assets/CombatBG/sprite_0.png" id="10_eucx6"]
+[ext_resource type="Texture2D" uid="uid://ma2l7x4uw24t" path="res://Combat Assets/CombatBG/sprite_1.png" id="11_k3v48"]
+[ext_resource type="Texture2D" uid="uid://dcyidikf0di4w" path="res://Combat Assets/CombatBG/sprite_2.png" id="12_talti"]
+[ext_resource type="Texture2D" uid="uid://wi4jkhdmwycw" path="res://Combat Assets/CombatBG/sprite_3.png" id="13_slv0g"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_bm8rm"]
+frames = 4
+frame_0/texture = ExtResource("10_eucx6")
+frame_0/duration = 0.17
+frame_1/texture = ExtResource("11_k3v48")
+frame_1/duration = 0.17
+frame_2/texture = ExtResource("12_talti")
+frame_2/duration = 0.17
+frame_3/texture = ExtResource("13_slv0g")
+frame_3/duration = 0.17
 
 [node name="combat" type="Node2D" unique_id=1647977493]
 script = ExtResource("1_l2mby")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1315813532]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 647.0
+texture = SubResource("AnimatedTexture_bm8rm")
+stretch_mode = 1
 
 [node name="Player" parent="." unique_id=1223803813 instance=ExtResource("2_gr412")]
 position = Vector2(162, 507)
@@ -21,6 +44,7 @@ offset_left = -86.666664
 offset_top = -194.0
 offset_right = 24.0
 offset_bottom = -162.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 
 [node name="SP" type="Label" parent="Player" unique_id=1088781795]
@@ -28,6 +52,7 @@ offset_left = -83.33333
 offset_top = -128.66667
 offset_right = 60.66667
 offset_bottom = -96.66667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 
 [node name="Partygoer" parent="." unique_id=1555681569 instance=ExtResource("3_gr412")]
@@ -40,12 +65,14 @@ offset_left = 859.0
 offset_top = 185.0
 offset_right = 959.0
 offset_bottom = 246.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="action" type="Label" parent="Partygoer" unique_id=212167909]
 offset_left = 826.0
 offset_top = 80.0
 offset_right = 1029.0
-offset_bottom = 174.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="Attack" type="Button" parent="." unique_id=1218250415]
 texture_filter = 1
@@ -125,12 +152,16 @@ expand_icon = true
 
 [node name="SuperBash" type="Button" parent="." unique_id=711982891]
 visible = false
-offset_left = 708.0
-offset_top = 534.0
-offset_right = 876.0
-offset_bottom = 602.0
+texture_filter = 1
+offset_left = 688.0
+offset_top = 460.0
+offset_right = 829.0
+offset_bottom = 601.0
 disabled = true
-text = "Triple Slash: 4 SP"
+icon = ExtResource("9_vysco")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
