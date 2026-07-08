@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwujnkscmv4wf"
-path.s3tc="res://.godot/imported/Idle_texture.png-5d0ee0005e416fa9ad5f60ce6c29a7ae.s3tc.ctex"
+uid="uid://cpl8t2v8srdl7"
+path.s3tc="res://.godot/imported/LifeformWalk_LifeformTexture.png-f5fa8449ad8fe3b657ef1dc81c396922.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3d2138c0df1927f1ee32666ffc9fd01c"
+"md5": "3a88688084eaf33713b41b8bfea20c72"
 }
 
 [deps]
 
-source_file="res://Assets/Idle_texture.png"
-dest_files=["res://.godot/imported/Idle_texture.png-5d0ee0005e416fa9ad5f60ce6c29a7ae.s3tc.ctex"]
+source_file="res://Assets/Enemies/Life Form/LifeformWalk_LifeformTexture.png"
+dest_files=["res://.godot/imported/LifeformWalk_LifeformTexture.png-f5fa8449ad8fe3b657ef1dc81c396922.s3tc.ctex"]
 
 [params]
 

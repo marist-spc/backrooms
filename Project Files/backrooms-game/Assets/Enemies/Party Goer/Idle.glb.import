@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bsc74ommjl1fj"
-path="res://.godot/imported/Walk.glb-816d0ca5792834aac6e3a0c35dedab0c.scn"
+uid="uid://s8s4mubs5fcs"
+path="res://.godot/imported/Idle.glb-a20a68ad092e9002b3817f15611cca2b.scn"
 
 [deps]
 
-source_file="res://Assets/Walk.glb"
-dest_files=["res://.godot/imported/Walk.glb-816d0ca5792834aac6e3a0c35dedab0c.scn"]
+source_file="res://Assets/Enemies/Party Goer/Idle.glb"
+dest_files=["res://.godot/imported/Idle.glb-a20a68ad092e9002b3817f15611cca2b.scn"]
 
 [params]
 
