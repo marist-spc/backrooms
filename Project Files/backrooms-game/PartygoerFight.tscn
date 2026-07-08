@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://8s0fdddnpuut" path="res://Combat Assets/DefendButton.png" id="5_rxjoe"]
 [ext_resource type="Texture2D" uid="uid://bhymib3oh7dgf" path="res://Assets/Combat Assests/ItemButton.png" id="6_7vhgq"]
 [ext_resource type="Texture2D" uid="uid://cnjbutgjlneut" path="res://Combat Assets/AbilityButton.png" id="6_rxjoe"]
+[ext_resource type="Texture2D" uid="uid://deegx7iofnxvt" path="res://Combat Assets/TextHolder.png" id="7_k3v48"]
 [ext_resource type="Texture2D" uid="uid://c86ug5agnlpd4" path="res://Assets/Combat Assests/BashAbilityButton.png" id="8_vysco"]
 [ext_resource type="Texture2D" uid="uid://bjmo2w3kf0wvr" path="res://Combat Assets/TripleSlashAbilityButton.png" id="9_vysco"]
 [ext_resource type="Texture2D" uid="uid://5r4ng1hvbhyy" path="res://Combat Assets/CombatBG/sprite_0.png" id="10_eucx6"]
@@ -39,40 +40,72 @@ stretch_mode = 1
 position = Vector2(162, 507)
 scale = Vector2(1.5, 1.5)
 
+[node name="TextHolder" type="Sprite2D" parent="Player" unique_id=1273744050]
+texture_filter = 1
+position = Vector2(1.9073486e-06, -181.33331)
+scale = Vector2(2.8645835, 2.2395835)
+texture = ExtResource("7_k3v48")
+
+[node name="TextHolder2" type="Sprite2D" parent="Player" unique_id=1770766378]
+texture_filter = 1
+position = Vector2(-0.16665554, -119.99999)
+scale = Vector2(2.901042, 2.104167)
+texture = ExtResource("7_k3v48")
+
 [node name="Label" type="Label" parent="Player" unique_id=1819122126]
-offset_left = -86.666664
-offset_top = -194.0
-offset_right = 24.0
-offset_bottom = -162.0
+offset_left = -84.666664
+offset_top = -198.66667
+offset_right = 90.666664
+offset_bottom = -162.00002
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SP" type="Label" parent="Player" unique_id=1088781795]
-offset_left = -83.33333
-offset_top = -128.66667
-offset_right = 60.66667
-offset_bottom = -96.66667
+offset_left = -90.0
+offset_top = -135.33334
+offset_right = 90.66667
+offset_bottom = -103.33334
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Partygoer" parent="." unique_id=1555681569 instance=ExtResource("3_gr412")]
 position = Vector2(-115, 7)
 health = 60
 max_health = 60
 
+[node name="TextHolder" type="Sprite2D" parent="Partygoer" unique_id=1097619549]
+texture_filter = 1
+position = Vector2(953.00006, 82)
+scale = Vector2(5.015625, 2.34375)
+texture = ExtResource("7_k3v48")
+
+[node name="TextHolder2" type="Sprite2D" parent="Partygoer" unique_id=1846126597]
+texture_filter = 1
+position = Vector2(903.00006, 147)
+scale = Vector2(3.3125, 2.03125)
+texture = ExtResource("7_k3v48")
+
 [node name="Label" type="Label" parent="Partygoer" unique_id=1622196255]
-offset_left = 859.0
-offset_top = 185.0
-offset_right = 959.0
-offset_bottom = 246.0
+offset_left = 803.0
+offset_top = 130.0
+offset_right = 1006.0
+offset_bottom = 165.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="action" type="Label" parent="Partygoer" unique_id=212167909]
-offset_left = 826.0
-offset_top = 80.0
-offset_right = 1029.0
-offset_bottom = 111.0
+offset_left = 797.0
+offset_top = 65.0
+offset_right = 1109.0
+offset_bottom = 101.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Attack" type="Button" parent="." unique_id=1218250415]
 texture_filter = 1
