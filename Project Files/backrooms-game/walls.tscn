@@ -1,10 +1,3 @@
-
-[gd_scene format=3 uid="uid://cwm5pxfl3vgua"]
-
-[ext_resource type="Material" path="res://BackroomsWalls.tres" id="1_jt0p1"]
-[ext_resource type="PackedScene" path="res://building_block.tscn" id="1_xxkwp"]
-[ext_resource type="Texture2D" path="res://BackroomsWallpaper.png" id="2_ftpcs"]
-
 [gd_scene format=3 uid="uid://dyercyo67dm1i"]
 
 [ext_resource type="Material" uid="uid://ccg0xse51hfp6" path="res://BackroomsWalls.tres" id="1_jt0p1"]
