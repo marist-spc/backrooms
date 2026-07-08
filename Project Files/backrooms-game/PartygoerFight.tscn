@@ -171,6 +171,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Bash" type="Button" parent="." unique_id=604396444]
+visible = false
 texture_filter = 1
 offset_left = 665.0
 offset_top = 418.0
@@ -183,6 +184,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="SuperBash" type="Button" parent="." unique_id=711982891]
+visible = false
 texture_filter = 1
 offset_left = 690.0
 offset_top = 486.0
