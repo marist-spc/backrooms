@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dpobgcxpm80d2"]
+
+[ext_resource type="Script" uid="uid://m6xx6u1b8mds" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://dwa81opw1rhm8" path="res://icon.svg" id="1_7k104"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ehu8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7k104")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="enemy" type="Node2D" unique_id=810602662]
+script = ExtResource("1_4gyqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=194062341]
+modulate = Color(0.44313726, 0.05490196, 0, 1)
+sprite_frames = SubResource("SpriteFrames_3ehu8")
