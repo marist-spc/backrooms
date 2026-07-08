@@ -39,14 +39,14 @@ func attack():
 
 func defend():
 	$Partygoer.defense += 5
-	$Partygoer/action.text = "Partygoer defends. It will take less damage this turn."
+	$Partygoer/action.text = "Partygoer defends."
 
 func doubleHit():
 	$Player.health -= randi_range(9,14) * $Partygoer.attack / $Player.defense - 2
 	set_player_health()
 	update_player_health()
 	$Partygoer/action.text = "Partygoer attacks"
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1).timeout
 	$Player.health -= randi_range(7,12) * $Partygoer.attack / $Player.defense - 2
 	set_player_health()
 	update_player_health()
@@ -54,6 +54,10 @@ func doubleHit():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if $Player.SP < 0 :
+		$Player.SP = 0
+	if $Player.health <= 0 :
+		$Player.health = 0
 	if turn == 1 and $Partygoer.health > 0:
 		turn = 0
 		await get_tree().create_timer(1).timeout
@@ -148,8 +152,10 @@ func _on_almond_water_pressed() -> void:
 func _on_ability_pressed() -> void:
 	$Bash.visible = true
 	$SuperBash.visible = true
-	$Bash.disabled = false
-	$SuperBash.disabled = false
+	if $Player.SP > 1 :
+		$Bash.disabled = false
+	if $Player.SP > 3:
+		$SuperBash.disabled = false
 	$Ability.visible = false
 	$Ability.disabled = true
 
@@ -164,6 +170,9 @@ func _on_bash_pressed() -> void:
 	$Player.SP -= 2
 	set_player_SP()
 	update_SP()
+	$"Almond Water".disabled = true
+	$"Almond Water".visible = false
+	$Item.visible = true
 	$Bash.visible = false
 	$SuperBash.visible = false
 	$Bash.disabled = true
@@ -196,6 +205,9 @@ func _on_super_bash_pressed() -> void:
 	$Player.SP -= 4
 	set_player_SP()
 	update_SP()
+	$"Almond Water".disabled = true
+	$"Almond Water".visible = false
+	$Item.visible = true
 	$Bash.visible = false
 	$SuperBash.visible = false
 	$Bash.disabled = true
