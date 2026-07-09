@@ -45,3 +45,7 @@ func health_change(player_health_changed):
 func _on_timer_timeout() -> void:
 	if Global.in_combat == false and Global.player_health < Global.player_max_health:
 		Global.player_health = Global.player_health + Global.player_healing
+
+
+func _on_combat_change_player_health(player_health_changed) -> void:
+	Global.player_health = player_health_changed

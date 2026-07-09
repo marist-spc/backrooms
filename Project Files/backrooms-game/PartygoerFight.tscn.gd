@@ -91,6 +91,7 @@ func _process(_delta: float) -> void:
 	$StarCandy/Label.text = str(Global.inventory_star_candy)
 	
 	if $Partygoer.health == 0:
+		Global.player_exp += 1
 		change_player_health.emit(player_health_changed)
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		Global.in_combat = false

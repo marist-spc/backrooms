@@ -3,7 +3,10 @@ extends CharacterBody3D
 @export var mouse_sensitivity: float = 0.004
 @onready var head: Node3D = $Head
 @onready var eye_camera: Camera3D = $Head/EyeCamera
-
+var combat_scene
+signal delete_partygoer
+signal delete_lifeform
+signal start_combat
 
 
 const SPEED = 5.0
@@ -57,10 +60,7 @@ func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 
-var combat_scene
-signal delete_partygoer
-signal delete_lifeform
-signal start_combat
+
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -77,5 +77,4 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			delete_lifeform.emit()
 			start_combat.emit()
 			Global.in_combat = true
-			
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED

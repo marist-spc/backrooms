@@ -237,10 +237,11 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[connection signal="change_player_health" from="." to="Player" method="_on_combat_change_player_health"]
 [connection signal="pressed" from="Item" to="." method="_on_item_pressed"]
 [connection signal="pressed" from="Ability" to="." method="_on_ability_pressed"]
 [connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
-[connection signal="pressed" from="Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Almond Water" to="." method="_on_almond_water_pressed"]
 [connection signal="pressed" from="StarCandy" to="." method="_on_star_candy_pressed"]
 [connection signal="pressed" from="Bash" to="." method="_on_bash_pressed"]

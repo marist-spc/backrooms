@@ -7,6 +7,9 @@ var turn = 0
 @onready var max_enemy_health = str($Lifeform.max_health)
 @onready var player_SP = str($Player.SP)
 @onready var max_player_SP = str($Player.max_SP)
+var player_health_changed
+
+signal change_player_health
 
 
 # Called when the node enters the scene tree for the first time.
@@ -55,6 +58,8 @@ func _process(_delta: float) -> void:
 	$LifeformHealthBar.value = $Lifeform.health
 	$LifeformHealthBar.max_value = $Lifeform.max_health
 	
+	player_health_changed = $Player.health
+	
 	if $Player.SP < 0 :
 		$Player.SP = 0
 	if $Player.health <= 0 :
@@ -75,13 +80,19 @@ func _process(_delta: float) -> void:
 		$Ability.visible = true
 		if turn_action != Defense_lower:
 			$Player.defense = $Player.standard_defense
-	elif $Lifeform.health == 0:
-		$Player.exp += 30
-		$Player.level_up()
-		
+	
+	$"Almond Water/Label".text = str(Global.inventory_almond_water)
+	$StarCandy/Label.text = str(Global.inventory_star_candy)
+	
+	
+	if $Lifeform.health == 0:
+		Global.player_exp += 1
+		change_player_health.emit(player_health_changed)
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		Global.in_combat = false
+		get_node(".").queue_free()
 
 func _on_button_pressed() -> void:
-	print($Lifeform.defense)
 	$Lifeform.health -= $Player.attack * 10 / 3 - $Lifeform.defense
 	if $Lifeform.health < 0:
 		$Lifeform.health = 0
@@ -261,7 +272,3 @@ func _on_star_candy_pressed() -> void:
 	$SuperBash.disabled = true
 	$Ability.visible = true
 	turn += 1
-
-
-func _on_attack_pressed() -> void:
-	pass # Replace with function body.
