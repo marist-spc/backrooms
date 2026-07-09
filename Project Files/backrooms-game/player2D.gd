@@ -3,8 +3,8 @@ extends Node2D
 var weapon = {}
 var armor = {}
 var Inventory = {"almond water": 5, "star candy": 2, "another fucking item idk": 0}
-@export var health = 100
-@export var max_health = 100
+@export var health: int = 100
+@export var max_health: int = 100
 @export var SP = 20
 @export var max_SP = 20
 @export var attack = 5

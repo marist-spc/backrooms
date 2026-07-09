@@ -54,6 +54,11 @@ func doubleHit():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	$PlayerHealthBar.value = $Player.health
+	$PlayerHealthBar.max_value = $Player.max_health
+	$PartygoerHealthBar.value = $Partygoer.health
+	$PartygoerHealthBar.max_value = $Partygoer.max_health
+	
 	if $Player.SP < 0 :
 		$Player.SP = 0
 	if $Player.health <= 0 :
@@ -73,7 +78,6 @@ func _process(_delta: float) -> void:
 		$SuperBash.disabled = true
 		$Ability.visible = true
 		$Player.defense = $Player.standard_defense
-		
 
 func _on_button_pressed() -> void:
 	$Partygoer.health -= $Player.attack * 10 / 3 - $Partygoer.defense
