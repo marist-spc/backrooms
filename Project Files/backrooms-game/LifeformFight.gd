@@ -128,10 +128,10 @@ func _on_block_pressed() -> void:
 func _on_item_pressed() -> void:
 	$Item.visible = false
 	$Item.disabled = true
-	if $Player.Inventory["almond water"] > 0:
+	if Global.inventory_almond_water > 0:
 		$"Almond Water".visible = true
 		$"Almond Water".disabled = false
-	if $Player.Inventory["star candy"] > 0:
+	if Global.inventory_star_candy > 0:
 		$StarCandy.visible = true
 		$StarCandy.disabled = false
 	else:
@@ -141,7 +141,7 @@ func _on_item_pressed() -> void:
 func _on_almond_water_pressed() -> void:
 	$Lifeform.defense = $Lifeform.standard_defense
 	$Player.health += 20
-	$Player.Inventory["almond water"] -= 1
+	Global.inventory_almond_water -= 1
 	if $Player.health > $Player.max_health:
 		$Player.health = $Player.max_health
 	set_player_health()
@@ -242,7 +242,7 @@ func _on_super_bash_pressed() -> void:
 func _on_star_candy_pressed() -> void:
 	$Lifeform.defense = $Lifeform.standard_defense
 	$Player.SP += 5
-	$Player.Inventory["star candy"] -= 1
+	Global.inventory_star_candy -= 1
 	if $Player.SP > $Player.max_SP:
 		$Player.SP = $Player.max_SP
 	set_player_SP()
