@@ -8,11 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://dcyidikf0di4w" path="res://Combat Assets/CombatBG/sprite_2.png" id="4_30e1d"]
 [ext_resource type="Texture2D" uid="uid://wi4jkhdmwycw" path="res://Combat Assets/CombatBG/sprite_3.png" id="5_tx3hb"]
 [ext_resource type="Texture2D" uid="uid://deegx7iofnxvt" path="res://Combat Assets/TextHolder.png" id="7_ywfrs"]
-[ext_resource type="Texture2D" uid="uid://de2ex1ba1xhip" path="res://Combat Assets/FightButton.png" id="9_pxw20"]
 [ext_resource type="Texture2D" uid="uid://8s0fdddnpuut" path="res://Combat Assets/DefendButton.png" id="10_e0ykw"]
-[ext_resource type="Texture2D" uid="uid://dq1nv0fjar0vs" path="res://Combat Assets/ItemButton.png" id="11_o1jle"]
+[ext_resource type="Texture2D" uid="uid://bhymib3oh7dgf" path="res://Assets/Combat Assests/ItemButton.png" id="11_qk5gg"]
 [ext_resource type="Texture2D" uid="uid://cnjbutgjlneut" path="res://Combat Assets/AbilityButton.png" id="12_ctrvj"]
 [ext_resource type="Texture2D" uid="uid://bxtg5lyhdg6py" path="res://Combat Assets/BashAbilityButton.png" id="13_cktje"]
+[ext_resource type="Texture2D" uid="uid://c61es5k6hheih" path="res://Assets/Combat Assests/FightButton.png" id="14_jbk1u"]
 [ext_resource type="Texture2D" uid="uid://bjmo2w3kf0wvr" path="res://Combat Assets/TripleSlashAbilityButton.png" id="14_juhqq"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_cr66n"]
@@ -105,36 +105,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Attack" type="Button" parent="." unique_id=1218250415]
-offset_left = 346.0
-offset_top = 461.0
-offset_right = 460.0
-offset_bottom = 575.0
-icon = ExtResource("9_pxw20")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="Block" type="Button" parent="." unique_id=1205252634]
-offset_left = 545.0
-offset_top = 466.0
-offset_right = 671.0
-offset_bottom = 574.0
-icon = ExtResource("10_e0ykw")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="Item" type="Button" parent="." unique_id=63356483]
-offset_left = 896.0
-offset_top = 465.0
-offset_right = 1019.0
-offset_bottom = 586.0
-icon = ExtResource("11_o1jle")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
 [node name="None" type="Button" parent="." unique_id=237543072]
 visible = false
 offset_left = 762.0
@@ -151,16 +121,6 @@ offset_top = 458.0
 offset_right = 1012.0
 offset_bottom = 527.0
 text = "Almond Water"
-
-[node name="Ability" type="Button" parent="." unique_id=348993660]
-offset_left = 734.0
-offset_top = 471.0
-offset_right = 844.0
-offset_bottom = 578.0
-icon = ExtResource("12_ctrvj")
-flat = true
-icon_alignment = 1
-expand_icon = true
 
 [node name="Bash" type="Button" parent="." unique_id=604396444]
 visible = false
@@ -196,11 +156,53 @@ offset_bottom = 576.0
 disabled = true
 text = "Star Candy"
 
-[connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
-[connection signal="pressed" from="Item" to="." method="_on_item_pressed"]
+[node name="Item" type="Button" parent="." unique_id=1540996088]
+texture_filter = 1
+offset_left = 865.0
+offset_top = 454.0
+offset_right = 1018.0
+offset_bottom = 601.0
+icon = ExtResource("11_qk5gg")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Ability" type="Button" parent="." unique_id=1770048629]
+texture_filter = 1
+offset_left = 684.0
+offset_top = 456.0
+offset_right = 831.0
+offset_bottom = 603.0
+icon = ExtResource("12_ctrvj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Block" type="Button" parent="." unique_id=752519830]
+texture_filter = 1
+offset_left = 502.0
+offset_top = 459.0
+offset_right = 650.0
+offset_bottom = 602.0
+text = "
+"
+icon = ExtResource("10_e0ykw")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Attack" type="Button" parent="." unique_id=1052239820]
+texture_filter = 1
+offset_left = 318.0
+offset_top = 458.0
+offset_right = 462.0
+offset_bottom = 608.0
+icon = ExtResource("14_jbk1u")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="pressed" from="Almond Water" to="." method="_on_almond_water_pressed"]
-[connection signal="pressed" from="Ability" to="." method="_on_ability_pressed"]
 [connection signal="pressed" from="Bash" to="." method="_on_bash_pressed"]
 [connection signal="pressed" from="SuperBash" to="." method="_on_super_bash_pressed"]
 [connection signal="pressed" from="StarCandy" to="." method="_on_star_candy_pressed"]
