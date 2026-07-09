@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b0l7xxy712hyq"]
 
 [ext_resource type="Texture2D" uid="uid://ciwij7ijvspa8" path="res://Assets/2D Assets/MIKE FACE(HURT).png" id="1_fyqef"]
+[ext_resource type="Script" uid="uid://c23aafgays1gj" path="res://progress_bar.gd" id="2_m6e0p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6e0p"]
 atlas = ExtResource("1_fyqef")
@@ -80,3 +81,11 @@ scale = Vector2(0.5, 0.52083343)
 sprite_frames = SubResource("SpriteFrames_it8ie")
 autoplay = "default"
 frame_progress = 0.059040487
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1809737099]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 600.0
+offset_right = 672.0
+offset_bottom = 627.0
+script = ExtResource("2_m6e0p")
