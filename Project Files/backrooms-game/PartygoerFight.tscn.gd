@@ -37,7 +37,7 @@ func update_SP():
 var enemy_turn = [attack, defend, doubleHit]
 
 func attack():
-	$Player.health -= randi_range(10,15) * $Partygoer.attack / $Player.defense
+	Global.player_health -= randi_range(10,15) * $Partygoer.attack / $Player.defense
 	set_player_health()
 	update_player_health()
 	$Partygoer/action.text = "Partygoer attacks!"
@@ -66,10 +66,11 @@ func _process(_delta: float) -> void:
 	
 	player_health_changed = $Player.health
 	
-	if $Player.SP < 0 :
+	if $Player.SP <= 0 :
 		$Player.SP = 0
-	if $Player.health <= 0 :
-		$Player.health = 0
+	if Global.player_health <= 0 :
+		Global.player_health = 0
+		get_tree().change_scene_to_file("res://main_menu.tscn")
 	if turn == 1 and $Partygoer.health > 0:
 		turn = 0
 		await get_tree().create_timer(1).timeout
@@ -149,7 +150,7 @@ func _on_item_pressed() -> void:
 		$StarCandy.visible = true
 		$StarCandy.disabled = false
 	else:
-		$None.visible = true
+		$Item.visible = true
 
 func _on_almond_water_pressed() -> void:
 	if Global.inventory_almond_water > 0:
