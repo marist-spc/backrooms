@@ -12,4 +12,3 @@ func _on_player_max_health_var(max_health) -> void:
 
 func _on_player_health_var(health) -> void:
 	$HealthBar.value = health
-	print(health)

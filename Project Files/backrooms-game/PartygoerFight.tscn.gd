@@ -19,6 +19,7 @@ func _ready() -> void:
 	$Player/SP.text = "SP: " + player_SP + "/" + max_player_SP
 	$Partygoer/action.text = "Partygoer approaches!"
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	Global.in_combat = true
 
 func set_player_health():
 	player_health = str($Player.health)
@@ -88,6 +89,7 @@ func _process(_delta: float) -> void:
 	if $Partygoer.health == 0:
 		change_player_health.emit(player_health_changed)
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		Global.in_combat = false
 		get_node(".").queue_free()
 
 func _on_button_pressed() -> void:
