@@ -50,6 +50,11 @@ func Defense_lower():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	$PlayerHealthBar.value = $Player.health
+	$PlayerHealthBar.max_value = $Player.max_health
+	$LifeformHealthBar.value = $Lifeform.health
+	$LifeformHealthBar.max_value = $Lifeform.max_health
+	
 	if $Player.SP < 0 :
 		$Player.SP = 0
 	if $Player.health <= 0 :
@@ -130,7 +135,8 @@ func _on_item_pressed() -> void:
 		$StarCandy.visible = true
 		$StarCandy.disabled = false
 	else:
-		$None.visible = true
+		$Item.visible = true
+		$Item.disabled = false
 
 func _on_almond_water_pressed() -> void:
 	$Lifeform.defense = $Lifeform.standard_defense
@@ -255,3 +261,7 @@ func _on_star_candy_pressed() -> void:
 	$SuperBash.disabled = true
 	$Ability.visible = true
 	turn += 1
+
+
+func _on_attack_pressed() -> void:
+	pass # Replace with function body.
