@@ -54,3 +54,8 @@ func _unhandled_input(event: InputEvent):
 		eye_camera.rotation.x = clamp(eye_camera.rotation.x, -0.7, 0.7)
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://PartygoerFight.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED

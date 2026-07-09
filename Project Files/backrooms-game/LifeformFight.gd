@@ -42,7 +42,7 @@ func defend():
 	$Lifeform/action.text = "Lifeform defends."
 
 func Defense_lower():
-	$Player.health -= randi_range(10,16) * $Lifeform.attack / $Player.defense - 2
+	$Player.health -= randi_range(10,16) * ($Lifeform.attack / $Player.defense) - 2
 	set_player_health()
 	update_player_health()
 	$Player.defense /= 2
@@ -74,6 +74,7 @@ func _process(_delta: float) -> void:
 		$Player.exp += 30
 
 func _on_button_pressed() -> void:
+	print($Lifeform.defense)
 	$Lifeform.health -= $Player.attack * 10 / 3 - $Lifeform.defense
 	if $Lifeform.health < 0:
 		$Lifeform.health = 0
@@ -87,6 +88,8 @@ func _on_button_pressed() -> void:
 	$Item.visible = true
 	$"Almond Water".visible = false
 	$"Almond Water".disabled = true
+	$StarCandy.visible = false
+	$StarCandy.disabled = true
 	$Ability.disabled = true
 	$Bash.visible = false
 	$SuperBash.visible = false
@@ -107,6 +110,8 @@ func _on_block_pressed() -> void:
 	$SuperBash.disabled = true
 	$"Almond Water".visible = false
 	$"Almond Water".disabled = true
+	$StarCandy.visible = false
+	$StarCandy.disabled = true
 	$Player.defense *= 3
 	turn += 1
 
@@ -119,7 +124,9 @@ func _on_item_pressed() -> void:
 	if $Player.Inventory["almond water"] > 0:
 		$"Almond Water".visible = true
 		$"Almond Water".disabled = false
-		
+	if $Player.Inventory["star candy"] > 0:
+		$StarCandy.visible = true
+		$StarCandy.disabled = false
 	else:
 		$None.visible = true
 
@@ -141,6 +148,8 @@ func _on_almond_water_pressed() -> void:
 	$Bash.disabled = true
 	$SuperBash.disabled = true
 	$Ability.visible = true
+	$StarCandy.visible = false
+	$StarCandy.disabled = true
 	turn += 1
 
 
@@ -179,6 +188,8 @@ func _on_bash_pressed() -> void:
 	$Attack.disabled = true
 	$Block.disabled = true
 	$Item.disabled = true
+	$StarCandy.visible = false
+	$StarCandy.disabled = true
 	turn += 1
 
 func _on_super_bash_pressed() -> void:
@@ -205,6 +216,8 @@ func _on_super_bash_pressed() -> void:
 	update_SP()
 	$"Almond Water".disabled = true
 	$"Almond Water".visible = false
+	$StarCandy.visible = false
+	$StarCandy.disabled = true
 	$Item.visible = true
 	$Bash.visible = false
 	$SuperBash.visible = false
@@ -214,4 +227,27 @@ func _on_super_bash_pressed() -> void:
 	$Attack.disabled = true
 	$Block.disabled = true
 	$Item.disabled = true
+	turn += 1
+
+
+func _on_star_candy_pressed() -> void:
+	$Lifeform.defense = $Lifeform.standard_defense
+	$Player.SP += 5
+	if $Player.SP > $Player.max_SP:
+		$Player.SP = $Player.max_SP
+	set_player_SP()
+	update_SP()
+	$"Almond Water".disabled = true
+	$"Almond Water".visible = false
+	$StarCandy.visible = false
+	$StarCandy.disabled = true
+	$Item.visible = true
+	$Attack.disabled = true
+	$Block.disabled = true
+	$Ability.disabled = true
+	$Bash.visible = false
+	$SuperBash.visible = false
+	$Bash.disabled = true
+	$SuperBash.disabled = true
+	$Ability.visible = true
 	turn += 1

@@ -1,62 +1,139 @@
 [gd_scene format=3 uid="uid://3wjpf8uhapol"]
 
-[ext_resource type="Script" uid="uid://dm3khw5vaokr3" path="res://Lifeform2D.gd" id="1_6yrp4"]
-[ext_resource type="PackedScene" uid="uid://bamcgkyaw4co6" path="res://player.tscn" id="2_hm5ma"]
+[ext_resource type="Script" uid="uid://jj2tudkfwxxd" path="res://LifeformFight.gd" id="1_6yrp4"]
+[ext_resource type="PackedScene" uid="uid://clb8ycwsgctg" path="res://player2D.tscn" id="2_6yrp4"]
+[ext_resource type="Texture2D" uid="uid://5r4ng1hvbhyy" path="res://Combat Assets/CombatBG/sprite_0.png" id="2_qk5gg"]
 [ext_resource type="PackedScene" uid="uid://cfcw5y30fqbbf" path="res://Lifeform2D.tscn" id="3_hm5ma"]
+[ext_resource type="Texture2D" uid="uid://ma2l7x4uw24t" path="res://Combat Assets/CombatBG/sprite_1.png" id="3_jbk1u"]
+[ext_resource type="Texture2D" uid="uid://dcyidikf0di4w" path="res://Combat Assets/CombatBG/sprite_2.png" id="4_30e1d"]
+[ext_resource type="Texture2D" uid="uid://wi4jkhdmwycw" path="res://Combat Assets/CombatBG/sprite_3.png" id="5_tx3hb"]
+[ext_resource type="Texture2D" uid="uid://deegx7iofnxvt" path="res://Combat Assets/TextHolder.png" id="7_ywfrs"]
+[ext_resource type="Texture2D" uid="uid://de2ex1ba1xhip" path="res://Combat Assets/FightButton.png" id="9_pxw20"]
+[ext_resource type="Texture2D" uid="uid://8s0fdddnpuut" path="res://Combat Assets/DefendButton.png" id="10_e0ykw"]
+[ext_resource type="Texture2D" uid="uid://dq1nv0fjar0vs" path="res://Combat Assets/ItemButton.png" id="11_o1jle"]
+[ext_resource type="Texture2D" uid="uid://cnjbutgjlneut" path="res://Combat Assets/AbilityButton.png" id="12_ctrvj"]
+[ext_resource type="Texture2D" uid="uid://bxtg5lyhdg6py" path="res://Combat Assets/BashAbilityButton.png" id="13_cktje"]
+[ext_resource type="Texture2D" uid="uid://bjmo2w3kf0wvr" path="res://Combat Assets/TripleSlashAbilityButton.png" id="14_juhqq"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_cr66n"]
+frames = 4
+frame_0/texture = ExtResource("2_qk5gg")
+frame_0/duration = 0.17
+frame_1/texture = ExtResource("3_jbk1u")
+frame_1/duration = 0.17
+frame_2/texture = ExtResource("4_30e1d")
+frame_2/duration = 0.17
+frame_3/texture = ExtResource("5_tx3hb")
+frame_3/duration = 0.17
 
 [node name="combat" type="Node2D" unique_id=1647977493]
 script = ExtResource("1_6yrp4")
 
-[node name="Player" parent="." unique_id=1223803813 instance=ExtResource("2_hm5ma")]
-position = Vector2(213, 534)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1835654150]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 647.0
+texture = SubResource("AnimatedTexture_cr66n")
+stretch_mode = 1
 
-[node name="Label" type="Label" parent="Player" unique_id=1819122126]
-offset_left = -169.0
-offset_top = -206.0
-offset_right = 95.0
-offset_bottom = -113.0
+[node name="Player" parent="." unique_id=1223803813 instance=ExtResource("2_6yrp4")]
+position = Vector2(154, 501)
 
-[node name="SP" type="Label" parent="Player" unique_id=1088781795]
-offset_left = -155.0
-offset_top = -102.0
-offset_right = 60.0
-offset_bottom = -24.0
+[node name="TextHolder" type="Sprite2D" parent="Player" unique_id=1192212398]
+texture_filter = 1
+position = Vector2(0, -181.33331)
+scale = Vector2(2.8645835, 2.2395835)
+texture = ExtResource("7_ywfrs")
+
+[node name="TextHolder2" type="Sprite2D" parent="Player" unique_id=389697954]
+texture_filter = 1
+position = Vector2(-0.1666565, -120)
+scale = Vector2(2.901042, 2.104167)
+texture = ExtResource("7_ywfrs")
+
+[node name="Label" type="Label" parent="Player" unique_id=1791952908]
+offset_left = -84.666664
+offset_top = -198.66667
+offset_right = 90.666664
+offset_bottom = -162.00002
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SP" type="Label" parent="Player" unique_id=335601512]
+offset_left = -90.0
+offset_top = -135.33334
+offset_right = 90.66667
+offset_bottom = -103.33334
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Lifeform" parent="." unique_id=1555681569 instance=ExtResource("3_hm5ma")]
 position = Vector2(-102, 13)
+standard_defense = 0
 
-[node name="Label" type="Label" parent="Lifeform" unique_id=1622196255]
-offset_left = 822.0
-offset_top = 228.0
-offset_right = 922.0
-offset_bottom = 289.0
+[node name="TextHolder" type="Sprite2D" parent="Lifeform" unique_id=1162006222]
+texture_filter = 1
+position = Vector2(953.00006, 82)
+scale = Vector2(5.015625, 2.34375)
+texture = ExtResource("7_ywfrs")
 
-[node name="action" type="Label" parent="Lifeform" unique_id=212167909]
-offset_left = 815.0
-offset_top = 88.0
-offset_right = 1018.0
-offset_bottom = 182.0
+[node name="TextHolder2" type="Sprite2D" parent="Lifeform" unique_id=1115671856]
+texture_filter = 1
+position = Vector2(903.00006, 147)
+scale = Vector2(3.3125, 2.03125)
+texture = ExtResource("7_ywfrs")
+
+[node name="Label" type="Label" parent="Lifeform" unique_id=1025221886]
+offset_left = 803.0
+offset_top = 130.0
+offset_right = 1006.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="action" type="Label" parent="Lifeform" unique_id=1618282292]
+offset_left = 797.0
+offset_top = 65.0
+offset_right = 1109.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Attack" type="Button" parent="." unique_id=1218250415]
 offset_left = 346.0
 offset_top = 461.0
 offset_right = 460.0
 offset_bottom = 575.0
-text = "fight"
+icon = ExtResource("9_pxw20")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="Block" type="Button" parent="." unique_id=1205252634]
 offset_left = 545.0
 offset_top = 466.0
 offset_right = 671.0
 offset_bottom = 574.0
-text = "Block"
+icon = ExtResource("10_e0ykw")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="Item" type="Button" parent="." unique_id=63356483]
 offset_left = 896.0
 offset_top = 465.0
 offset_right = 1019.0
 offset_bottom = 586.0
-text = "Item"
+icon = ExtResource("11_o1jle")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="None" type="Button" parent="." unique_id=237543072]
 visible = false
@@ -69,10 +146,10 @@ text = "no items"
 
 [node name="Almond Water" type="Button" parent="." unique_id=2060077665]
 visible = false
-offset_left = 904.0
+offset_left = 892.0
 offset_top = 458.0
-offset_right = 1027.0
-offset_bottom = 581.0
+offset_right = 1012.0
+offset_bottom = 527.0
 text = "Almond Water"
 
 [node name="Ability" type="Button" parent="." unique_id=348993660]
@@ -80,25 +157,44 @@ offset_left = 734.0
 offset_top = 471.0
 offset_right = 844.0
 offset_bottom = 578.0
-text = "Abilities"
+icon = ExtResource("12_ctrvj")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="Bash" type="Button" parent="." unique_id=604396444]
 visible = false
-offset_left = 711.0
-offset_top = 442.0
-offset_right = 865.0
-offset_bottom = 514.0
+offset_left = 712.0
+offset_top = 453.0
+offset_right = 867.0
+offset_bottom = 566.0
 disabled = true
-text = "Bash: 2 SP"
+icon = ExtResource("13_cktje")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
 
 [node name="SuperBash" type="Button" parent="." unique_id=711982891]
 visible = false
-offset_left = 708.0
-offset_top = 534.0
-offset_right = 876.0
-offset_bottom = 602.0
+offset_left = 724.0
+offset_top = 519.0
+offset_right = 855.0
+offset_bottom = 629.0
 disabled = true
-text = "Triple Slash: 4 SP"
+icon = ExtResource("14_juhqq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="StarCandy" type="Button" parent="." unique_id=1716671931]
+visible = false
+offset_left = 884.0
+offset_top = 532.0
+offset_right = 1014.5807
+offset_bottom = 576.0
+disabled = true
+text = "Star Candy"
 
 [connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
@@ -107,3 +203,4 @@ text = "Triple Slash: 4 SP"
 [connection signal="pressed" from="Ability" to="." method="_on_ability_pressed"]
 [connection signal="pressed" from="Bash" to="." method="_on_bash_pressed"]
 [connection signal="pressed" from="SuperBash" to="." method="_on_super_bash_pressed"]
+[connection signal="pressed" from="StarCandy" to="." method="_on_star_candy_pressed"]

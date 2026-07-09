@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://b0l7xxy712hyq"]
+
+[ext_resource type="Texture2D" uid="uid://ciwij7ijvspa8" path="res://Assets/2D Assets/MIKE FACE(HURT).png" id="1_fyqef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6e0p"]
+atlas = ExtResource("1_fyqef")
+region = Rect2(0, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27fn8"]
+atlas = ExtResource("1_fyqef")
+region = Rect2(384, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nltto"]
+atlas = ExtResource("1_fyqef")
+region = Rect2(768, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibotj"]
+atlas = ExtResource("1_fyqef")
+region = Rect2(0, 384, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5ude"]
+atlas = ExtResource("1_fyqef")
+region = Rect2(384, 384, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4yjw"]
+atlas = ExtResource("1_fyqef")
+region = Rect2(768, 384, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waa4j"]
+atlas = ExtResource("1_fyqef")
+region = Rect2(0, 768, 384, 384)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it8ie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6e0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27fn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nltto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibotj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5ude")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4yjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waa4j")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UI" type="Control" unique_id=1169676460]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1345343683]
+layout_mode = 0
+offset_top = 440.0
+offset_right = 208.0
+offset_bottom = 648.0
+color = Color(0.09803922, 0.09803922, 0.09803922, 0.5568628)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1638190830]
+position = Vector2(96, 548)
+scale = Vector2(0.5, 0.52083343)
+sprite_frames = SubResource("SpriteFrames_it8ie")
+autoplay = "default"
+frame_progress = 0.059040487
