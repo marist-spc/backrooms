@@ -38,6 +38,7 @@ script = ExtResource("1_08q8e")
 
 [node name="player3D" parent="." unique_id=415036748 instance=ExtResource("2_t218m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.35224, 1.4718018, -25.035156)
+mouse_sensitivity = 0.004
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=52557283]
 transform = Transform3D(-0.9991228, 0, 0.041875646, 0, 1, 0, -0.041875646, 0, -0.9991228, 0, 1, 0)
@@ -544,6 +545,5 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -49.72274, 1.2295976
 
 [node name="UI" parent="." unique_id=1169676460 instance=ExtResource("9_eomlm")]
 
-[connection signal="start_combat" from="NavigationRegion3D/Party Goer" to="." method="_on_party_goer_start_combat"]
-[connection signal="start_combat" from="NavigationRegion3D/Party Goer2" to="." method="_on_party_goer_start_combat"]
-[connection signal="start_combat" from="NavigationRegion3D/Party Goer3" to="." method="_on_party_goer_start_combat"]
+[connection signal="delete_lifeform" from="player3D" to="NavigationRegion3D/LifeForm" method="_on_player_3d_delete_lifeform"]
+[connection signal="delete_partygoer" from="player3D" to="NavigationRegion3D/Party Goer" method="_on_player_3d_delete_partygoer"]

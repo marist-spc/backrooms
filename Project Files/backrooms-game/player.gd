@@ -58,12 +58,21 @@ func _unhandled_input(event: InputEvent):
 		get_tree().quit()
 
 var combat_scene
+signal delete_partygoer
+signal delete_lifeform
+signal start_combat
+
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body is PartyGoer:
-		combat_scene = preload("res://PartygoerFight.tscn").instantiate()
-		get_tree().root.add_child(combat_scene)
-	elif body is LifeForm:
-		combat_scene = preload("res://LifeformFight.tscn").instantiate()
-		get_tree().root.add_child(combat_scene)
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	if Global.in_combat == false:
+		if body is PartyGoer:
+			combat_scene = preload("res://PartygoerFight.tscn").instantiate()
+			get_tree().root.add_child(combat_scene)
+			delete_partygoer.emit()
+			start_combat.emit()
+		elif body is LifeForm:
+			combat_scene = preload("res://LifeformFight.tscn").instantiate()
+			get_tree().root.add_child(combat_scene)
+			delete_lifeform.emit()
+			start_combat.emit()
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
