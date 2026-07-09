@@ -10,5 +10,5 @@ var standard_defense = 3
 var player_exp :int = 0
 var player_level:int = 1
 var player_level_up_exp:int = 50
-var in_combat
+var in_combat = false
 var player_healing = 1

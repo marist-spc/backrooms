@@ -84,7 +84,7 @@ transform = Transform3D(-0.099302545, 0, -0.99505806, 0, 1, 0, 0.99505806, 0, -0
 player_path = NodePath("../../player3D")
 
 [node name="LifeForm" parent="NavigationRegion3D" unique_id=280681958 instance=ExtResource("11_ryq82")]
-transform = Transform3D(-0.21980704, 0, -0.009212643, 0, 0.22, 0, 0.009212643, 0, -0.21980704, 0, 0.06886816, 0)
+transform = Transform3D(-0.21980715, 0, -0.009212648, 0, 0.22, 0, 0.009212648, 0, -0.21980715, -15.3108835, -0.22275782, 22.926891)
 player_path = NodePath("../../player3D")
 
 [node name="LifeForm2" parent="NavigationRegion3D" unique_id=604622351 instance=ExtResource("11_ryq82")]
