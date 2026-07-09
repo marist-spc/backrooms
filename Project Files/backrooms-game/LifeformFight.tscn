@@ -41,31 +41,31 @@ position = Vector2(154, 501)
 
 [node name="TextHolder" type="Sprite2D" parent="Player" unique_id=1192212398]
 texture_filter = 1
-position = Vector2(0, -181.33331)
+position = Vector2(2, -214.33333)
 scale = Vector2(2.8645835, 2.2395835)
 texture = ExtResource("7_ywfrs")
 
 [node name="TextHolder2" type="Sprite2D" parent="Player" unique_id=389697954]
 texture_filter = 1
-position = Vector2(-0.1666565, -120)
+position = Vector2(1.8333435, -153.00002)
 scale = Vector2(2.901042, 2.104167)
 texture = ExtResource("7_ywfrs")
 
 [node name="Label" type="Label" parent="Player" unique_id=1791952908]
-offset_left = -84.666664
-offset_top = -198.66667
-offset_right = 90.666664
-offset_bottom = -162.00002
+offset_left = -82.666664
+offset_top = -231.66669
+offset_right = 92.666664
+offset_bottom = -195.00003
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SP" type="Label" parent="Player" unique_id=335601512]
-offset_left = -90.0
-offset_top = -135.33334
-offset_right = 90.66667
-offset_bottom = -103.33334
+offset_left = -88.0
+offset_top = -168.33336
+offset_right = 92.66667
+offset_bottom = -136.33336
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
