@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0l7xxy712hyq"]
 
+[ext_resource type="Script" uid="uid://ygyjwwgb5gv6" path="res://ui.gd" id="1_m6e0p"]
 [ext_resource type="PackedScene" uid="uid://clb8ycwsgctg" path="res://player2D.tscn" id="2_27fn8"]
-[ext_resource type="Script" uid="uid://c23aafgays1gj" path="res://progress_bar.gd" id="2_m6e0p"]
 
 [node name="UI" type="Control" unique_id=1169676460]
 layout_mode = 3
@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m6e0p")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1345343683]
 layout_mode = 0
@@ -24,7 +25,8 @@ offset_left = 216.0
 offset_top = 600.0
 offset_right = 672.0
 offset_bottom = 627.0
-script = ExtResource("2_m6e0p")
+step = 1.0
+show_percentage = false
 
 [node name="Player" parent="." unique_id=1223803813 instance=ExtResource("2_27fn8")]
 texture_filter = 1
