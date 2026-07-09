@@ -57,5 +57,8 @@ func _unhandled_input(event: InputEvent):
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://PartygoerFight.tscn")
+	if body is PartyGoer:
+		get_tree().call_deferred("change_scene_to_file", "res://PartygoerFight.tscn")
+	elif body is LifeForm:
+		get_tree().call_deferred("change_scene_to_file", "res://LifeformFight.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED

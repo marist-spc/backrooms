@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name LifeForm extends CharacterBody3D
 
 var player = null
 var state_machine
@@ -14,6 +14,8 @@ const ATTACK_RANGE = 2.0
 @onready var anim_tree = $LifeformIdle/AnimationTree
 @onready var collisionshape = $CollisionShape3D
 @onready var raycast = $RayCast
+
+signal start_combat
 
 func _ready() -> void:
 	player = get_node(player_path)
@@ -49,3 +51,12 @@ func _physics_process(delta: float) -> void:
 
 func target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	#start_combat.emit()
+	#queue_free()
+	pass
+
+func _on_animation_tree_animation_finished(_anim_name: StringName) -> void:
+	$Area3D/CollisionShape3D.disabled = false
