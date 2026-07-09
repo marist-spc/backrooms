@@ -2,7 +2,6 @@ extends Node2D
 
 var weapon = {}
 var armor = {}
-var Inventory = {"almond water": 5, "star candy": 2, "another fucking item idk": 0}
 @export var health: int = Global.player_health
 @export var max_health: int = Global.player_max_health
 @export var SP = Global.player_sp

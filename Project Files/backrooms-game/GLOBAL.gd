@@ -12,3 +12,5 @@ var player_level:int = 1
 var player_level_up_exp:int = 50
 var in_combat = false
 var player_healing = 1
+var inventory_almond_water = 0
+var inventory_star_candy = 0
