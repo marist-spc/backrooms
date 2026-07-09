@@ -19,7 +19,7 @@ func _ready() -> void:
 	player = get_node(player_path)
 	state_machine = anim_tree.get("parameters/playback")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	match state_machine.get_current_node():
 		"Idle":
 			# get the direction vector pointing from enemy to player
@@ -51,7 +51,7 @@ func target_in_range():
 	
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func _on_area_3d_body_entered(_body: Node3D) -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://PartygoerFight.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 

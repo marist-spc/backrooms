@@ -78,6 +78,9 @@ func _process(_delta: float) -> void:
 		$SuperBash.disabled = true
 		$Ability.visible = true
 		$Player.defense = $Player.standard_defense
+	
+	if $Partygoer.health == 0:
+		get_tree().call_deferred("change_scene_to_file", "res://level_0.tscn")
 
 func _on_button_pressed() -> void:
 	$Partygoer.health -= $Player.attack * 10 / 3 - $Partygoer.defense
