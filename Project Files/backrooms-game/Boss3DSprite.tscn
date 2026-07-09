@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://b2xcrtquf8uo4"]
+
+[ext_resource type="Texture2D" uid="uid://dv2ycw3084w71" path="res://Assets/2D Assets/friend(7_6_26) (3).png" id="1_s786s"]
+[ext_resource type="Script" uid="uid://b0bt1u57taulj" path="res://boss_3d_sprite.gd" id="1_vnpv6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k37g8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnpv6"]
+atlas = ExtResource("1_s786s")
+region = Rect2(0, 0, 840, 840)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rp4l"]
+atlas = ExtResource("1_s786s")
+region = Rect2(840, 0, 840, 840)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2wad"]
+atlas = ExtResource("1_s786s")
+region = Rect2(0, 840, 840, 840)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lkyr"]
+atlas = ExtResource("1_s786s")
+region = Rect2(840, 840, 840, 840)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iihas"]
+atlas = ExtResource("1_s786s")
+region = Rect2(0, 1680, 840, 840)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wcq"]
+atlas = ExtResource("1_s786s")
+region = Rect2(840, 1680, 840, 840)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k37g8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnpv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rp4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2wad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lkyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iihas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wcq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node3D" type="Node3D" unique_id=423815377]
+script = ExtResource("1_vnpv6")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1343963142]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1460321731]
+shape = SubResource("CapsuleShape3D_k37g8")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1422439585]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_k37g8")
+frame_progress = 0.5546549
