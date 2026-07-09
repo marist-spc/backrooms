@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name PartyGoer extends CharacterBody3D
 
 var player = null
 var state_machine
@@ -52,7 +52,7 @@ func target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
 	
 
-
+# TODO delete this later if we're it's not needed
 func _on_area_3d_body_entered(_body: Node3D) -> void:
 	if Global.in_combat == false:
 		start_combat.emit()

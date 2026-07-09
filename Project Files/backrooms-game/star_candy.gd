@@ -1,5 +1,5 @@
 extends StaticBody3D
 
 func interact():
-	print("BYE")
+	Global.inventory_star_candy += 1
 	queue_free()
