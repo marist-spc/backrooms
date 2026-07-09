@@ -72,6 +72,8 @@ func _process(_delta: float) -> void:
 			$Player.defense = $Player.standard_defense
 	elif $Lifeform.health == 0:
 		$Player.exp += 30
+		$Player.level_up()
+		
 
 func _on_button_pressed() -> void:
 	print($Lifeform.defense)
@@ -133,6 +135,7 @@ func _on_item_pressed() -> void:
 func _on_almond_water_pressed() -> void:
 	$Lifeform.defense = $Lifeform.standard_defense
 	$Player.health += 20
+	$Player.Inventory["almond water"] -= 1
 	if $Player.health > $Player.max_health:
 		$Player.health = $Player.max_health
 	set_player_health()
@@ -233,6 +236,7 @@ func _on_super_bash_pressed() -> void:
 func _on_star_candy_pressed() -> void:
 	$Lifeform.defense = $Lifeform.standard_defense
 	$Player.SP += 5
+	$Player.Inventory["star candy"] -= 1
 	if $Player.SP > $Player.max_SP:
 		$Player.SP = $Player.max_SP
 	set_player_SP()
