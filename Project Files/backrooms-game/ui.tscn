@@ -1,64 +1,9 @@
 [gd_scene format=3 uid="uid://b0l7xxy712hyq"]
 
-[ext_resource type="Texture2D" uid="uid://ciwij7ijvspa8" path="res://Assets/2D Assets/MIKE FACE(HURT).png" id="1_fyqef"]
-[ext_resource type="Script" uid="uid://c23aafgays1gj" path="res://progress_bar.gd" id="2_m6e0p"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m6e0p"]
-atlas = ExtResource("1_fyqef")
-region = Rect2(0, 0, 384, 384)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_27fn8"]
-atlas = ExtResource("1_fyqef")
-region = Rect2(384, 0, 384, 384)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nltto"]
-atlas = ExtResource("1_fyqef")
-region = Rect2(768, 0, 384, 384)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ibotj"]
-atlas = ExtResource("1_fyqef")
-region = Rect2(0, 384, 384, 384)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n5ude"]
-atlas = ExtResource("1_fyqef")
-region = Rect2(384, 384, 384, 384)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y4yjw"]
-atlas = ExtResource("1_fyqef")
-region = Rect2(768, 384, 384, 384)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_waa4j"]
-atlas = ExtResource("1_fyqef")
-region = Rect2(0, 768, 384, 384)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_it8ie"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m6e0p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_27fn8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nltto")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ibotj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n5ude")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y4yjw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_waa4j")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Script" uid="uid://ygyjwwgb5gv6" path="res://ui.gd" id="1_m6e0p"]
+[ext_resource type="PackedScene" uid="uid://clb8ycwsgctg" path="res://player2D.tscn" id="2_27fn8"]
+[ext_resource type="Texture2D" uid="uid://deegx7iofnxvt" path="res://Combat Assets/TextHolder.png" id="3_nltto"]
+[ext_resource type="Texture2D" uid="uid://clexmtf7m7wgw" path="res://HealthBar.png" id="4_ibotj"]
 
 [node name="UI" type="Control" unique_id=1169676460]
 layout_mode = 3
@@ -67,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m6e0p")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1345343683]
 layout_mode = 0
@@ -75,17 +21,21 @@ offset_right = 208.0
 offset_bottom = 648.0
 color = Color(0.09803922, 0.09803922, 0.09803922, 0.5568628)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1638190830]
-position = Vector2(96, 548)
-scale = Vector2(0.5, 0.52083343)
-sprite_frames = SubResource("SpriteFrames_it8ie")
-autoplay = "default"
-frame_progress = 0.059040487
+[node name="Player" parent="." unique_id=1223803813 instance=ExtResource("2_27fn8")]
+texture_filter = 1
+position = Vector2(104, 552)
+scale = Vector2(0.8, 0.8)
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1809737099]
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1146912502]
+texture_filter = 1
 layout_mode = 0
 offset_left = 216.0
-offset_top = 600.0
-offset_right = 672.0
-offset_bottom = 627.0
-script = ExtResource("2_m6e0p")
+offset_top = 544.0
+offset_right = 736.0
+offset_bottom = 664.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_nltto")
+texture_progress = ExtResource("4_ibotj")
+
+[connection signal="health_var" from="Player" to="." method="_on_player_health_var"]
+[connection signal="max_health_var" from="Player" to="." method="_on_player_max_health_var"]

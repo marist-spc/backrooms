@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ma2l7x4uw24t" path="res://Combat Assets/CombatBG/sprite_1.png" id="11_k3v48"]
 [ext_resource type="Texture2D" uid="uid://dcyidikf0di4w" path="res://Combat Assets/CombatBG/sprite_2.png" id="12_talti"]
 [ext_resource type="Texture2D" uid="uid://wi4jkhdmwycw" path="res://Combat Assets/CombatBG/sprite_3.png" id="13_slv0g"]
+[ext_resource type="Texture2D" uid="uid://clexmtf7m7wgw" path="res://HealthBar.png" id="15_talti"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_bm8rm"]
 frames = 4
@@ -36,14 +37,18 @@ offset_bottom = 647.0
 texture = SubResource("AnimatedTexture_bm8rm")
 stretch_mode = 1
 
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="." unique_id=1545934895]
+texture_filter = 1
+offset_left = 67.0
+offset_top = 216.0
+offset_right = 255.0
+offset_bottom = 362.0
+nine_patch_stretch = true
+texture_under = ExtResource("7_k3v48")
+texture_progress = ExtResource("15_talti")
+
 [node name="Player" parent="." unique_id=1223803813 instance=ExtResource("2_gr412")]
 position = Vector2(162, 507)
-
-[node name="TextHolder" type="Sprite2D" parent="Player" unique_id=1273744050]
-texture_filter = 1
-position = Vector2(-3.999998, -215.33333)
-scale = Vector2(2.8645835, 2.2395835)
-texture = ExtResource("7_k3v48")
 
 [node name="TextHolder2" type="Sprite2D" parent="Player" unique_id=1770766378]
 texture_filter = 1
@@ -71,6 +76,16 @@ theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PartygoerHealthBar" type="TextureProgressBar" parent="." unique_id=1433087991]
+texture_filter = 1
+offset_left = 681.0
+offset_top = 80.0
+offset_right = 890.0
+offset_bottom = 222.0
+nine_patch_stretch = true
+texture_under = ExtResource("7_k3v48")
+texture_progress = ExtResource("15_talti")
+
 [node name="Partygoer" parent="." unique_id=1555681569 instance=ExtResource("3_gr412")]
 position = Vector2(-115, 7)
 health = 90
@@ -84,17 +99,11 @@ position = Vector2(953.00006, 82)
 scale = Vector2(5.015625, 2.34375)
 texture = ExtResource("7_k3v48")
 
-[node name="TextHolder2" type="Sprite2D" parent="Partygoer" unique_id=1846126597]
-texture_filter = 1
-position = Vector2(903.00006, 147)
-scale = Vector2(3.3125, 2.03125)
-texture = ExtResource("7_k3v48")
-
 [node name="Label" type="Label" parent="Partygoer" unique_id=1622196255]
-offset_left = 803.0
-offset_top = 130.0
-offset_right = 1006.0
-offset_bottom = 165.0
+offset_left = 801.0
+offset_top = 125.0
+offset_right = 1004.0
+offset_bottom = 160.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -174,10 +183,10 @@ expand_icon = true
 [node name="Bash" type="Button" parent="." unique_id=604396444]
 visible = false
 texture_filter = 1
-offset_left = 665.0
-offset_top = 418.0
-offset_right = 841.0
-offset_bottom = 562.0
+offset_left = 684.0
+offset_top = 457.0
+offset_right = 821.0
+offset_bottom = 538.0
 disabled = true
 icon = ExtResource("8_vysco")
 flat = true
@@ -187,10 +196,10 @@ expand_icon = true
 [node name="SuperBash" type="Button" parent="." unique_id=711982891]
 visible = false
 texture_filter = 1
-offset_left = 690.0
-offset_top = 486.0
-offset_right = 831.0
-offset_bottom = 627.0
+offset_left = 685.0
+offset_top = 530.0
+offset_right = 826.0
+offset_bottom = 606.0
 disabled = true
 icon = ExtResource("9_vysco")
 flat = true
@@ -206,6 +215,7 @@ offset_bottom = 576.0
 disabled = true
 text = "Star Candy"
 
+[connection signal="change_player_health" from="." to="Player" method="health_change"]
 [connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
 [connection signal="pressed" from="Item" to="." method="_on_item_pressed"]
