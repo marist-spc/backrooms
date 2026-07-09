@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bjflva437ntrs"]
+
+[ext_resource type="Texture2D" uid="uid://da7dpem86evx7" path="res://Combat Assets/MainMenuScreen.png" id="1_06t4h"]
+
+[node name="MainMenu" type="Node" unique_id=1563416522]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1948986174]
+texture_filter = 1
+offset_right = 1153.0
+offset_bottom = 646.0
+texture = ExtResource("1_06t4h")

@@ -2,7 +2,7 @@ extends Node2D
 
 var weapon = {}
 var armor = {}
-var Inventory = {"almond water": 5, "item": 0, "another fucking item idk": 0}
+var Inventory = {"almond water": 5, "star candy": 2, "another fucking item idk": 0}
 @export var health = 100
 @export var max_health = 100
 @export var SP = 20
@@ -20,6 +20,8 @@ func level_up():
 		level += 1
 		attack += 1
 		defense += 1
+		max_health += 10
+		max_SP += 5
 		level_up_exp *= 1.35
 
 # Called when the node enters the scene tree for the first time.
