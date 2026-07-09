@@ -475,4 +475,15 @@ light_volumetric_fog_energy = 5.436
 light_specular = 15.684
 spot_range = 32.335
 
+[node name="ItemTest" parent="." unique_id=600644081 instance=ExtResource("5_nu7sl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 2, -19)
+
+[node name="AlmondWater" parent="." unique_id=1628047451 instance=ExtResource("6_omks2")]
+transform = Transform3D(-0.17677669, 0, 0.17677669, 0, 0.25, 0, -0.17677669, 0, -0.17677669, -46.41191, 1.3463827, -21.78056)
+
+[node name="StarCandy" parent="." unique_id=617621598 instance=ExtResource("7_wwd78")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -42, 1, -22)
+
+[node name="StopSign" parent="." unique_id=653316931 instance=ExtResource("8_40rfo")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -44.56968, 1.2296052, -21.051813)
 [node name="UI" parent="." unique_id=1169676460 instance=ExtResource("5_nu7sl")]
