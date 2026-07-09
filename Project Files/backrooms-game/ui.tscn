@@ -18,7 +18,7 @@ offset_right = 208.0
 offset_bottom = 648.0
 color = Color(0.09803922, 0.09803922, 0.09803922, 0.5568628)
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1809737099]
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1809737099]
 layout_mode = 0
 offset_left = 216.0
 offset_top = 600.0
@@ -30,3 +30,5 @@ script = ExtResource("2_m6e0p")
 texture_filter = 1
 position = Vector2(104, 552)
 scale = Vector2(0.8, 0.8)
+
+[connection signal="health_var" from="Player" to="HealthBar" method="_on_player_health_var"]
