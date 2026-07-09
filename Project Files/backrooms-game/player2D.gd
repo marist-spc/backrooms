@@ -2,7 +2,6 @@ extends Node2D
 
 var weapon = {}
 var armor = {}
-var Inventory = {"almond water": 5, "star candy": 2, "another fucking item idk": 0}
 @export var health: int = Global.player_health
 @export var max_health: int = Global.player_max_health
 @export var SP = Global.player_sp
@@ -18,14 +17,15 @@ signal health_var
 signal max_health_var
 
 func level_up():
-	if expoint >= level_up_exp:
-		expoint -= level_up_exp
-		level += 1
-		attack += 1
-		defense += 1
-		max_health += 10
-		max_SP += 5
-		level_up_exp *= 1.35
+	if Global.player_exp >= Global.player_level_up_exp:
+		Global.player_exp -= Global.player_level_up_exp
+		Global.player_level += 1
+		Global.player_attack += 1
+		Global.player_defense += 1
+		Global.player_max_health += 10
+		Global.player_max_sp += 5
+		Global.player_level_up_exp *= 1.35
+		Global.player_healing += 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,5 +37,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	max_health_var.emit(max_health)
 
+
 func health_change(player_health_changed):
 	Global.player_health = player_health_changed
+
+
+func _on_timer_timeout() -> void:
+	if Global.in_combat == false and Global.player_health < Global.player_max_health:
+		Global.player_health = Global.player_health + Global.player_healing

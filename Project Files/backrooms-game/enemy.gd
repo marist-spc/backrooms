@@ -54,8 +54,9 @@ func target_in_range():
 
 # TODO delete this later if we're it's not needed
 func _on_area_3d_body_entered(_body: Node3D) -> void:
-	start_combat.emit()
-	queue_free()
+	if Global.in_combat == false:
+		start_combat.emit()
+		queue_free()
 
 
 func _on_animation_tree_animation_finished(_anim_name: StringName) -> void:
