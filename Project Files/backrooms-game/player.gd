@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var mouse_sensitivity: float = 0.002
+@export var mouse_sensitivity: float = 0.004
 @onready var head: Node3D = $Head
 @onready var eye_camera: Camera3D = $Head/EyeCamera
 
@@ -43,6 +43,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	
+	
 
 	move_and_slide()
 	
