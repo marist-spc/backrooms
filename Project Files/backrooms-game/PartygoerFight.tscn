@@ -215,6 +215,7 @@ offset_bottom = 576.0
 disabled = true
 text = "Star Candy"
 
+[connection signal="change_player_health" from="." to="Player" method="health_change"]
 [connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
 [connection signal="pressed" from="Item" to="." method="_on_item_pressed"]

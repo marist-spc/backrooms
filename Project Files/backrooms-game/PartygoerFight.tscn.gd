@@ -7,6 +7,9 @@ var turn = 0
 @onready var max_enemy_health = str($Partygoer.max_health)
 @onready var player_SP = str($Player.SP)
 @onready var max_player_SP = str($Player.max_SP)
+var player_health_changed
+
+signal change_player_health
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,6 +18,7 @@ func _ready() -> void:
 	$Partygoer/Label.text = "HP: " + enemy_health + "/" + max_enemy_health
 	$Player/SP.text = "SP: " + player_SP + "/" + max_player_SP
 	$Partygoer/action.text = "Partygoer approaches!"
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 func set_player_health():
 	player_health = str($Player.health)
@@ -59,6 +63,8 @@ func _process(_delta: float) -> void:
 	$PartygoerHealthBar.value = $Partygoer.health
 	$PartygoerHealthBar.max_value = $Partygoer.max_health
 	
+	player_health_changed = $Player.health
+	
 	if $Player.SP < 0 :
 		$Player.SP = 0
 	if $Player.health <= 0 :
@@ -78,6 +84,11 @@ func _process(_delta: float) -> void:
 		$SuperBash.disabled = true
 		$Ability.visible = true
 		$Player.defense = $Player.standard_defense
+	
+	if $Partygoer.health == 0:
+		change_player_health.emit(player_health_changed)
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		get_node(".").queue_free()
 
 func _on_button_pressed() -> void:
 	$Partygoer.health -= $Player.attack * 10 / 3 - $Partygoer.defense

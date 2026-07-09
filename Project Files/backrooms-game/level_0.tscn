@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bah16eccmbo2t"]
 
+[ext_resource type="Script" uid="uid://bnspyrlhwky5i" path="res://level_0.gd" id="1_08q8e"]
 [ext_resource type="PackedScene" uid="uid://dyercyo67dm1i" path="res://walls.tscn" id="1_vfa6b"]
 [ext_resource type="PackedScene" uid="uid://bamcgkyaw4co6" path="res://player.tscn" id="2_t218m"]
 [ext_resource type="Material" uid="uid://c41hxvvxo3f5i" path="res://BackroomsFloor.tres" id="3_smnfn"]
@@ -32,6 +33,7 @@ material = SubResource("StandardMaterial3D_v6xcw")
 size = Vector3(104, 1, 60)
 
 [node name="Level0" type="Node3D" unique_id=1880062457]
+script = ExtResource("1_08q8e")
 
 [node name="player3D" parent="." unique_id=415036748 instance=ExtResource("2_t218m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.35224, 1.4718018, -25.035156)
@@ -492,3 +494,5 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -42, 1, -22)
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -44.56968, 1.2296052, -21.051813)
 
 [node name="UI" parent="." unique_id=1169676460 instance=ExtResource("9_eomlm")]
+
+[connection signal="start_combat" from="NavigationRegion3D/Party Goer" to="." method="_on_party_goer_start_combat"]
