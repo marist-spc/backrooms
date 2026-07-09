@@ -57,10 +57,13 @@ func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 
+var combat_scene
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is PartyGoer:
-		get_tree().call_deferred("change_scene_to_file", "res://PartygoerFight.tscn")
+		combat_scene = preload("res://PartygoerFight.tscn").instantiate()
+		get_tree().root.add_child(combat_scene)
 	elif body is LifeForm:
-		get_tree().call_deferred("change_scene_to_file", "res://LifeformFight.tscn")
+		combat_scene = preload("res://LifeformFight.tscn").instantiate()
+		get_tree().root.add_child(combat_scene)
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
