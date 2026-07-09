@@ -3,8 +3,8 @@ extends Node2D
 var weapon = {}
 var armor = {}
 var Inventory = {"almond water": 5, "star candy": 2, "another fucking item idk": 0}
-@export var health = 100
-@export var max_health = 100
+@export var health: int = 100
+@export var max_health: int = 100
 @export var SP = 20
 @export var max_SP = 20
 @export var attack = 5
@@ -13,6 +13,9 @@ var Inventory = {"almond water": 5, "star candy": 2, "another fucking item idk":
 @export var exp:int = 0
 @export var level:int = 1
 @export var level_up_exp:int = 50
+
+signal health_var
+signal max_health_var
 
 func level_up():
 	if exp >= level_up_exp:
@@ -31,4 +34,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	health_var.emit(health)
+	max_health_var.emit(max_health)
