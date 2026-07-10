@@ -47,11 +47,12 @@ func defend():
 func Defense_lower():
 	if $Player.defense < 0:
 		$Player.defense = 1
-	$Player.health -= randi_range(10,16) * ($Lifeform.attack / $Player.defense) - 2
-	set_player_health()
-	update_player_health()
-	$Player.defense /= 2
-	$Lifeform/action.text = "Lifeform attacks! Your defense has been lowered!"
+	if $Player.defense > 0:
+		$Player.health -= randi_range(10,16) * ($Lifeform.attack / $Player.defense) - 2
+		set_player_health()
+		update_player_health()
+		$Player.defense /= 2
+		$Lifeform/action.text = "Lifeform attacks! Your defense has been lowered!"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -66,7 +67,7 @@ func _process(_delta: float) -> void:
 		$Player.SP = 0
 		update_SP()
 		
-	if $Player.health <= 0 :
+	if Global.player_health <= 0 :
 		$Player.health = 0
 		update_player_health()
 		await get_tree().create_timer(0.5).timeout
@@ -94,7 +95,7 @@ func _process(_delta: float) -> void:
 	
 	
 	if $Lifeform.health == 0:
-		Global.player_exp += 30
+		Global.player_exp += 3
 		change_player_health.emit(player_health_changed)
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		Global.in_combat = false
@@ -124,6 +125,10 @@ func _on_button_pressed() -> void:
 	$Ability.visible = true
 
 func _on_block_pressed() -> void:
+	if $Player.SP < Global.player_max_sp:
+		$Player.SP += Global.player_sp_increase
+		set_player_SP()
+		update_SP()
 	$Attack.disabled = true
 	$Block.disabled = true
 	$Item.disabled = true

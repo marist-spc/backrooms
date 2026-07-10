@@ -4,8 +4,8 @@ extends CharacterBody3D
 @onready var head: Node3D = $Head
 @onready var eye_camera: Camera3D = $Head/EyeCamera
 var combat_scene
-signal delete_partygoer
-signal delete_lifeform
+#signal delete_partygoer
+#signal delete_lifeform
 signal start_combat
 signal delete_boss
 

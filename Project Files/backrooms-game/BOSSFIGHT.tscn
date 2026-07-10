@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cnjbutgjlneut" path="res://Combat Assets/AbilityButton.png" id="11_crxi2"]
 [ext_resource type="Texture2D" uid="uid://c86ug5agnlpd4" path="res://Assets/Combat Assests/BashAbilityButton.png" id="12_isssb"]
 [ext_resource type="Texture2D" uid="uid://bjmo2w3kf0wvr" path="res://Combat Assets/TripleSlashAbilityButton.png" id="13_xkypl"]
+[ext_resource type="Texture2D" uid="uid://d2q7mo7jm2lk3" path="res://Combat Assets/AlmondWaterButton.png" id="16_prn4p"]
+[ext_resource type="Texture2D" uid="uid://ox6yhswf1wd6" path="res://Combat Assets/StarCandyButton.png" id="17_fjtid"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_bm8rm"]
 frames = 4
@@ -148,26 +150,6 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Almond Water" type="Button" parent="." unique_id=2060077665]
-visible = false
-offset_left = 880.0
-offset_top = 464.0
-offset_right = 1003.0
-offset_bottom = 524.0
-text = "Almond Water"
-
-[node name="Label" type="Label" parent="Almond Water" unique_id=1670749700]
-layout_mode = 0
-offset_left = 93.0
-offset_top = 20.0
-offset_right = 133.0
-offset_bottom = 57.0
-theme_override_colors/font_color = Color(0.2627451, 0.16078432, 0.07058824, 1)
-theme_override_font_sizes/font_size = 24
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Ability" type="Button" parent="." unique_id=348993660]
 texture_filter = 1
 offset_left = 684.0
@@ -205,16 +187,44 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="StarCandy" type="Button" parent="." unique_id=1494793763]
+[node name="Almond Water" type="Button" parent="." unique_id=944051976]
 visible = false
-offset_left = 884.0
-offset_top = 532.0
-offset_right = 1014.5807
-offset_bottom = 576.0
-disabled = true
-text = "Star Candy"
+texture_filter = 1
+offset_left = 866.0
+offset_top = 448.0
+offset_right = 1014.0
+offset_bottom = 531.0
+icon = ExtResource("16_prn4p")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
-[node name="Label" type="Label" parent="StarCandy" unique_id=662310361]
+[node name="Label" type="Label" parent="Almond Water" unique_id=2107940981]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 20.0
+offset_right = 133.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0.2627451, 0.16078432, 0.07058824, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StarCandy" type="Button" parent="." unique_id=1565269383]
+visible = false
+texture_filter = 1
+offset_left = 874.0
+offset_top = 522.0
+offset_right = 1015.0
+offset_bottom = 599.0
+disabled = true
+icon = ExtResource("17_fjtid")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="StarCandy" unique_id=49670301]
 layout_mode = 0
 offset_left = 87.0
 offset_top = 20.0
@@ -229,8 +239,8 @@ vertical_alignment = 1
 [connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
 [connection signal="pressed" from="Item" to="." method="_on_item_pressed"]
-[connection signal="pressed" from="Almond Water" to="." method="_on_almond_water_pressed"]
 [connection signal="pressed" from="Ability" to="." method="_on_ability_pressed"]
 [connection signal="pressed" from="Bash" to="." method="_on_bash_pressed"]
 [connection signal="pressed" from="SuperBash" to="." method="_on_super_bash_pressed"]
+[connection signal="pressed" from="Almond Water" to="." method="_on_almond_water_pressed"]
 [connection signal="pressed" from="StarCandy" to="." method="_on_star_candy_pressed"]

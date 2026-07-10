@@ -71,7 +71,7 @@ func _process(_delta: float) -> void:
 	if $Player.SP <= 0 :
 		$Player.SP = 0
 	
-	if $Player.health <= 0 :
+	if Global.player_health <= 0 :
 		Global.player_health = 0
 		update_player_health()
 		await get_tree().create_timer(0.5).timeout
@@ -79,6 +79,7 @@ func _process(_delta: float) -> void:
 		get_node(".").queue_free()
 	if turn == 1 and $Partygoer.health > 0:
 		turn = 0
+		
 		await get_tree().create_timer(1).timeout
 		var turn_action = enemy_turn[randi_range(0, 2)]
 		turn_action.call()
@@ -127,6 +128,10 @@ func _on_button_pressed() -> void:
 	$StarCandy.disabled = true
 
 func _on_block_pressed() -> void:
+	if $Player.SP < Global.player_max_sp:
+		$Player.SP += Global.player_sp_increase
+		set_player_SP()
+		update_SP()
 	$Attack.disabled = true
 	$Block.disabled = true
 	$Item.disabled = true
