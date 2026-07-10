@@ -3,7 +3,7 @@ class_name LifeForm extends CharacterBody3D
 var player = null
 var state_machine
 
-const SPEED = 3.0
+const SPEED = 6.0
 const JUMP_VELOCITY = 4.5
 const ATTACK_RANGE = 2.0
 

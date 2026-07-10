@@ -67,26 +67,26 @@ shape = SubResource("BoxShape3D_47xu7")
 transform = Transform3D(-0.9991229, 0, -0.04187565, 0, 1, 0, 0.04187565, 0, -0.9991229, 0, -1, 0)
 
 [node name="Party Goer" parent="NavigationRegion3D" unique_id=269867450 instance=ExtResource("4_smnfn")]
-transform = Transform3D(-0.2627259, 0, 0.9648707, 0, 1, 0, -0.9648707, 0, -0.2627259, 37.09298, 0, 25.323545)
+transform = Transform3D(-0.20975137, 0, 0.7720132, 0, 0.8, 0, -0.7720132, 0, -0.20975137, 37.09298, 0, 25.323545)
 player_path = NodePath("../../player3D")
 
 [node name="Boss" parent="NavigationRegion3D" unique_id=423815377 instance=ExtResource("6_bugp2")]
 transform = Transform3D(0.024094824, 0, 1.2497679, 0, 1.25, 0, -1.2497679, 0, 0.024094824, -44.42394, 0.8494382, -23.104237)
 
 [node name="Party Goer2" parent="NavigationRegion3D" unique_id=499997472 instance=ExtResource("4_smnfn")]
-transform = Transform3D(0.9989169, 0, -0.046535842, 0, 1, 0, 0.046535842, 0, 0.9989169, -29.228771, 0, 26.24701)
+transform = Transform3D(0.7991333, 0, -0.037228663, 0, 0.8, 0, 0.037228663, 0, 0.7991333, -29.228771, 0, 26.24701)
 player_path = NodePath("../../player3D")
 
 [node name="Party Goer3" parent="NavigationRegion3D" unique_id=463964860 instance=ExtResource("4_smnfn")]
-transform = Transform3D(-0.099302545, 0, -0.99505806, 0, 1, 0, 0.99505806, 0, -0.099302545, 27.0295, 0, -9.611108)
+transform = Transform3D(-0.07944195, 0, -0.79604584, 0, 0.8, 0, 0.79604584, 0, -0.07944195, 27.0295, 0, -9.611108)
 player_path = NodePath("../../player3D")
 
 [node name="Party Goer4" parent="NavigationRegion3D" unique_id=1426640376 instance=ExtResource("4_smnfn")]
-transform = Transform3D(0.54162145, 0, 0.84062386, 0, 1, 0, -0.84062386, 0, 0.54162145, 0.40490347, 0, 0.10226239)
+transform = Transform3D(0.43329668, 0, 0.67249835, 0, 0.8, 0, -0.67249835, 0, 0.43329668, 0.40490347, 0, 0.10226239)
 player_path = NodePath("../../player3D")
 
 [node name="Party Goer5" parent="NavigationRegion3D" unique_id=226707029 instance=ExtResource("4_smnfn")]
-transform = Transform3D(0.12481658, 0, -0.9921813, 0, 1, 0, 0.9921813, 0, 0.12481658, -30.125484, 0, -25.841019)
+transform = Transform3D(0.09985311, 0, -0.7937439, 0, 0.8, 0, 0.7937439, 0, 0.09985311, -30.125484, 0, -25.841019)
 player_path = NodePath("../../player3D")
 
 [node name="LifeForm" parent="NavigationRegion3D" unique_id=280681958 instance=ExtResource("11_ryq82")]
