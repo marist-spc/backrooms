@@ -29,6 +29,7 @@ func level_up():
 		Global.player_healing_time *= 0.75
 		Global.player_sp_increase += 5
 		Global.player_sp += 5
+		Global.player_health = Global.player_max_health
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
