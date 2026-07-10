@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name LifeForm extends CharacterBody3D
 
 var player = null
 var state_machine
@@ -15,12 +15,13 @@ const ATTACK_RANGE = 2.0
 @onready var collisionshape = $CollisionShape3D
 @onready var raycast = $RayCast
 
+
 func _ready() -> void:
 	player = get_node(player_path)
 	state_machine = anim_tree.get("parameters/playback")
 	print(state_machine)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	match state_machine.get_current_node():
 		"Idle":
 			# get the direction vector pointing from enemy to player
@@ -31,17 +32,19 @@ func _physics_process(delta: float) -> void:
 			raycast.look_at(player.global_position, Vector3.UP)
 			if raycast.is_colliding():
 				if raycast.get_collider() == player: 
-					anim_tree.set("parameters/conditions/Walk", true)
+					if Global.in_combat == false:
+						anim_tree.set("parameters/conditions/Walk", true)
 		"Walk":
-			velocity = Vector3.ZERO
-			
-			nav_agent.set_target_position(player.global_position)
-			var next_nav_point = nav_agent.get_next_path_position()
-			velocity = (next_nav_point - global_position).normalized() * SPEED
-			look_at(Vector3(next_nav_point.x, global_position.y, next_nav_point.z), Vector3.UP)
-			anim_tree.set("parameters/conditions/Attack", target_in_range())
+			if Global.in_combat == false:
+				velocity = Vector3.ZERO
+				
+				nav_agent.set_target_position(player.global_position)
+				var next_nav_point = nav_agent.get_next_path_position()
+				velocity = (next_nav_point - global_position).normalized() * SPEED
+				look_at(Vector3(next_nav_point.x, global_position.y, next_nav_point.z), Vector3.UP)
+				anim_tree.set("parameters/conditions/Attack", target_in_range())
 
-			move_and_slide()
+				move_and_slide()
 			
 		"Attack":
 			anim_tree.set("parameters/conditions/Walk", !target_in_range())
@@ -49,3 +52,12 @@ func _physics_process(delta: float) -> void:
 
 func target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
+
+
+
+func _on_animation_tree_animation_finished(_anim_name: StringName) -> void:
+	$Area3D/CollisionShape3D.disabled = false
+
+
+func _on_player_3d_delete_lifeform() -> void:
+	queue_free()

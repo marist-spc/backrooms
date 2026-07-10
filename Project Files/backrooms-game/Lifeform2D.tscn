@@ -1,45 +1,45 @@
 [gd_scene format=3 uid="uid://cfcw5y30fqbbf"]
 
 [ext_resource type="Script" uid="uid://dm3khw5vaokr3" path="res://Lifeform2D.gd" id="1_eipbb"]
-[ext_resource type="Texture2D" uid="uid://do5gap7jtamkl" path="res://Partygoers (1).png" id="2_ogc7m"]
+[ext_resource type="Texture2D" uid="uid://cr54cij4i1dc" path="res://Assets/2D Assets/Lifeform.png" id="2_eipbb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhq4l"]
-atlas = ExtResource("2_ogc7m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogc7m"]
+atlas = ExtResource("2_eipbb")
 region = Rect2(0, 0, 840, 840)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ye4tn"]
-atlas = ExtResource("2_ogc7m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypw2l"]
+atlas = ExtResource("2_eipbb")
 region = Rect2(840, 0, 840, 840)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kybwp"]
-atlas = ExtResource("2_ogc7m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvk77"]
+atlas = ExtResource("2_eipbb")
 region = Rect2(0, 840, 840, 840)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q6a8b"]
-atlas = ExtResource("2_ogc7m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_grydf"]
+atlas = ExtResource("2_eipbb")
 region = Rect2(840, 840, 840, 840)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_soqtg"]
-atlas = ExtResource("2_ogc7m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vndm5"]
+atlas = ExtResource("2_eipbb")
 region = Rect2(0, 1680, 840, 840)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k37g8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jhq4l")
+"texture": SubResource("AtlasTexture_ogc7m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ye4tn")
+"texture": SubResource("AtlasTexture_ypw2l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kybwp")
+"texture": SubResource("AtlasTexture_xvk77")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q6a8b")
+"texture": SubResource("AtlasTexture_grydf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_soqtg")
+"texture": SubResource("AtlasTexture_vndm5")
 }],
 "loop": 1,
 "name": &"default",

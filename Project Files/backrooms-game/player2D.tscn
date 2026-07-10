@@ -51,3 +51,9 @@ position = Vector2(-3, 1)
 scale = Vector2(0.62499994, 0.62499994)
 sprite_frames = SubResource("SpriteFrames_v0sqw")
 animation = &"idle"
+
+[node name="Timer" type="Timer" parent="." unique_id=835854064]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

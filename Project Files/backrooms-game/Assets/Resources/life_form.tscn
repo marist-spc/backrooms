@@ -491,40 +491,40 @@ graph_offset = Vector2(-16.7079, 0)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2oyae"]
 size = Vector3(2, 7, 3)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e2ki"]
+size = Vector3(2, 1.9, 1.4)
+
 [node name="LifeForm" type="CharacterBody3D" unique_id=280681958]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_56kx6")
 
 [node name="LifeformIdle" parent="." unique_id=1079272750 instance=ExtResource("1_8crh3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Skeleton3D" parent="LifeformIdle/Armature" parent_id_path=PackedInt32Array(1079272750, 477287130) index="0" unique_id=434609263]
-bones/0/rotation = Quaternion(0.029860515, 1.16508545e-05, -0.2512504, 0.9674614)
-bones/2/rotation = Quaternion(-0.5398931, -0.04744956, -0.078812554, 0.8366915)
-bones/3/rotation = Quaternion(-0.003568634, 0.0033188944, -0.0017358443, 0.99998665)
-bones/5/rotation = Quaternion(0.4765351, 0.027077565, -0.043611128, 0.8776555)
-bones/6/rotation = Quaternion(-0.00035780296, 0.0005416557, -0.0025478334, 0.99999654)
-bones/8/rotation = Quaternion(-0.24158362, 0.032263122, 0.3723404, 0.8955217)
-bones/10/rotation = Quaternion(0.041747686, -0.10348583, 0.34464976, 0.9320753)
-bones/12/rotation = Quaternion(0.1743304, -0.22374272, 0.3334479, 0.8990888)
-bones/14/rotation = Quaternion(-0.37199977, 0.0770812, 0.3048373, 0.87335503)
-bones/15/rotation = Quaternion(-0.019694248, -6.321498e-05, -0.06967335, 0.9973755)
-bones/16/rotation = Quaternion(-0.027119555, -1.0147576e-05, -0.0953289, 0.9950764)
-bones/17/rotation = Quaternion(-0.029326148, 0.00020860389, -0.09677187, 0.9948744)
-bones/18/rotation = Quaternion(0.99991614, -0.0017117749, 0.0046296273, 0.011971967)
-bones/19/rotation = Quaternion(0.41750568, 0.0016481681, -0.007179049, 0.90864456)
-bones/20/rotation = Quaternion(-0.4343888, 0.0010160587, 0.0027692183, 0.9007206)
-bones/21/rotation = Quaternion(-0.2406079, 1.1570717e-07, -2.8682683e-08, 0.9706224)
-bones/22/rotation = Quaternion(0.2585154, -0.062770106, 0.2532173, 0.9301133)
-bones/23/position = Vector3(-2.7056394, -8.683842, 6.616519)
-bones/24/position = Vector3(-2.0581756, -8.762279, -5.8551326)
+[node name="Skeleton3D" parent="LifeformIdle/Armature" parent_id_path=PackedInt32Array(1079272750, 203423230) index="0" unique_id=1566408494]
+bones/0/rotation = Quaternion(0.07639247, 0.011826383, -0.22910157, 0.9703283)
+bones/2/rotation = Quaternion(-0.5626043, -0.08057708, -0.104420856, 0.8161373)
+bones/3/rotation = Quaternion(-0.4383363, -0.0035183162, -0.49039465, 0.75323445)
+bones/4/rotation = Quaternion(0.772836, 0.0017764013, 0.0018679231, 0.6346006)
+bones/5/rotation = Quaternion(0.47787604, 0.09499009, -0.07470379, 0.87007517)
+bones/6/rotation = Quaternion(0.30851352, 0.011099517, -0.6231447, 0.7186007)
+bones/8/rotation = Quaternion(-0.2727253, -0.008144755, 0.012136705, 0.96198094)
+bones/10/rotation = Quaternion(0.027596068, 0.0011969159, 0.008861204, 0.99957925)
+bones/12/rotation = Quaternion(0.17074572, -0.0062332386, 0.010994905, 0.98523414)
+bones/13/rotation = Quaternion(0.45882595, 0.012682958, 0.014030604, 0.888325)
+bones/14/rotation = Quaternion(-0.4008165, -8.680727e-05, -0.0002062268, 0.9161584)
+bones/15/rotation = Quaternion(0.06309379, 0.008771406, -0.068146415, 0.9956396)
+bones/16/rotation = Quaternion(0.09083515, 0.0050697313, -0.0861635, 0.9921186)
+bones/17/rotation = Quaternion(0.07016429, -0.025669592, -0.07740879, 0.9941961)
+bones/23/position = Vector3(3.4883947, -6.6131315, 3.0087726)
+bones/24/position = Vector3(3.2958622, -5.831321, -1.4856424)
 bones/24/rotation = Quaternion(0.70140815, 0.70140815, 0.08959146, -0.08959147)
-bones/25/position = Vector3(0.04845631, -9.70056, -1.514984)
-bones/26/position = Vector3(-1.9561634, -10.542806, 1.5903763)
 bones/26/rotation = Quaternion(0.7071068, 0.7071068, 6.883939e-08, -6.883939e-08)
-bones/27/position = Vector3(0.5832983, -0.48738217, 0.06889538)
+bones/27/position = Vector3(0.6845809, -0.17641926, 0.21911134)
 
-[node name="AnimationPlayer" parent="LifeformIdle" index="1" unique_id=45626199]
+[node name="AnimationPlayer" parent="LifeformIdle" index="1" unique_id=1608505642]
 libraries/ = SubResource("AnimationLibrary_u6212")
 
 [node name="AnimationTree" type="AnimationTree" parent="LifeformIdle" unique_id=208072748]
@@ -543,5 +543,17 @@ shape = SubResource("BoxShape3D_2oyae")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.6, 0)
 target_position = Vector3(0, 0, -30)
 collision_mask = 3
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1475454675]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1868983033]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1.4999998, 4.15, -3.8)
+shape = SubResource("BoxShape3D_3e2ki")
+disabled = true
+
+[connection signal="animation_finished" from="LifeformIdle/AnimationTree" to="." method="_on_animation_tree_animation_finished"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="LifeformIdle"]

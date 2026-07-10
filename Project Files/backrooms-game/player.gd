@@ -1,9 +1,12 @@
 extends CharacterBody3D
 
-@export var mouse_sensitivity: float = 0.002
+@export var mouse_sensitivity: float = 0.004
 @onready var head: Node3D = $Head
 @onready var eye_camera: Camera3D = $Head/EyeCamera
-
+var combat_scene
+signal delete_partygoer
+signal delete_lifeform
+signal start_combat
 
 
 const SPEED = 5.0
@@ -43,6 +46,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	
+	
 
 	move_and_slide()
 	
@@ -56,6 +61,20 @@ func _unhandled_input(event: InputEvent):
 		get_tree().quit()
 
 
+
+
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://PartygoerFight.tscn")
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	if Global.in_combat == false:
+		if body is PartyGoer:
+			combat_scene = preload("res://PartygoerFight.tscn").instantiate()
+			get_tree().root.add_child(combat_scene)
+			delete_partygoer.emit()
+			start_combat.emit()
+			Global.in_combat = true
+		elif body is LifeForm:
+			combat_scene = preload("res://LifeformFight.tscn").instantiate()
+			get_tree().root.add_child(combat_scene)
+			delete_lifeform.emit()
+			start_combat.emit()
+			Global.in_combat = true
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED

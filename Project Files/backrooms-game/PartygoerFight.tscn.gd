@@ -7,6 +7,9 @@ var turn = 0
 @onready var max_enemy_health = str($Partygoer.max_health)
 @onready var player_SP = str($Player.SP)
 @onready var max_player_SP = str($Player.max_SP)
+var player_health_changed
+
+signal change_player_health
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,6 +18,8 @@ func _ready() -> void:
 	$Partygoer/Label.text = "HP: " + enemy_health + "/" + max_enemy_health
 	$Player/SP.text = "SP: " + player_SP + "/" + max_player_SP
 	$Partygoer/action.text = "Partygoer approaches!"
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	Global.in_combat = true
 
 func set_player_health():
 	player_health = str($Player.health)
@@ -32,7 +37,9 @@ func update_SP():
 var enemy_turn = [attack, defend, doubleHit]
 
 func attack():
-	$Player.health -= randi_range(10,15) * $Partygoer.attack / $Player.defense
+	if $Player.defense < 0:
+		$Player.defense = 1
+	Global.player_health -= randi_range(10,15) * $Partygoer.attack / $Player.defense
 	set_player_health()
 	update_player_health()
 	$Partygoer/action.text = "Partygoer attacks!"
@@ -54,10 +61,21 @@ func doubleHit():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if $Player.SP < 0 :
+	$PlayerHealthBar.value = $Player.health
+	$PlayerHealthBar.max_value = $Player.max_health
+	$PartygoerHealthBar.value = $Partygoer.health
+	$PartygoerHealthBar.max_value = $Partygoer.max_health
+	
+	player_health_changed = $Player.health
+	
+	if $Player.SP <= 0 :
 		$Player.SP = 0
+	
 	if $Player.health <= 0 :
-		$Player.health = 0
+		await get_tree().create_timer(0.5).timeout
+		Global.player_health = 0
+		get_tree().change_scene_to_file("res://main_menu.tscn")
+		get_node(".").queue_free()
 	if turn == 1 and $Partygoer.health > 0:
 		turn = 0
 		await get_tree().create_timer(1).timeout
@@ -73,7 +91,16 @@ func _process(_delta: float) -> void:
 		$SuperBash.disabled = true
 		$Ability.visible = true
 		$Player.defense = $Player.standard_defense
-		
+	
+	$"Almond Water/Label".text = str(Global.inventory_almond_water)
+	$StarCandy/Label.text = str(Global.inventory_star_candy)
+	
+	if $Partygoer.health == 0:
+		Global.player_exp += 1
+		change_player_health.emit(player_health_changed)
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		Global.in_combat = false
+		get_node(".").queue_free()
 
 func _on_button_pressed() -> void:
 	$Partygoer.health -= $Player.attack * 10 / 3 - $Partygoer.defense
@@ -122,37 +149,40 @@ func _on_block_pressed() -> void:
 func _on_item_pressed() -> void:
 	$Item.visible = false
 	$Item.disabled = true
-	if $Player.Inventory["almond water"] > 0:
+	if Global.inventory_almond_water > 0:
 		$"Almond Water".visible = true
 		$"Almond Water".disabled = false
-	if $Player.Inventory["star candy"] > 0:
+	if Global.inventory_star_candy > 0:
 		$StarCandy.visible = true
 		$StarCandy.disabled = false
 	else:
-		$None.visible = true
+		$Item.visible = true
 
 func _on_almond_water_pressed() -> void:
-	$Partygoer.defense = $Partygoer.standard_defense
-	$Player.health += 20
-	$Player.Inventory["almond water"] -= 1
-	if $Player.health > $Player.max_health:
-		$Player.health = $Player.max_health
-	set_player_health()
-	update_player_health()
-	$"Almond Water".disabled = true
-	$"Almond Water".visible = false
-	$Item.visible = true
-	$Attack.disabled = true
-	$Block.disabled = true
-	$Ability.disabled = true
-	$Bash.visible = false
-	$SuperBash.visible = false
-	$Bash.disabled = true
-	$SuperBash.disabled = true
-	$Ability.visible = true
-	$StarCandy.visible = false
-	$StarCandy.disabled = true
-	turn += 1
+	if Global.inventory_almond_water > 0:
+		$Partygoer.defense = $Partygoer.standard_defense
+		$Player.health += 20
+		Global.inventory_almond_water -= 1
+		if Global.inventory_almond_water < 0:
+			Global.inventory_almond_water = 0 
+		if $Player.health > $Player.max_health:
+			$Player.health = $Player.max_health
+		set_player_health()
+		update_player_health()
+		$"Almond Water".disabled = true
+		$"Almond Water".visible = false
+		$Item.visible = true
+		$Attack.disabled = true
+		$Block.disabled = true
+		$Ability.disabled = true
+		$Bash.visible = false
+		$SuperBash.visible = false
+		$Bash.disabled = true
+		$SuperBash.disabled = true
+		$Ability.visible = true
+		$StarCandy.visible = false
+		$StarCandy.disabled = true
+		turn += 1
 
 
 
@@ -235,7 +265,7 @@ func _on_super_bash_pressed() -> void:
 func _on_star_candy_pressed() -> void:
 	$Partygoer.defense = $Partygoer.standard_defense
 	$Player.SP += 5
-	$Player.Inventory["star candy"] -= 1
+	Global.inventory_star_candy -= 1
 	if $Player.SP > $Player.max_SP:
 		$Player.SP = $Player.max_SP
 	set_player_SP()

@@ -13,7 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://5r4ng1hvbhyy" path="res://Combat Assets/CombatBG/sprite_0.png" id="10_eucx6"]
 [ext_resource type="Texture2D" uid="uid://ma2l7x4uw24t" path="res://Combat Assets/CombatBG/sprite_1.png" id="11_k3v48"]
 [ext_resource type="Texture2D" uid="uid://dcyidikf0di4w" path="res://Combat Assets/CombatBG/sprite_2.png" id="12_talti"]
+[ext_resource type="Texture2D" uid="uid://d2q7mo7jm2lk3" path="res://Combat Assets/AlmondWaterButton.png" id="13_qcutj"]
 [ext_resource type="Texture2D" uid="uid://wi4jkhdmwycw" path="res://Combat Assets/CombatBG/sprite_3.png" id="13_slv0g"]
+[ext_resource type="Texture2D" uid="uid://clexmtf7m7wgw" path="res://HealthBar.png" id="15_talti"]
+[ext_resource type="Texture2D" uid="uid://ox6yhswf1wd6" path="res://Combat Assets/StarCandyButton.png" id="17_wqmuf"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_bm8rm"]
 frames = 4
@@ -36,14 +39,18 @@ offset_bottom = 647.0
 texture = SubResource("AnimatedTexture_bm8rm")
 stretch_mode = 1
 
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="." unique_id=1545934895]
+texture_filter = 1
+offset_left = 67.0
+offset_top = 216.0
+offset_right = 255.0
+offset_bottom = 362.0
+nine_patch_stretch = true
+texture_under = ExtResource("7_k3v48")
+texture_progress = ExtResource("15_talti")
+
 [node name="Player" parent="." unique_id=1223803813 instance=ExtResource("2_gr412")]
 position = Vector2(162, 507)
-
-[node name="TextHolder" type="Sprite2D" parent="Player" unique_id=1273744050]
-texture_filter = 1
-position = Vector2(-3.999998, -215.33333)
-scale = Vector2(2.8645835, 2.2395835)
-texture = ExtResource("7_k3v48")
 
 [node name="TextHolder2" type="Sprite2D" parent="Player" unique_id=1770766378]
 texture_filter = 1
@@ -71,6 +78,16 @@ theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PartygoerHealthBar" type="TextureProgressBar" parent="." unique_id=1433087991]
+texture_filter = 1
+offset_left = 681.0
+offset_top = 80.0
+offset_right = 890.0
+offset_bottom = 222.0
+nine_patch_stretch = true
+texture_under = ExtResource("7_k3v48")
+texture_progress = ExtResource("15_talti")
+
 [node name="Partygoer" parent="." unique_id=1555681569 instance=ExtResource("3_gr412")]
 position = Vector2(-115, 7)
 health = 90
@@ -84,17 +101,11 @@ position = Vector2(953.00006, 82)
 scale = Vector2(5.015625, 2.34375)
 texture = ExtResource("7_k3v48")
 
-[node name="TextHolder2" type="Sprite2D" parent="Partygoer" unique_id=1846126597]
-texture_filter = 1
-position = Vector2(903.00006, 147)
-scale = Vector2(3.3125, 2.03125)
-texture = ExtResource("7_k3v48")
-
 [node name="Label" type="Label" parent="Partygoer" unique_id=1622196255]
-offset_left = 803.0
-offset_top = 130.0
-offset_right = 1006.0
-offset_bottom = 165.0
+offset_left = 801.0
+offset_top = 125.0
+offset_right = 1004.0
+offset_bottom = 160.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -143,22 +154,29 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="None" type="Button" parent="." unique_id=237543072]
-visible = false
-offset_left = 762.0
-offset_top = 456.0
-offset_right = 877.0
-offset_bottom = 572.0
-disabled = true
-text = "no items"
-
 [node name="Almond Water" type="Button" parent="." unique_id=2060077665]
 visible = false
-offset_left = 880.0
-offset_top = 464.0
-offset_right = 1003.0
-offset_bottom = 524.0
-text = "Almond Water"
+texture_filter = 1
+offset_left = 866.0
+offset_top = 448.0
+offset_right = 1014.0
+offset_bottom = 531.0
+icon = ExtResource("13_qcutj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Almond Water" unique_id=1561602114]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 20.0
+offset_right = 133.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0.2627451, 0.16078432, 0.07058824, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Ability" type="Button" parent="." unique_id=348993660]
 texture_filter = 1
@@ -199,13 +217,30 @@ expand_icon = true
 
 [node name="StarCandy" type="Button" parent="." unique_id=1494793763]
 visible = false
-offset_left = 884.0
-offset_top = 532.0
-offset_right = 1014.5807
-offset_bottom = 576.0
+texture_filter = 1
+offset_left = 874.0
+offset_top = 522.0
+offset_right = 1015.0
+offset_bottom = 599.0
 disabled = true
-text = "Star Candy"
+icon = ExtResource("17_wqmuf")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
+[node name="Label" type="Label" parent="StarCandy" unique_id=2138983861]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 20.0
+offset_right = 127.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.38928655, 0.38928664, 0.38928658, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="change_player_health" from="." to="Player" method="health_change"]
 [connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
 [connection signal="pressed" from="Item" to="." method="_on_item_pressed"]
