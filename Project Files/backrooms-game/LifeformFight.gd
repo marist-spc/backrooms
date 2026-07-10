@@ -45,12 +45,13 @@ func defend():
 	$Lifeform/action.text = "Lifeform defends."
 
 func Defense_lower():
-	if $Player.defense > 0:
-		$Player.health -= randi_range(10,16) * ($Lifeform.attack / $Player.defense) - 2
-		set_player_health()
-		update_player_health()
-		$Player.defense /= 2
-		$Lifeform/action.text = "Lifeform attacks! Your defense has been lowered!"
+	if $Player.defense < 0:
+		$Player.defense = 1
+	$Player.health -= randi_range(10,16) * ($Lifeform.attack / $Player.defense) - 2
+	set_player_health()
+	update_player_health()
+	$Player.defense /= 2
+	$Lifeform/action.text = "Lifeform attacks! Your defense has been lowered!"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -64,6 +65,7 @@ func _process(_delta: float) -> void:
 	if $Player.SP < 0 :
 		$Player.SP = 0
 	if $Player.health <= 0 :
+		await get_tree().create_timer(0.5).timeout
 		Global.player_health = 0
 		get_tree().change_scene_to_file("res://main_menu.tscn")
 		get_node(".").queue_free()
