@@ -148,15 +148,6 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="None" type="Button" parent="." unique_id=237543072]
-visible = false
-offset_left = 762.0
-offset_top = 456.0
-offset_right = 877.0
-offset_bottom = 572.0
-disabled = true
-text = "no items"
-
 [node name="Almond Water" type="Button" parent="." unique_id=2060077665]
 visible = false
 offset_left = 880.0

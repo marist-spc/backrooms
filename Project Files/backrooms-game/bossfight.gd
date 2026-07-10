@@ -138,14 +138,15 @@ func _on_block_pressed() -> void:
 func _on_item_pressed() -> void:
 	$Item.visible = false
 	$Item.disabled = true
-	if $Player.Inventory["almond water"] > 0:
+	if Global.inventory_almond_water > 0:
 		$"Almond Water".visible = true
 		$"Almond Water".disabled = false
-	if $Player.Inventory["star candy"] > 0:
+	if Global.inventory_star_candy > 0:
 		$StarCandy.visible = true
 		$StarCandy.disabled = false
 	else:
-		$None.visible = true
+		$Item.visible = true
+		$Item.disabled = false
 
 func _on_almond_water_pressed() -> void:
 	$Boss.defense = $Boss.standard_defense
