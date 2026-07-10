@@ -26,6 +26,7 @@ func level_up():
 		Global.player_max_sp += 5
 		Global.player_level_up_exp *= 1.35
 		Global.player_healing += 1
+		Global.player_healing_time *= 0.75
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,6 +37,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	max_health_var.emit(max_health)
+	$Timer.wait_time = Global.player_healing_time
+	level_up()
 
 
 func health_change(player_health_changed):

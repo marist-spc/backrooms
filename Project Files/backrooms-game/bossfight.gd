@@ -151,7 +151,7 @@ func _on_item_pressed() -> void:
 func _on_almond_water_pressed() -> void:
 	$Boss.defense = $Boss.standard_defense
 	$Player.health += 20
-	$Player.Inventory["almond water"] -= 1
+	Global.inventory_almond_water -= 1
 	if $Player.health > $Player.max_health:
 		$Player.health = $Player.max_health
 	set_player_health()
@@ -252,7 +252,7 @@ func _on_super_bash_pressed() -> void:
 func _on_star_candy_pressed() -> void:
 	$Boss.defense = $Boss.standard_defense
 	$Player.SP += 5
-	$Player.Inventory["star candy"] -= 1
+	Global.inventory_star_candy -= 1
 	if $Player.SP > $Player.max_SP:
 		$Player.SP = $Player.max_SP
 	set_player_SP()

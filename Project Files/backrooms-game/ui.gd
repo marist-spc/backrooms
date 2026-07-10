@@ -2,6 +2,9 @@ extends Control
 
 func _process(_delta: float) -> void:
 	$HealthBar.value = Global.player_health
+	$Label.text = "Level: " + str(Global.player_level)
+	$LevelBar.max_value = Global.player_level_up_exp
+	$LevelBar.value = Global.player_exp
 
 
 
