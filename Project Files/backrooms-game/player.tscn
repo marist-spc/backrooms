@@ -16,7 +16,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.167631, 0, 0)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_4flbx")
-mouse_sensitivity = null
 
 [node name="CharacterBody3D" type="CollisionShape3D" parent="." unique_id=728791337]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4040527, 0)
@@ -34,7 +33,7 @@ current = true
 
 [node name="SeeCast" type="RayCast3D" parent="Head/EyeCamera" unique_id=942683381]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 4.1975582e-08, -1, 0, 3.5200002, 1.1924881e-08, 0, -0.17850828, 0.4466225)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.3067882, -0.99619466, 0, 3.5066054, 0.087155744, 0, -0.17850828, 0.4466225)
 collision_mask = 9
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=944861254]
