@@ -56,7 +56,7 @@ func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:
 		var relative = event.relative * mouse_sensitivity
 		head.rotate_y(-relative.x)
-		eye_camera.rotate_x(relative.y)
+		eye_camera.rotate_x(-relative.y)
 		eye_camera.rotation.x = clamp(eye_camera.rotation.x, -0.7, 0.7)
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()

@@ -67,7 +67,7 @@ func _process(_delta: float) -> void:
 		$Player.SP = 0
 		update_SP()
 		
-	if Global.player_health <= 0 :
+	if $Player.health <= 0 :
 		$Player.health = 0
 		update_player_health()
 		await get_tree().create_timer(0.5).timeout

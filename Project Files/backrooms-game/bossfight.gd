@@ -44,15 +44,15 @@ func defend():
 	$Boss/action.text = "defends."
 
 func doubleHit():
-	$Player.health -= randi_range(9,14) * $Boss.attack / $Player.defense - 2
+	$Player.health -= randi_range(9,14) * $Boss.attack / $Player.defense
 	set_player_health()
 	update_player_health()
 	$Boss/action.text = "attacks."
-	await get_tree().create_timer(1).timeout
-	$Player.health -= randi_range(7,12) * $Boss.attack / $Player.defense - 2
+	await get_tree().create_timer(0.5).timeout
+	$Player.health -= randi_range(7,12) * $Boss.attack / $Player.defense 
 	set_player_health()
 	update_player_health()
-	$Boss/action.text = "attacks again."
+	$Boss/action.text = "attacks twice."
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -68,6 +68,9 @@ func _process(_delta: float) -> void:
 	if $Player.health <= 0 :
 		$Player.health = 0
 		update_player_health()
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file("res://main_menu.tscn")
+		get_node(".").queue_free()
 	
 	
 	player_health_changed = $Player.health
@@ -90,6 +93,9 @@ func _process(_delta: float) -> void:
 	
 	$"Almond Water/Label".text = str(Global.inventory_almond_water)
 	$StarCandy/Label.text = str(Global.inventory_star_candy)
+	
+	if $Boss.health == 0:
+		get_tree().change_scene_to_file("res://win_screen.tscn")
 
 func _on_button_pressed() -> void:
 	$Boss.health -= $Player.attack * 10 / 3 - $Boss.defense

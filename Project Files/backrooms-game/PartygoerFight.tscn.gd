@@ -7,6 +7,7 @@ var turn = 0
 @onready var max_enemy_health = str($Partygoer.max_health)
 @onready var player_SP = str($Player.SP)
 @onready var max_player_SP = str($Player.max_SP)
+@onready var partygoer_fight = randi_range(10,15) * $Partygoer.attack / $Player.defense
 var player_health_changed
 
 signal change_player_health
@@ -39,9 +40,14 @@ var enemy_turn = [attack, defend, doubleHit]
 func attack():
 	if $Player.defense < 0:
 		$Player.defense = 1
-	Global.player_health -= randi_range(10,15) * $Partygoer.attack / $Player.defense
-	set_player_health()
-	update_player_health()
+	if partygoer_fight < 1:
+		Global.player_health -= 2
+		set_player_health()
+		update_player_health()
+	else: 
+		Global.player_health -= partygoer_fight
+		set_player_health()
+		update_player_health()
 	$Partygoer/action.text = "Partygoer attacks!"
 
 func defend():
@@ -53,11 +59,11 @@ func doubleHit():
 	set_player_health()
 	update_player_health()
 	$Partygoer/action.text = "Partygoer attacks"
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.5).timeout
 	$Player.health -= randi_range(7,12) * $Partygoer.attack / $Player.defense 
 	set_player_health()
 	update_player_health()
-	$Partygoer/action.text = "Partygoer attacks again!"
+	$Partygoer/action.text = "Partygoer attacks twice!"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -71,7 +77,7 @@ func _process(_delta: float) -> void:
 	if $Player.SP <= 0 :
 		$Player.SP = 0
 	
-	if Global.player_health <= 0 :
+	if $Player.health <= 0 :
 		Global.player_health = 0
 		update_player_health()
 		await get_tree().create_timer(0.5).timeout
