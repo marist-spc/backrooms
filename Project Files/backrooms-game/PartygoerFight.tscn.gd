@@ -49,12 +49,12 @@ func defend():
 	$Partygoer/action.text = "Partygoer defends."
 
 func doubleHit():
-	$Player.health -= randi_range(9,14) * $Partygoer.attack / $Player.defense - 2
+	$Player.health -= randi_range(9,14) * $Partygoer.attack / $Player.defense
 	set_player_health()
 	update_player_health()
 	$Partygoer/action.text = "Partygoer attacks"
 	await get_tree().create_timer(1).timeout
-	$Player.health -= randi_range(7,12) * $Partygoer.attack / $Player.defense - 2
+	$Player.health -= randi_range(7,12) * $Partygoer.attack / $Player.defense 
 	set_player_health()
 	update_player_health()
 	$Partygoer/action.text = "Partygoer attacks again!"

@@ -45,9 +45,13 @@ func defend():
 	$Lifeform/action.text = "Lifeform defends."
 
 func Defense_lower():
+<<<<<<< HEAD
+	$Player.health -= randi_range(10,16) * ($Lifeform.attack / $Player.defense)
+=======
 	if $Player.defense < 0:
 		$Player.defense = 1
 	$Player.health -= randi_range(10,16) * ($Lifeform.attack / $Player.defense) - 2
+>>>>>>> 842a243e3219f0ef52eb3096ccc536c9b6a99bac
 	set_player_health()
 	update_player_health()
 	$Player.defense /= 2
@@ -64,12 +68,20 @@ func _process(_delta: float) -> void:
 	
 	if $Player.SP < 0 :
 		$Player.SP = 0
+		update_SP()
+		
 	if $Player.health <= 0 :
+<<<<<<< HEAD
+		$Player.health = 0
+		update_player_health()
+		
+=======
 		Global.player_health = 0
 		update_player_health()
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://main_menu.tscn")
 		get_node(".").queue_free()
+>>>>>>> 842a243e3219f0ef52eb3096ccc536c9b6a99bac
 	if turn == 1 and $Lifeform.health > 0:
 		turn = 0
 		await get_tree().create_timer(1).timeout
@@ -92,7 +104,7 @@ func _process(_delta: float) -> void:
 	
 	
 	if $Lifeform.health == 0:
-		Global.player_exp += 1
+		Global.player_exp += 30
 		change_player_health.emit(player_health_changed)
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		Global.in_combat = false

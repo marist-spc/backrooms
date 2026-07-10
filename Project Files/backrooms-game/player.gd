@@ -7,6 +7,7 @@ var combat_scene
 signal delete_partygoer
 signal delete_lifeform
 signal start_combat
+signal delete_boss
 
 
 const SPEED = 5.0
@@ -78,4 +79,14 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			#start_combat.emit()
 			#Global.in_combat = true
 			pass
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+
+
+func _on_boss_start_boss_fight() -> void:
+	if Global.in_combat == false:
+		combat_scene = preload("res://BOSSFIGHT.tscn").instantiate()
+		get_tree().root.add_child(combat_scene)
+		delete_boss.emit()
+		start_combat.emit()
+		Global.in_combat = true
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED

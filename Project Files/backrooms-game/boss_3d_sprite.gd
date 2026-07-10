@@ -10,3 +10,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	emit_signal("Start_Boss_Fight")
+
+
+func _on_player_3d_delete_boss() -> void:
+	queue_free()

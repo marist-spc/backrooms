@@ -59,6 +59,8 @@ animations = [{
 script = ExtResource("1_vnpv6")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1343963142]
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1460321731]
 shape = SubResource("CapsuleShape3D_k37g8")
@@ -66,4 +68,6 @@ shape = SubResource("CapsuleShape3D_k37g8")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1422439585]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_k37g8")
-frame_progress = 0.5546549
+frame_progress = 0.725087
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
