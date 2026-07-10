@@ -45,7 +45,6 @@ func defend():
 	$Lifeform/action.text = "Lifeform defends."
 
 func Defense_lower():
-	$Player.health -= randi_range(10,16) * ($Lifeform.attack / $Player.defense)
 	if $Player.defense < 0:
 		$Player.defense = 1
 	$Player.health -= randi_range(10,16) * ($Lifeform.attack / $Player.defense) - 2
@@ -69,9 +68,6 @@ func _process(_delta: float) -> void:
 		
 	if $Player.health <= 0 :
 		$Player.health = 0
-		update_player_health()
-		
-		Global.player_health = 0
 		update_player_health()
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://main_menu.tscn")
