@@ -6,5 +6,6 @@
 albedo_texture = ExtResource("1_imd12")
 backlight_enabled = true
 backlight = Color(1, 1, 0.90588236, 1)
+uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 uv1_world_triplanar = true

@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dyercyo67dm1i" path="res://walls.tscn" id="1_vfa6b"]
 [ext_resource type="PackedScene" uid="uid://bamcgkyaw4co6" path="res://player.tscn" id="2_t218m"]
 [ext_resource type="Material" uid="uid://c41hxvvxo3f5i" path="res://BackroomsFloor.tres" id="3_smnfn"]
+[ext_resource type="Material" uid="uid://gdkmvjpxiv5s" path="res://Ceiling.tres" id="4_bugp2"]
 [ext_resource type="PackedScene" uid="uid://daxk0bedguv08" path="res://Assets/Enemies/enemy.tscn" id="4_smnfn"]
-[ext_resource type="PackedScene" uid="uid://6hpqdiaaojcf" path="res://item_test.tscn" id="5_nu7sl"]
 [ext_resource type="PackedScene" uid="uid://b2xcrtquf8uo4" path="res://Boss3DSprite.tscn" id="6_bugp2"]
 [ext_resource type="PackedScene" uid="uid://bel3gbrndphyi" path="res://almond_water.tscn" id="6_omks2"]
 [ext_resource type="PackedScene" uid="uid://rbe02im2hdkx" path="res://star_candy.tscn" id="7_wwd78"]
@@ -24,22 +24,15 @@ size = Vector3(104, 1, 60)
 [sub_resource type="BoxShape3D" id="BoxShape3D_47xu7"]
 size = Vector3(104, 1, 60)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6xcw"]
-backlight_enabled = true
-backlight = Color(1, 1, 0.90588236, 1)
-uv1_triplanar = true
-uv1_world_triplanar = true
-
 [sub_resource type="BoxMesh" id="BoxMesh_smnfn"]
-material = SubResource("StandardMaterial3D_v6xcw")
+material = ExtResource("4_bugp2")
 size = Vector3(104, 1, 60)
 
 [node name="Level0" type="Node3D" unique_id=1880062457]
 script = ExtResource("1_08q8e")
 
 [node name="player3D" parent="." unique_id=415036748 instance=ExtResource("2_t218m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.35224, 0.47180176, -25.035156)
-mouse_sensitivity = 0.004
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -46.35224, 0.47180176, -25.035156)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=52557283]
 transform = Transform3D(-0.9991228, 0, 0.041875646, 0, 1, 0, -0.041875646, 0, -0.9991228, 0, 1, 0)
@@ -59,7 +52,6 @@ shape = SubResource("BoxShape3D_47xu7")
 
 [node name="Ceiling" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1377640456]
 transform = Transform3D(1.0000001, 0, -3.7252903e-09, 0, 1, 0, 3.7252903e-09, 0, 1.0000001, 0, -2, 0)
-visible = false
 collision_layer = 0
 collision_mask = 14
 
