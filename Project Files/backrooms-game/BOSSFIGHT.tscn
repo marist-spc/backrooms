@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dcyidikf0di4w" path="res://Combat Assets/CombatBG/sprite_2.png" id="3_aaxxi"]
 [ext_resource type="Texture2D" uid="uid://wi4jkhdmwycw" path="res://Combat Assets/CombatBG/sprite_3.png" id="4_prn4p"]
 [ext_resource type="PackedScene" uid="uid://clb8ycwsgctg" path="res://player2D.tscn" id="5_fjtid"]
+[ext_resource type="Texture2D" uid="uid://clexmtf7m7wgw" path="res://HealthBar.png" id="6_oq58p"]
 [ext_resource type="Texture2D" uid="uid://deegx7iofnxvt" path="res://Combat Assets/TextHolder.png" id="6_qsmov"]
 [ext_resource type="PackedScene" uid="uid://brioa2asaayhm" path="res://boss.tscn" id="7_simle"]
 [ext_resource type="Texture2D" uid="uid://c61es5k6hheih" path="res://Assets/Combat Assests/FightButton.png" id="8_5j18r"]
@@ -33,6 +34,16 @@ offset_right = 1152.0
 offset_bottom = 647.0
 texture = SubResource("AnimatedTexture_bm8rm")
 stretch_mode = 1
+
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="." unique_id=907303300]
+texture_filter = 1
+offset_left = 67.0
+offset_top = 216.0
+offset_right = 255.0
+offset_bottom = 362.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_qsmov")
+texture_progress = ExtResource("6_oq58p")
 
 [node name="Player" parent="." unique_id=1223803813 instance=ExtResource("5_fjtid")]
 position = Vector2(162, 507)
@@ -101,6 +112,16 @@ offset_bottom = 108.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BossHealthBar" type="TextureProgressBar" parent="." unique_id=2004931718]
+texture_filter = 1
+offset_left = 693.0
+offset_top = 85.0
+offset_right = 902.0
+offset_bottom = 227.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_qsmov")
+texture_progress = ExtResource("6_oq58p")
 
 [node name="Attack" type="Button" parent="." unique_id=1218250415]
 texture_filter = 1

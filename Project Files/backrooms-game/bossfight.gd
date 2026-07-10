@@ -7,7 +7,9 @@ var turn = 0
 @onready var max_enemy_health = str($Boss.max_health)
 @onready var player_SP = str($Player.SP)
 @onready var max_player_SP = str($Player.max_SP)
+var player_health_changed
 
+signal change_player_health
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -56,8 +58,18 @@ func doubleHit():
 func _process(_delta: float) -> void:
 	if $Player.SP < 0 :
 		$Player.SP = 0
+		update_SP()
 	if $Player.health <= 0 :
 		$Player.health = 0
+		update_player_health()
+	
+	$PlayerHealthBar.value = $Player.health
+	$PlayerHealthBar.max_value = $Player.max_health
+	$BossHealthBar.value = $Boss.health
+	$BossHealthBar.max_value = $Boss.max_health
+	
+	player_health_changed = $Player.health
+	
 	if turn == 1 and $Boss.health > 0:
 		turn = 0
 		await get_tree().create_timer(1).timeout
@@ -73,7 +85,8 @@ func _process(_delta: float) -> void:
 		$SuperBash.disabled = true
 		$Ability.visible = true
 		$Player.defense = $Player.standard_defense
-		
+	$"Almond Water/Label".text = str(Global.inventory_almond_water)
+	$StarCandy/Label.text = str(Global.inventory_star_candy)
 
 func _on_button_pressed() -> void:
 	$Boss.health -= $Player.attack * 10 / 3 - $Boss.defense
