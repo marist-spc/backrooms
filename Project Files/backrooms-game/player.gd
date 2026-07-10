@@ -73,11 +73,12 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			start_combat.emit()
 			Global.in_combat = true
 		elif body is LifeForm:
-			combat_scene = preload("res://LifeformFight.tscn").instantiate()
-			get_tree().root.add_child(combat_scene)
-			delete_lifeform.emit()
-			start_combat.emit()
-			Global.in_combat = true
+			#combat_scene = preload("res://LifeformFight.tscn").instantiate()
+			#get_tree().root.add_child(combat_scene)
+			#delete_lifeform.emit()
+			#start_combat.emit()
+			#Global.in_combat = true
+			pass
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 
