@@ -56,6 +56,12 @@ func doubleHit():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	$PlayerHealthBar.value = $Player.health
+	$PlayerHealthBar.max_value = $Player.max_health
+	$BossHealthBar.value = $Boss.health
+	$BossHealthBar.max_value = $Boss.max_health
+	
+	
 	if $Player.SP < 0 :
 		$Player.SP = 0
 		update_SP()
@@ -63,10 +69,6 @@ func _process(_delta: float) -> void:
 		$Player.health = 0
 		update_player_health()
 	
-	$PlayerHealthBar.value = $Player.health
-	$PlayerHealthBar.max_value = $Player.max_health
-	$BossHealthBar.value = $Boss.health
-	$BossHealthBar.max_value = $Boss.max_health
 	
 	player_health_changed = $Player.health
 	
@@ -85,6 +87,7 @@ func _process(_delta: float) -> void:
 		$SuperBash.disabled = true
 		$Ability.visible = true
 		$Player.defense = $Player.standard_defense
+	
 	$"Almond Water/Label".text = str(Global.inventory_almond_water)
 	$StarCandy/Label.text = str(Global.inventory_star_candy)
 
