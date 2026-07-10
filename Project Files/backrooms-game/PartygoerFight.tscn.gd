@@ -37,6 +37,8 @@ func update_SP():
 var enemy_turn = [attack, defend, doubleHit]
 
 func attack():
+	if $Player.defense < 0:
+		$Player.defense = 1
 	Global.player_health -= randi_range(10,15) * $Partygoer.attack / $Player.defense
 	set_player_health()
 	update_player_health()
@@ -68,9 +70,13 @@ func _process(_delta: float) -> void:
 	
 	if $Player.SP <= 0 :
 		$Player.SP = 0
-	if Global.player_health <= 0 :
+	
+	if $Player.health <= 0 :
 		Global.player_health = 0
+		update_player_health()
+		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://main_menu.tscn")
+		get_node(".").queue_free()
 	if turn == 1 and $Partygoer.health > 0:
 		turn = 0
 		await get_tree().create_timer(1).timeout

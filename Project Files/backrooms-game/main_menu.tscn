@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://da7dpem86evx7" path="res://Combat Assets/MainMenuScreen.png" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://lpfa4vssjhb4" path="res://main_menu.gd" id="1_glbon"]
 [ext_resource type="Texture2D" uid="uid://nklrpyk7yr6q" path="res://2D Buttons/Start Buttons.png" id="2_jix8l"]
-[ext_resource type="Texture2D" uid="uid://d3fcxqdj2ooiq" path="res://2D Buttons/Menu Buttons.png" id="3_glbon"]
 [ext_resource type="Texture2D" uid="uid://qvjawxyfy3jo" path="res://2D Buttons/Exit Buttons.png" id="4_nlkkf"]
 
 [node name="MainMenu" type="Node" unique_id=1563416522]
@@ -25,16 +24,6 @@ icon = ExtResource("2_jix8l")
 flat = true
 expand_icon = true
 
-[node name="MenuButton" type="Button" parent="." unique_id=1589161611]
-texture_filter = 1
-offset_left = 24.0
-offset_top = 400.0
-offset_right = 207.0
-offset_bottom = 511.0
-icon = ExtResource("3_glbon")
-flat = true
-expand_icon = true
-
 [node name="ExitButton" type="Button" parent="." unique_id=695799031]
 texture_filter = 1
 offset_left = 24.0
@@ -46,5 +35,4 @@ flat = true
 expand_icon = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
