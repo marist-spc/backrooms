@@ -14,7 +14,7 @@ const ATTACK_RANGE = 2.0
 @onready var anim_tree = $LifeformIdle/AnimationTree
 @onready var collisionshape = $CollisionShape3D
 @onready var raycast = $RayCast
-
+var combat_scene
 
 func _ready() -> void:
 	player = get_node(player_path)
@@ -43,17 +43,26 @@ func _physics_process(_delta: float) -> void:
 				velocity = (next_nav_point - global_position).normalized() * SPEED
 				look_at(Vector3(next_nav_point.x, global_position.y, next_nav_point.z), Vector3.UP)
 				anim_tree.set("parameters/conditions/Attack", target_in_range())
+				
+
 
 				move_and_slide()
 			
 		"Attack":
 			anim_tree.set("parameters/conditions/Walk", !target_in_range())
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
+			lifeform_start_fight()
 
 func target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
 
-
+func lifeform_start_fight():
+	await get_tree().create_timer(0.625).timeout
+	combat_scene = preload("res://LifeformFight.tscn").instantiate()
+	get_tree().root.add_child(combat_scene)
+	Global.in_combat = true
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	queue_free()
 
 func _on_animation_tree_animation_finished(_anim_name: StringName) -> void:
 	$Area3D/CollisionShape3D.disabled = false
