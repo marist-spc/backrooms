@@ -68,12 +68,10 @@ func _process(_delta: float) -> void:
 		
 	if $Player.health <= 0 :
 		$Player.health = 0
-		Global.player_health = 0
 		update_player_health()
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://main_menu.tscn")
 		get_node(".").queue_free()
-
 	if turn == 1 and $Lifeform.health > 0:
 		turn = 0
 		await get_tree().create_timer(1).timeout

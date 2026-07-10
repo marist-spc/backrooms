@@ -59,7 +59,6 @@ shape = SubResource("BoxShape3D_47xu7")
 
 [node name="Ceiling" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1377640456]
 transform = Transform3D(1.0000001, 0, -3.7252903e-09, 0, 1, 0, 3.7252903e-09, 0, 1.0000001, 0, -2, 0)
-visible = false
 collision_layer = 0
 collision_mask = 14
 
@@ -79,7 +78,7 @@ transform = Transform3D(-0.2627259, 0, 0.96487063, 0, 1, 0, -0.96487063, 0, -0.2
 player_path = NodePath("../../player3D")
 
 [node name="Boss" parent="NavigationRegion3D" unique_id=423815377 instance=ExtResource("6_bugp2")]
-transform = Transform3D(0.028913796, 0, 1.4997213, 0, 1.5, 0, -1.4997213, 0, 0.028913796, -45.381584, 0.9529214, -22.280949)
+transform = Transform3D(0.024094824, 0, 1.2497679, 0, 1.25, 0, -1.2497679, 0, 0.024094824, -44.42394, 0.8494382, -23.104237)
 
 [node name="Party Goer2" parent="NavigationRegion3D" unique_id=499997472 instance=ExtResource("4_smnfn")]
 transform = Transform3D(0.9989169, 0, -0.046535842, 0, 1, 0, 0.046535842, 0, 0.9989169, -29.228771, 0, 26.24701)
