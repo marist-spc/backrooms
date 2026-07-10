@@ -15,3 +15,4 @@ var player_healing = 1
 var player_healing_time = 5
 var inventory_almond_water = 0
 var inventory_star_candy = 0
+var player_sp_increase = 1

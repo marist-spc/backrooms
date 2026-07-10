@@ -125,6 +125,10 @@ func _on_button_pressed() -> void:
 	$Ability.visible = true
 
 func _on_block_pressed() -> void:
+	if $Player.SP < Global.player_max_sp:
+		$Player.SP += Global.player_sp_increase
+		set_player_SP()
+		update_SP()
 	$Attack.disabled = true
 	$Block.disabled = true
 	$Item.disabled = true
