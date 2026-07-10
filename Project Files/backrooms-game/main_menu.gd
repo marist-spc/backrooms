@@ -5,6 +5,7 @@ extends Node
 func _ready() -> void:
 	if Global.player_health < 100:
 		Global.player_health = 100
+	Global.in_combat = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

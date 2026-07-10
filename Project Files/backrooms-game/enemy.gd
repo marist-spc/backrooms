@@ -15,6 +15,7 @@ const Too_Far_Away = 7.0
 @onready var anim_tree = $"A-Pose/AnimationTree"
 @onready var collisionshape = $CollisionShape3D
 @onready var raycast = $RayCast
+var combat_scene
 
 func _ready() -> void:
 	player = get_node(player_path)
@@ -51,10 +52,19 @@ func _physics_process(_delta: float) -> void:
 		"Attack":
 			anim_tree.set("parameters/conditions/Walk", !target_in_range())
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
-			
+			partygoer_start_fight()
 func target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
 	
+
+func partygoer_start_fight():
+	await get_tree().create_timer(0.875).timeout
+	combat_scene = preload("res://PartygoerFight.tscn").instantiate()
+	get_tree().root.add_child(combat_scene)
+	Global.in_combat = true
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	queue_free()
+
 
 func too_far():
 	return global_position.distance_to(player.global_position) > Too_Far_Away
