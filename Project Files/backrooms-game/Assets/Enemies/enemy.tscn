@@ -496,7 +496,7 @@ advance_condition = &"Walk"
 states/Attack/node = SubResource("AnimationNodeAnimation_5lhdp")
 states/Attack/position = Vector2(668, 90)
 states/Idle/node = SubResource("AnimationNodeAnimation_dkpqf")
-states/Idle/position = Vector2(331.30746, 99.97269)
+states/Idle/position = Vector2(331.30746, 100)
 states/Walk/node = SubResource("AnimationNodeAnimation_gud5n")
 states/Walk/position = Vector2(500.66666, 104.666664)
 transitions = ["Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_knfqj"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_l3pa1"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_5lhdp"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_gud5n")]
@@ -516,32 +516,10 @@ script = ExtResource("1_hrk6l")
 [node name="A-Pose" parent="." unique_id=139543420 instance=ExtResource("2_5lhdp")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.120966434, -0.00034976006, -0.037009656)
 
-[node name="Armature" parent="A-Pose" index="0" unique_id=930566990]
+[node name="Armature" parent="A-Pose" index="0" unique_id=1468475439]
 transform = Transform3D(-9.647943e-08, 0, -2.2071922, 0, 2.2071922, 0, 2.2071922, 0, -9.647943e-08, 0, 5.960957, 0)
 
-[node name="Skeleton3D" parent="A-Pose/Armature" index="0" unique_id=626536660]
-bones/0/rotation = Quaternion(-0.007483728, -0.00022719358, 0.23958513, 0.97084653)
-bones/2/rotation = Quaternion(0.2138091, 0.002085877, 0.34446833, 0.91412413)
-bones/3/rotation = Quaternion(0.17539589, -0.004254864, 0.20819186, 0.96222365)
-bones/4/rotation = Quaternion(-0.022964442, 0.0002275669, 0.049898095, 0.99849033)
-bones/5/rotation = Quaternion(-0.015973466, 5.1716524e-06, 0.10636236, 0.99419916)
-bones/7/rotation = Quaternion(-0.40938577, 0.0054208566, 0.26929498, 0.87169623)
-bones/8/rotation = Quaternion(-0.07763894, -0.004637993, 0.07434667, 0.9941948)
-bones/9/rotation = Quaternion(1, 0, 0, -2.980233e-08)
-bones/11/rotation = Quaternion(0.68403, -0.00063667714, -0.00059670495, 0.72945344)
-bones/12/rotation = Quaternion(2.0561937e-17, -2.910383e-11, 6.433214e-19, 1)
-bones/14/rotation = Quaternion(-0.6639333, 2.9531552e-08, -2.6219835e-08, 0.7477918)
-bones/15/rotation = Quaternion(-2.5410988e-21, 3.5527145e-15, -5.726928e-22, 1)
-bones/16/position = Vector3(0, -4.8866153, 0.4121406)
-bones/17/position = Vector3(0, -4.919599, -0.41772455)
-bones/17/rotation = Quaternion(0.7071068, -0.7071068, -2.6692543e-08, -2.6692543e-08)
-bones/18/position = Vector3(-1.3348569, -1.7944928, 1.6481094)
-bones/19/position = Vector3(-0.6049732, -2.1410315, -1.5729821)
-bones/20/position = Vector3(-0.21554118, 0.21402955, -0.006833578)
-bones/22/position = Vector3(-0.72372025, -2.8882427, -0.41772455)
-bones/22/rotation = Quaternion(0.7071068, -0.7071068, -2.6692543e-08, -2.6692543e-08)
-
-[node name="AnimationPlayer" parent="A-Pose" index="1" unique_id=17895688]
+[node name="AnimationPlayer" parent="A-Pose" index="1" unique_id=494466771]
 libraries/ = SubResource("AnimationLibrary_2ol74")
 
 [node name="AnimationTree" type="AnimationTree" parent="A-Pose" unique_id=301086702]

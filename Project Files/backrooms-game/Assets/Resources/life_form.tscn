@@ -503,27 +503,6 @@ script = ExtResource("1_56kx6")
 [node name="LifeformIdle" parent="." unique_id=1079272750 instance=ExtResource("1_8crh3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Skeleton3D" parent="LifeformIdle/Armature" parent_id_path=PackedInt32Array(1079272750, 203423230) index="0" unique_id=1566408494]
-bones/0/rotation = Quaternion(0.07639247, 0.011826383, -0.22910157, 0.9703283)
-bones/2/rotation = Quaternion(-0.5626043, -0.08057708, -0.104420856, 0.8161373)
-bones/3/rotation = Quaternion(-0.4383363, -0.0035183162, -0.49039465, 0.75323445)
-bones/4/rotation = Quaternion(0.772836, 0.0017764013, 0.0018679231, 0.6346006)
-bones/5/rotation = Quaternion(0.47787604, 0.09499009, -0.07470379, 0.87007517)
-bones/6/rotation = Quaternion(0.30851352, 0.011099517, -0.6231447, 0.7186007)
-bones/8/rotation = Quaternion(-0.2727253, -0.008144755, 0.012136705, 0.96198094)
-bones/10/rotation = Quaternion(0.027596068, 0.0011969159, 0.008861204, 0.99957925)
-bones/12/rotation = Quaternion(0.17074572, -0.0062332386, 0.010994905, 0.98523414)
-bones/13/rotation = Quaternion(0.45882595, 0.012682958, 0.014030604, 0.888325)
-bones/14/rotation = Quaternion(-0.4008165, -8.680727e-05, -0.0002062268, 0.9161584)
-bones/15/rotation = Quaternion(0.06309379, 0.008771406, -0.068146415, 0.9956396)
-bones/16/rotation = Quaternion(0.09083515, 0.0050697313, -0.0861635, 0.9921186)
-bones/17/rotation = Quaternion(0.07016429, -0.025669592, -0.07740879, 0.9941961)
-bones/23/position = Vector3(3.4883947, -6.6131315, 3.0087726)
-bones/24/position = Vector3(3.2958622, -5.831321, -1.4856424)
-bones/24/rotation = Quaternion(0.70140815, 0.70140815, 0.08959146, -0.08959147)
-bones/26/rotation = Quaternion(0.7071068, 0.7071068, 6.883939e-08, -6.883939e-08)
-bones/27/position = Vector3(0.6845809, -0.17641926, 0.21911134)
-
 [node name="AnimationPlayer" parent="LifeformIdle" index="1" unique_id=1608505642]
 libraries/ = SubResource("AnimationLibrary_u6212")
 

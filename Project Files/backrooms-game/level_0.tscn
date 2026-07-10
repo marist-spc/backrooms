@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bamcgkyaw4co6" path="res://player.tscn" id="2_t218m"]
 [ext_resource type="Material" uid="uid://c41hxvvxo3f5i" path="res://BackroomsFloor.tres" id="3_smnfn"]
 [ext_resource type="PackedScene" uid="uid://daxk0bedguv08" path="res://Assets/Enemies/enemy.tscn" id="4_smnfn"]
+[ext_resource type="PackedScene" uid="uid://6hpqdiaaojcf" path="res://item_test.tscn" id="5_nu7sl"]
+[ext_resource type="PackedScene" uid="uid://b2xcrtquf8uo4" path="res://Boss3DSprite.tscn" id="6_bugp2"]
 [ext_resource type="PackedScene" uid="uid://bel3gbrndphyi" path="res://almond_water.tscn" id="6_omks2"]
 [ext_resource type="PackedScene" uid="uid://rbe02im2hdkx" path="res://star_candy.tscn" id="7_wwd78"]
 [ext_resource type="PackedScene" uid="uid://b0ajvqrsfn8jb" path="res://stop_sign.tscn" id="8_40rfo"]
@@ -75,6 +77,9 @@ transform = Transform3D(-0.9991229, 0, -0.04187565, 0, 1, 0, 0.04187565, 0, -0.9
 [node name="Party Goer" parent="NavigationRegion3D" unique_id=269867450 instance=ExtResource("4_smnfn")]
 transform = Transform3D(-0.2627259, 0, 0.9648707, 0, 1, 0, -0.9648707, 0, -0.2627259, 37.09298, 0, 25.323545)
 player_path = NodePath("../../player3D")
+
+[node name="Boss" parent="NavigationRegion3D" unique_id=423815377 instance=ExtResource("6_bugp2")]
+transform = Transform3D(0.024094824, 0, 1.2497679, 0, 1.25, 0, -1.2497679, 0, 0.024094824, -44.42394, 0.8494382, -23.104237)
 
 [node name="Party Goer2" parent="NavigationRegion3D" unique_id=499997472 instance=ExtResource("4_smnfn")]
 transform = Transform3D(0.9989169, 0, -0.046535842, 0, 1, 0, 0.046535842, 0, 0.9989169, -29.228771, 0, 26.24701)
@@ -558,5 +563,7 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -52.241646, 1.175045
 
 [node name="UI" parent="." unique_id=1169676460 instance=ExtResource("9_eomlm")]
 
+[connection signal="delete_boss" from="player3D" to="NavigationRegion3D/Boss" method="_on_player_3d_delete_boss"]
 [connection signal="delete_lifeform" from="player3D" to="NavigationRegion3D/LifeForm" method="_on_player_3d_delete_lifeform"]
 [connection signal="delete_partygoer" from="player3D" to="NavigationRegion3D/Party Goer" method="_on_player_3d_delete_partygoer"]
+[connection signal="Start_Boss_Fight" from="NavigationRegion3D/Boss" to="player3D" method="_on_boss_start_boss_fight"]

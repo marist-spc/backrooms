@@ -6,6 +6,7 @@ var state_machine
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 const ATTACK_RANGE = 2.0
+const Too_Far_Away = 7.0
 
 
 @export var player_path : NodePath
@@ -30,10 +31,11 @@ func _physics_process(_delta: float) -> void:
 			raycast.look_at(player.global_position, Vector3.UP)
 			if raycast.is_colliding():
 				if raycast.get_collider() == player: 
-					if Global.in_combat == false:
+					if Global.in_combat == false and !too_far():
 						anim_tree.set("parameters/conditions/Walk", true)
+
 		"Walk":
-			if Global.in_combat == false:
+			if Global.in_combat == false and !too_far():
 				velocity = Vector3.ZERO
 				
 				nav_agent.set_target_position(player.global_position)
@@ -43,6 +45,8 @@ func _physics_process(_delta: float) -> void:
 				anim_tree.set("parameters/conditions/Attack", target_in_range())
 
 				move_and_slide()
+			if too_far():
+				pass
 			
 		"Attack":
 			anim_tree.set("parameters/conditions/Walk", !target_in_range())
@@ -52,6 +56,8 @@ func target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
 	
 
+func too_far():
+	return global_position.distance_to(player.global_position) > Too_Far_Away
 
 func _on_animation_tree_animation_finished(_anim_name: StringName) -> void:
 	$Area3D/CollisionShape3D.disabled = false

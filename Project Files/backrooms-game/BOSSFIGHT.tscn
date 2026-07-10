@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://c2bsv40vtc16h"]
 
+[ext_resource type="Script" uid="uid://ovljjejw5qs3" path="res://bossfight.gd" id="1_aaxxi"]
 [ext_resource type="Texture2D" uid="uid://5r4ng1hvbhyy" path="res://Combat Assets/CombatBG/sprite_0.png" id="1_hoku1"]
 [ext_resource type="Texture2D" uid="uid://ma2l7x4uw24t" path="res://Combat Assets/CombatBG/sprite_1.png" id="2_oq58p"]
 [ext_resource type="Texture2D" uid="uid://dcyidikf0di4w" path="res://Combat Assets/CombatBG/sprite_2.png" id="3_aaxxi"]
 [ext_resource type="Texture2D" uid="uid://wi4jkhdmwycw" path="res://Combat Assets/CombatBG/sprite_3.png" id="4_prn4p"]
 [ext_resource type="PackedScene" uid="uid://clb8ycwsgctg" path="res://player2D.tscn" id="5_fjtid"]
+[ext_resource type="Texture2D" uid="uid://clexmtf7m7wgw" path="res://HealthBar.png" id="6_oq58p"]
 [ext_resource type="Texture2D" uid="uid://deegx7iofnxvt" path="res://Combat Assets/TextHolder.png" id="6_qsmov"]
 [ext_resource type="PackedScene" uid="uid://brioa2asaayhm" path="res://boss.tscn" id="7_simle"]
 [ext_resource type="Texture2D" uid="uid://c61es5k6hheih" path="res://Assets/Combat Assests/FightButton.png" id="8_5j18r"]
@@ -26,6 +28,7 @@ frame_3/texture = ExtResource("4_prn4p")
 frame_3/duration = 0.17
 
 [node name="combat" type="Node2D" unique_id=1647977493]
+script = ExtResource("1_aaxxi")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1315813532]
 texture_filter = 1
@@ -34,14 +37,18 @@ offset_bottom = 647.0
 texture = SubResource("AnimatedTexture_bm8rm")
 stretch_mode = 1
 
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="." unique_id=907303300]
+texture_filter = 1
+offset_left = 67.0
+offset_top = 216.0
+offset_right = 255.0
+offset_bottom = 362.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_qsmov")
+texture_progress = ExtResource("6_oq58p")
+
 [node name="Player" parent="." unique_id=1223803813 instance=ExtResource("5_fjtid")]
 position = Vector2(162, 507)
-
-[node name="TextHolder" type="Sprite2D" parent="Player" unique_id=1273744050]
-texture_filter = 1
-position = Vector2(-3.999998, -215.33333)
-scale = Vector2(2.8645835, 2.2395835)
-texture = ExtResource("6_qsmov")
 
 [node name="TextHolder2" type="Sprite2D" parent="Player" unique_id=1770766378]
 texture_filter = 1
@@ -69,6 +76,16 @@ theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BossHealthBar" type="TextureProgressBar" parent="." unique_id=2004931718]
+texture_filter = 1
+offset_left = 695.0
+offset_top = 84.0
+offset_right = 904.0
+offset_bottom = 226.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_qsmov")
+texture_progress = ExtResource("6_oq58p")
+
 [node name="Boss" parent="." unique_id=1414879781 instance=ExtResource("7_simle")]
 position = Vector2(13, 0)
 
@@ -76,12 +93,6 @@ position = Vector2(13, 0)
 texture_filter = 1
 position = Vector2(838.00006, 89)
 scale = Vector2(5.015625, 2.34375)
-texture = ExtResource("6_qsmov")
-
-[node name="TextHolder2" type="Sprite2D" parent="Boss" unique_id=1846126597]
-texture_filter = 1
-position = Vector2(788.00006, 154)
-scale = Vector2(3.3125, 2.03125)
 texture = ExtResource("6_qsmov")
 
 [node name="Label" type="Label" parent="Boss" unique_id=1622196255]
@@ -137,15 +148,6 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="None" type="Button" parent="." unique_id=237543072]
-visible = false
-offset_left = 762.0
-offset_top = 456.0
-offset_right = 877.0
-offset_bottom = 572.0
-disabled = true
-text = "no items"
-
 [node name="Almond Water" type="Button" parent="." unique_id=2060077665]
 visible = false
 offset_left = 880.0
@@ -153,6 +155,18 @@ offset_top = 464.0
 offset_right = 1003.0
 offset_bottom = 524.0
 text = "Almond Water"
+
+[node name="Label" type="Label" parent="Almond Water" unique_id=1670749700]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 20.0
+offset_right = 133.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0.2627451, 0.16078432, 0.07058824, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Ability" type="Button" parent="." unique_id=348993660]
 texture_filter = 1
@@ -199,6 +213,18 @@ offset_right = 1014.5807
 offset_bottom = 576.0
 disabled = true
 text = "Star Candy"
+
+[node name="Label" type="Label" parent="StarCandy" unique_id=662310361]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 20.0
+offset_right = 127.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.38928655, 0.38928664, 0.38928658, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Attack" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
