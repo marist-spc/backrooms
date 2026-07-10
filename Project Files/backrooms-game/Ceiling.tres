@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://gdkmvjpxiv5s"]
+
+[ext_resource type="Texture2D" uid="uid://c45ggtx5nn5ga" path="res://BackroomsCeiling.png" id="1_imd12"]
+
+[resource]
+albedo_texture = ExtResource("1_imd12")
+backlight_enabled = true
+backlight = Color(1, 1, 0.90588236, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
