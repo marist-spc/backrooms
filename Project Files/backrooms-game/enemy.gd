@@ -73,5 +73,5 @@ func _on_animation_tree_animation_finished(_anim_name: StringName) -> void:
 	$Area3D/CollisionShape3D.disabled = false
 
 
-func _on_player_3d_delete_partygoer() -> void:
-	queue_free()
+#func _on_player_3d_delete_partygoer() -> void:
+	#queue_free()
